@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
+
+
 body{
     background-color: white;
     /* padding:0px 33px */
 }
+.font-montserrat {
+  font-family: "Montserrat", sans-serif !important;
+}
+.font-unbounded {
+  font-family: "Unbounded", sans-serif !important;
+}
+
+
+
+/*  */
