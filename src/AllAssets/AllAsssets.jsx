@@ -24,8 +24,13 @@ import footerlogo from '../../public/HeroImages/footerlogo.png';
 
 //CTA-------------------
 import cta from '../../public/HeroImages/CTA.svg'
+
+//clients--------------------
+import qcslogo from '../../public/HeroImages/qcslogo.svg'
+
+
 export {
     HeroBackground,HeroBackground2,HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
-    challenges9,challenges10,previous,next,footerlogo,cta
+    challenges9,challenges10,previous,next,footerlogo,cta,qcslogo
     
 }
