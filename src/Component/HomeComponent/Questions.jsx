@@ -10,7 +10,7 @@ import { HomePageFaq } from "@/Data/FaqQuestions/Questions";
 
 
 
-const Questions = () => {
+const Questions = ({FaqData}) => {
     const heading = `FAQ It Up! Your curiosity meets our expertise let's clear things up!`;
 
     const [openIndex, setOpenIndex] = useState(null);
@@ -56,7 +56,7 @@ const Questions = () => {
 
                 {/* Right Section (FAQ List) */}
                 <div className={`md:w-1/2 space-y-4 mt-6 md:mt-0 font-montserrat`}>
-                    {HomePageFaq?.map((item, index) => (
+                    {FaqData?.map((item, index) => (
                         <div key={index} className="bg-gray-100 p-4 rounded-lg cursor-pointer"
                             onClick={() => toggleAnswer(index)}>
                             <div className=" flex justify-between items-center py-2">

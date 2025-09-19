@@ -68,20 +68,34 @@ const AISEOFeatures = () => {
           
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  ">
-          {features.map((feature, index) => (
-            <div key={index} className={`bg-white shadow-lg overflow-hidden border-b border-r transition-all duration-300 hover:shadow-xl hover:scale-105
-            `}>
-              <div className="px-10 py-8  justify-center  hover:border-none items-start">
-                <div className='  w-[63%]'>
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  {features.map((feature, index) => {
+    const isLastColumn = (index + 1) % 3 === 0; 
+    const isLastRow = index >= features.length - 3; 
 
-                <h3 className="mt-4 text-xl font-semibold font-montserrat text-gray-900">{feature.title} :</h3>
-                <p className="mt-2 text-gray-600 text-[15px] font-montserrat">{feature.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+    return (
+      <div
+        key={index}
+        className={`bg-white overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105
+          ${!isLastColumn ? "border-r" : ""}
+          ${!isLastRow ? "border-b" : ""}
+        `}
+      >
+        <div className="px-10 py-8 justify-center items-start">
+          <div className="w-[63%]">
+            <h3 className="mt-4 text-xl font-semibold font-montserrat text-gray-900">
+              {feature.title} :
+            </h3>
+            <p className="mt-2 text-gray-600 text-[15px] font-montserrat">
+              {feature.description}
+            </p>
+          </div>
         </div>
+      </div>
+    );
+  })}
+</div>
+
         
       
       </div>

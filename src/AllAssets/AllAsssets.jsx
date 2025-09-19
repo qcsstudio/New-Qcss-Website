@@ -1,7 +1,6 @@
 import React from 'react'
 
-import HeroBackground from '../../public/HeroImages/BLACK.png';
-import HeroBackground2 from '../../public/HeroImages/WHITE.png';
+
 import HomeBrand1 from '../../public/HeroImages/Brand1.png';
 import HomeBrand2 from '../../public/HeroImages/Brand2.png';
 import HomeBrand3 from '../../public/HeroImages/Brand3.png';
@@ -28,9 +27,16 @@ import cta from '../../public/HeroImages/CTA.svg'
 //clients--------------------
 import qcslogo from '../../public/HeroImages/qcslogo.svg'
 
+//Navbar-------------
+import NavbarQcsLogo from '../../public/HeroImages/NavbarLogo.svg'
+
+//Mission & Values-----------
+import MissionBar from '../../public/HeroImages/Mission.svg'
+import VisionBar from '../../public/HeroImages/Vision.svg'
+import ValuesBar from '../../public/HeroImages/ValuesBar.svg'
 
 export {
-    HeroBackground,HeroBackground2,HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
-    challenges9,challenges10,previous,next,footerlogo,cta,qcslogo
+    HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
+    challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar
     
 }

@@ -1,7 +1,7 @@
 import { middleFeatures, rightFeatures } from "@/Data/HomePage/FeaturesData";
 import React from "react";
 
-const Features = () => {
+const Features = ({middleFeature,rightFeature}) => {
 
    
 
@@ -21,7 +21,7 @@ const Features = () => {
 
                     {/* Middle Section */}
                     <div className="md:w-1/4 flex flex-col justify-center gap-6  border-r-2 border-gray-300 px-6">
-                        {middleFeatures.map((feature, idx) => (
+                        {middleFeature.map((feature, idx) => (
                             <div key={idx} >
                                 <div className="p-3">
                                     <h3 className="font-semibold mb-2 font-montserrat text-[20px]">{feature.title}</h3>
@@ -35,17 +35,17 @@ const Features = () => {
 
                     {/* Right Section */}
                     <div className="md:w-1/4 flex flex-col gap-6 ">
-                        {rightFeatures.map((feature, idx) => (
-                            <>
+                        {rightFeature.map((feature, idx) => (
+                            <div key={idx}>
                                      
-                                <div key={idx} className=" p-5">
+                                <div  className=" p-5">
                                     <h3 className="font-semibold mb-2 font-montserrat text-[20px]">{feature.title}</h3>
                                     <p className="text-gray-600   font-montserrat text-[15px] ">{feature.description}</p>
                                 </div>
 
                                 <hr className=" border-b border-gray-300" />
 
-                            </>
+                            </div>
                         ))}
                     </div>
                 </div>

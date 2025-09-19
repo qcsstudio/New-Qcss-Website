@@ -10,11 +10,15 @@ import NextGenTools from '@/Component/HomeComponent/NextGenTools'
 import PowerSection from '@/Component/HomeComponent/PowerSection'
 import Questions from '@/Component/HomeComponent/Questions'
 import WeSupport from '@/Component/HomeComponent/WeSupport'
+import Navbar from '@/Component/Navbar'
+import { HomePageFaq } from '@/Data/FaqQuestions/Questions'
+import { HomemiddleFeatures, HomerightFeatures } from '@/Data/HomePage/FeaturesData'
 import React from 'react'
 
 const HomeContainer = () => {
   return (
     <>
+    <Navbar/>
     <AISEOFeatures/>
     <NextGenTools/>
     <div className=''>
@@ -24,10 +28,10 @@ const HomeContainer = () => {
     <PowerSection/>
     <Challenges/>
     <Clients/>
-    <Features/>
+    <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures}/>
     <CTA/>
     </div>
-    <Questions/>
+    <Questions FaqData={HomePageFaq}/>
     <Footer/>
     </>
   )
