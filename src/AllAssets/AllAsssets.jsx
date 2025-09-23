@@ -35,8 +35,31 @@ import MissionBar from '../../public/HeroImages/Mission.svg'
 import VisionBar from '../../public/HeroImages/Vision.svg'
 import ValuesBar from '../../public/HeroImages/ValuesBar.svg'
 
+//oursuccess---------------
+import success from '../../public/HeroImages/Success.svg'
+
+//team--------
+import team1 from '../../public/HeroImages/team1.svg'
+import team2 from '../../public/HeroImages/team2.svg'
+import team3 from '../../public/HeroImages/team3.svg'
+
+//Client Wins--------------
+import AWS from '../../public/HeroImages/AWS.svg'
+import DPIIT from '../../public/HeroImages/DPIIT.svg'
+import GooglePartner from '../../public/HeroImages/GooglePartner.svg'
+import Linkedinpartner from '../../public/HeroImages/Linkedinpartner.svg'
+import MetaBussiness from '../../public/HeroImages/MetaBussiness.svg'
+import PinterestPartner from '../../public/HeroImages/PinterestPartner.svg'
+import AutomationPartner from '../../public/HeroImages/Setting.svg'
+
+//services------  Growth Strategy------
+import Strategy1 from '../../public/HeroImages/GrowthStrategy1.svg';
+import Strategy2 from '../../public/HeroImages/GrowthStrategy2.svg';
+
+
 export {
     HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
-    challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar
+    challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar,success,team1,team2,team3,
+    AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2
     
 }

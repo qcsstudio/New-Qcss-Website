@@ -21,8 +21,8 @@ const Navbar = () => {
         </Link>
 
         <div className={`hidden md:flex space-x-11 text-[17px] font-montserrat`}>
-          <Link href="/services" className="hover:text-gray-400">Services</Link>
-          <Link href="/courses" className="hover:text-gray-400">Courses</Link>
+          <Link href="/service" className="hover:text-gray-400">Service</Link>
+          <Link href="/product" className="hover:text-gray-400">product</Link>
           <Link href="/aboutus" className="hover:text-gray-400">About Us</Link>
           <Link href="/blogs" className="hover:text-gray-400">Blogs</Link>
           <Link href="/contactus" className="hover:text-gray-400">Contact Us</Link>
@@ -50,11 +50,11 @@ const Navbar = () => {
       {/* responsive navbar */}
       {menuOpen && (
         <div className="md:hidden flex flex-col items-center bg-black py-4 space-y-4 ">
-          <Link href="/services">Services</Link>
-          <Link href="/courses">courses</Link>
-          <Link href="services/#aboutus">About Us</Link>
+          <Link href="/service">Service</Link>
+          <Link href="/product">product</Link>
+          <Link href="service/#aboutus">About Us</Link>
           <Link href="/blogs">Blogs</Link>
-          <Link href="/services/contactus">Contact Us</Link>
+          <Link href="/service/contactus">Contact Us</Link>
           <div className="flex items-center">
             <IoGlobeOutline className="w-5 h-5 me-1" /> En
           </div>

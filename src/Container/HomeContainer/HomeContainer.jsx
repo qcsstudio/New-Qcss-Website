@@ -13,6 +13,7 @@ import WeSupport from '@/Component/HomeComponent/WeSupport'
 import Navbar from '@/Component/Navbar'
 import { HomePageFaq } from '@/Data/FaqQuestions/Questions'
 import { HomemiddleFeatures, HomerightFeatures } from '@/Data/HomePage/FeaturesData'
+import { supportCards } from '@/Data/HomePage/weSupportData'
 import React from 'react'
 
 const HomeContainer = () => {
@@ -24,7 +25,7 @@ const HomeContainer = () => {
     <div className=''>
     {/* <HeroSection/> */}
     <Brands/>
-    <WeSupport/>
+    <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support"/>
     <PowerSection/>
     <Challenges/>
     <Clients/>
