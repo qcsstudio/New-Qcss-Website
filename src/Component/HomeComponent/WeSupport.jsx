@@ -7,20 +7,22 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 // import {Swiper} from 'swiper';
-import { supportCards } from '@/Data/HomePage/weSupportData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { MdKeyboardArrowRight } from "react-icons/md";
+import Heading from '../HeadingComponent/Heading';
 
 
 
 
-const WeSupport = () => {
+const WeSupport = ({cards,heading,heading1}) => {
     return (
         <>
             <div className="px-[72px] mt-20">
-                <h2 className="text-2xl md:text-[40px] font-unbounded font-bold  max-w-[45rem] leading-snug ">
-                    Startups to Scaleups Here's Who We Support
-                </h2>
+                
+                {
+                    heading1 ? <Heading heading={heading1}/> : ""
+                }
+                <Heading heading={heading}/>
                 <div className=" py-10">
                     <Swiper
                         modules={[Navigation, Pagination, FreeMode, Autoplay]}
@@ -40,14 +42,17 @@ const WeSupport = () => {
                         speed={1000}
                         className="pb-10"
                     >
-                        {supportCards.map((item, index) => (
+                        {cards?.map((item, index) => (
                             <SwiperSlide key={index} className="flex items-center justify-center">
                                 <div className="bg-[#F5F7F9] rounded-lg p-4 h-[473px] flex flex-col sm:justify-between">
                                     <div>
                                         <h3 className={`font-semibold text-lg md:text-[35px] mb-2 font-unbounded  w-[70%]`}>{item.heading}</h3>
-                                        <p className={`text-gray-600 text-base md:text-[25px] font-medium font-unbounded`}>
+                                        {
+                                            item.desc ?  <p className={`text-gray-600 text-base md:text-[25px] font-medium font-unbounded`}>
                                             {item.desc}
-                                        </p>
+                                        </p> : ""
+                                        }
+                                       
                                         <div className='flex flex-col items-start justify-between  h-60 mt-10'>
                                         <p className='font-montserrat text-[15px]'>{item.para}</p>
                                         <button className='flex gap-2 font-montserrat items-center justify-center'>{item.button} <span><MdKeyboardArrowRight className='text-[20px]' /></span></button>

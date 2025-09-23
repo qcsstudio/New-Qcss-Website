@@ -86,3 +86,94 @@ export const AboutusFaq = [
     answer: "Yes—visit our Case Studies page or request a tailored deck during your call."
   },
 ]
+
+export const ServiceFaq = [
+  {
+    question: "How does AI marketing actually improve ROI?",
+    answer: "AI reallocates budget in real time to high-performing segments, reducing waste and increasing revenue impact."
+  },
+  {
+    question: "When will I see results from Voice-First SEO?",
+    answer: "Technical fixes deliver quick wins in a few weeks; sustained traffic growth typically begins within 90 days."
+  },
+  {
+    question: "Can Nova Chatbot run in multiple languages?",
+    answer: "Yes. Nova supports over 40 languages and automatically detects each visitor's locale."
+  },
+  {
+    question: "Do I need a full site rebuild for AI integration?",
+    answer: "No. We can layer AI chat, automation, and dashboards onto your current stack or build an AI-native site if preferred."
+  },
+  {
+    question: "What does the Discovery phase cost?",
+    answer: "Discovery is free and includes an audit report plus ROI forecast delivered within 48 hours."
+  },
+  {
+    question: "Do you offer white-label partnerships?",
+    answer: "Yes. Agencies can brand ElevatrX and Nova to expand their service lines without new hires."
+  },
+  {
+    question: "Is my data secure with QuantumCrafters?",
+    answer: "We follow GDPR and SOC-2 aligned processes, with full encryption at rest and in transit."
+  },
+  {
+    question: "Can I see live dashboards before signing?",
+    answer: "Absolutely. Schedule a demo to view anonymised real-time KPI dashboards."
+  },
+  {
+    question: "What KPIs will you track?",
+    answer: "We monitor traffic, conversions, CAC, LTV, funnel velocity, hours saved and any custom metrics you define."
+  },
+  {
+    question: "How do I start?",
+    answer: "Book a free consultation; you'll receive your AI roadmap and quote within 48 hours."
+  },
+
+]
+export const ProductFaq = [
+  {
+    question: "How long does setup take?",
+    answer: "Most clients go live in 1-2 days."
+  },
+  {
+    question: "Can ElevatrX write captions in my tone?",
+    answer: "Yes—upload writing samples; GPT fine-tunes to your brand voice."
+  },
+  {
+    question: "Does Nova work on mobile?",
+    answer: "Yes—responsive chat widget supports AMP and PWAs."
+  },
+  {
+    question: "Which CRMs are supported?",
+    answer: "HubSpot, Salesforce, Pipedrive, Zoho plus Zapier."
+  },
+  {
+    question: "Is data GDPR compliant?",
+    answer: "Yes—EU servers, encryption in transit and at rest, right-to-be-forgotten endpoints."
+  },
+  {
+    question: "Can I moderate AI replies?",
+    answer: "Confidence thresholds and human hand-off rules can be set."
+  },
+  {
+    question: "What languages are supported?",
+    answer: "40+ languages including English, Spanish, Hindi, German and French."
+  },
+  {
+    question: "Do you charge per seat?",
+    answer: "No—pricing based on social profiles (ElevatrX) or monthly chats (Nova)."
+  },
+  {
+    question: "Will ElevatrX replace my social manager?",
+    answer: "It augments them—AI handles scheduling; humans craft strategy."
+  },
+  {
+    question: "Can Nova book meetings in multiple time zones?",
+    answer: "Yes—integrates with Calendly, Google Calendar and Outlook."
+  },
+  {
+    question: "Is there a free trial?",
+    answer: "v"
+  },
+
+]
