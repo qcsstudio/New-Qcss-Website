@@ -30,6 +30,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={` ${unbounded.variable} ${montserrat.variable}`}>
+      <head>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.56/build/spline-viewer.js"></script>
+
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
