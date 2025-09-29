@@ -10,7 +10,7 @@ import Image from "next/image";
 
 
 const Clients = () => {
-    const [activeIndex, setActiveIndex] = useState(2)
+    const [activeIndex, setActiveIndex] = useState(0)
 
 
     return (
@@ -28,20 +28,37 @@ const Clients = () => {
             <div className="relative flex flex-col items-center">
                 <Swiper
                     modules={[Navigation]}
-                    spaceBetween={15}
-                    slidesPerView={6}
+                    spaceBetween={16}
+                    slidesPerView={1}
                     loop={true}
                     initialSlide={0}
                     navigation={{
                         nextEl: ".custom-next1",
                         prevEl: ".custom-prev1",
                     }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 24,
+                        },
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 24,
+                        },
+                        1280: {
+                            slidesPerView: 6,
+                            spaceBetween: 24,
+                        },
+                    }}
+                    onSwiper={(swiper) => {
+                        setActiveIndex(swiper.realIndex);
+                    }}
                     onSlideChange={(swiper) => {
-                        const current = swiper.slides[swiper.activeIndex + 2];
-                        if (current) {
-                            const realIndex = current.getAttribute("data-swiper-slide-index");
-                            setActiveIndex(Number(realIndex));
-                        }
+                        setActiveIndex(swiper.realIndex);
                     }}
                     scrollbar={true}
                     grabCursor={true}       // cursor ko grab banata hai

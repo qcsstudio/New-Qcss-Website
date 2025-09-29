@@ -11,14 +11,14 @@ const Footer = () => {
     <>
       <footer className='bg-black text-white py-5 px-10 mt-10 rounded-ss-3xl w-full rounded-se-3xl'>
         <div className=' mx-auto'>
-          <div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-8'>
+          <div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-10 md:gap-0'>
             <div className='lg:w-[45%]  '>
               <div className='flex'>
                 <Image src={footerlogo} alt="logo" width={569.86} height={117} />
               </div>
               <p className={`text-[#FFFFFF]  mt-4 text-lg leading-relaxed px-4 md:px-0 text-center md:text-start  lg:w-[72%] font-unbounded `}>The next big thing starts here— drop us a line and let's get creating!</p>
             </div>
-            <div className='flex md:justify-normal items-start  space-x-20 sm:space-x-80  md:space-x-24 mt-8 md:mt-0'>
+            <div className='flex flex-col sm:flex-row items-start gap-8 md:gap-24 mt-8 md:mt-0'>
               <div>
                 <h2 className={`font-semibold mb-4 text-[15px] font-unbounded`}>Quick Links</h2>
                 <ul className={`text-[#FFFFFF] space-y-3 text-sm font-montserrat`}>
@@ -88,7 +88,7 @@ const Footer = () => {
 
             <div className='border-t border-gray-700 '></div>
           </div>
-          <div className={`flex justify-between text-[#FFFFFF] text-[15px] mt-3  font-montserrat`}>
+          <div className={`mt-3 flex flex-col gap-3 text-center text-[#FFFFFF] text-[15px] font-montserrat md:flex-row md:items-center md:justify-between md:text-left`}>
             <span>
               © 2025 QuantumCrafters Studio Pvt. Ltd. All rights reserved.
             </span>
