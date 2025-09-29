@@ -56,10 +56,14 @@ import AutomationPartner from '../../public/HeroImages/Setting.svg'
 import Strategy1 from '../../public/HeroImages/GrowthStrategy1.svg';
 import Strategy2 from '../../public/HeroImages/GrowthStrategy2.svg';
 
+// web&Saas -- ComparisonTable---------
+import Crosslogo from '../../public/HeroImages/Crosslogo.svg'
+import Checklogo from '../../public/HeroImages/checklogo.svg'
+
 
 export {
     HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
     challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar,success,team1,team2,team3,
-    AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2
+    AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2,Crosslogo,Checklogo
     
 }

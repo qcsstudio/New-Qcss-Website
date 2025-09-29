@@ -3,20 +3,22 @@ import React from "react";
 import Image from "next/image";
 
 import Heading from "../HeadingComponent/Heading";
+import Link from "next/link";
 
-export default function Strategy({heading,desc,cards}) {
-   
+export default function Strategy({ heading, desc, cards }) {
+
 
     return (
         <>
             <div className="px-[72px] mt-20">
-                <Heading heading={heading}/>
+                <Heading heading={heading} />
                 <p className="font-montserrat text-[18px]">{desc}</p>
                 <div className="flex flex-col md:flex-row gap-6 mt-5">
                     {cards?.map((card, idx) => (
-                        <div
+                        <Link
+                            href={card.link || "#"}
                             key={idx}
-                            className="relative group  w-full  h-[470px] rounded-2xl overflow-hidden    "
+                            className="relative group  w-full  h-[470px] rounded-2xl overflow-hidden  "
                         >
                             {/* Background Image on Hover */}
                             <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100">
@@ -37,14 +39,14 @@ export default function Strategy({heading,desc,cards}) {
                                 <ul className="space-y-2 mt-4">
                                     {card?.points.map((point, i) => (
                                         <li key={i} className="flex items-center gap-2 text-[15px] font-montserrat group-hover:text-white">
-                                           <div className='w-[20px] h-[20px] rounded-full bg-[#F1813B] flex justify-center items-center'>
-                                                    <div className='w-[10px] h-[10px] rounded-full bg-[#F9D8C3]' />
-                                                </div> {point}
+                                            <div className='w-[20px] h-[20px] rounded-full bg-[#F1813B] flex justify-center items-center'>
+                                                <div className='w-[10px] h-[10px] rounded-full bg-[#F9D8C3]' />
+                                            </div> {point}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

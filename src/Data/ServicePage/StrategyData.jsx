@@ -7,7 +7,8 @@
             subtitle:
                 "Voice-First SEO, ML ad bidding, GPT content, Nova chatbots, ElevatX social automation",
             points: ["3x traffic", "-40% CAC", "24/7 lead capture"],
-            image: Strategy1
+            image: Strategy1,
+            link:"#"
         },
         {
             number: "02",
@@ -15,7 +16,8 @@
             subtitle:
                 "AI-integrated websites, CRM workflows, API dashboards, modular SaaS builds",
             points: ["2x conversions", "60% time saved", "scale-ready architecture"],
-            image: Strategy2
+            image: Strategy2,
+            link:"/web-saas"
         },
     ];
  export const ProductStrategy = [
