@@ -10,7 +10,7 @@ import Image from "next/image";
 
 
 const Clients = () => {
-    const [activeIndex, setActiveIndex] = useState(0)
+    const [activeIndex, setActiveIndex] = useState(0);
 
 
     return (
@@ -55,13 +55,13 @@ const Clients = () => {
                         },
                     }}
                     onSwiper={(swiper) => {
-                        setActiveIndex(swiper.realIndex);
+                        setActiveIndex(swiper.realIndex ?? 0);
                     }}
                     onSlideChange={(swiper) => {
-                        setActiveIndex(swiper.realIndex);
+                        setActiveIndex(swiper.realIndex ?? 0);
                     }}
                     scrollbar={true}
-                    grabCursor={true}       // cursor ko grab banata hai
+                    grabCursor={true}
                     freeMode={false}
                     className="w-full pb-12"
                 >

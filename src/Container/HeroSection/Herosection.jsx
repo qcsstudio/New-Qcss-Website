@@ -1,115 +1,134 @@
-'use client'
-import React, { useEffect, useMemo, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+"use client";
 
+import React, { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 
-const Herosection = ({ heading, para, titles, buttons }) => {
+const SPLINE_SCRIPT_URL = "https://unpkg.com/@splinetool/viewer@1.10.56/build/spline-viewer.js";
 
-    const titles1 = useMemo(
-        () => titles,
-        []
-    );
-    const [titleNumber, setTitleNumber] = useState(0);
+const Herosection = ({ heading, para, titles = [], buttons = [] }) => {
+    const [titleIndex, setTitleIndex] = useState(0);
+    const rotatingTitles = useMemo(() => titles.filter(Boolean), [titles]);
 
     useEffect(() => {
-        if (typeof window === "undefined") return
-        if (window.customElements?.get("spline-viewer")) return
+        if (!rotatingTitles.length) {
+            if (titleIndex !== 0) {
+                setTitleIndex(0);
+            }
+            return;
+        }
 
-        const script = document.createElement("script")
-        script.src = "https://unpkg.com/@splinetool/viewer@1.10.56/build/spline-viewer.js"
-        script.type = "module"
-        script.async = true
-        script.dataset.splineViewer = "true"
-        document.head.appendChild(script)
+        if (titleIndex >= rotatingTitles.length) {
+            setTitleIndex(0);
+        }
+    }, [rotatingTitles, titleIndex]);
+
+    useEffect(() => {
+        if (typeof window === "undefined") {
+            return undefined;
+        }
+
+        if (window.customElements?.get("spline-viewer")) {
+            return undefined;
+        }
+
+        const script = document.createElement("script");
+        script.src = SPLINE_SCRIPT_URL;
+        script.type = "module";
+        script.async = true;
+        script.dataset.splineViewer = "true";
+        document.head.appendChild(script);
 
         return () => {
             if (script.parentElement) {
-                script.parentElement.removeChild(script)
+                script.parentElement.removeChild(script);
             }
-        }
-    }, [])
+        };
+    }, []);
 
     useEffect(() => {
+        if (!rotatingTitles.length) {
+            return undefined;
+        }
+
         const timeoutId = setTimeout(() => {
-            if (titleNumber === titles.length - 1) {
-                setTitleNumber(0);
-            } else {
-                setTitleNumber(titleNumber + 1);
-            }
+            setTitleIndex((current) => (current + 1) % rotatingTitles.length);
         }, 3000);
+
         return () => clearTimeout(timeoutId);
-    }, [titleNumber, titles]);
+    }, [rotatingTitles, titleIndex]);
+
     return (
-        <>
-            <div className='w-full h-screen relative'>
-                {/* // hide spline mark */}
-                <div className='w-[300px] h-[100px]  absolute bottom-0 right-0 bg-[#ececec] z-50'></div>
+        <div className="relative h-screen w-full">
+            <div className="absolute bottom-0 right-0 z-50 h-[100px] w-[300px] bg-[#ececec]" aria-hidden="true" />
 
-                <div className='w-full h-full  absolute z-100 ' >
-                    <div className='  absolute z-101 top-[20%] px-8 py-3 '>
-                        <div className="w-full sm:w-[50%] lg:w-[60%] xl:w-[65%] flex flex-col justify-center text-black sm:mt-[25rem] md:mt-[0rem] min-[320px]:mt-[20rem]  ">
+            <div className="absolute inset-0 z-10 px-6 py-4 sm:px-10">
+                <div className="flex h-full flex-col justify-center gap-6 text-black sm:w-1/2 lg:w-[60%] xl:w-[65%]">
+                    <h1 className="w-full text-4xl font-unbounded font-bold leading-tight tracking-tight md:text-[45px] xl:text-[70px]">
+                        <span className="text-spektr-cyan-50">{heading}</span>
+                        {rotatingTitles.length ? (
+                            <span className="relative mt-2 flex w-full overflow-hidden md:pb-4 md:pt-1">
+                                &nbsp;
+                                {rotatingTitles.map((title, index) => (
+                                    <motion.span
+                                        key={title}
+                                        className="absolute font-semibold"
+                                        initial={{ opacity: 0, y: -100 }}
+                                        animate={
+                                            titleIndex === index
+                                                ? { y: 0, opacity: 1 }
+                                                : { y: titleIndex > index ? -150 : 150, opacity: 0 }
+                                        }
+                                        transition={{ type: "spring", stiffness: 50 }}
+                                    >
+                                        {title}
+                                    </motion.span>
+                                ))}
+                            </span>
+                        ) : null}
+                    </h1>
 
-                            <h1 className="text-5xl md:text-[45px] xl:text-[70px] font-unbounded xl:w-4xl tracking-tighter leading-[1.3] w-full font-bold ">
-                                <span className="text-spektr-cyan-50">
-                                    {heading}
-                                </span>
-                                {
-                                    titles &&
-                                    <span className="relative flex w-full  overflow-hidden  md:pb-4 md:pt-1">
-                                        &nbsp;
-                                        {titles1.map((title, index) => (
-                                            <motion.span
-                                                key={index}
-                                                className="absolute font-semibold"
-                                                initial={{ opacity: 0, y: "-100" }}
-                                                transition={{ type: "spring", stiffness: 50 }}
-                                                animate={
-                                                    titleNumber === index
-                                                        ? {
-                                                            y: 0,
-                                                            opacity: 1,
-                                                        }
-                                                        : {
-                                                            y: titleNumber > index ? -150 : 150,
-                                                            opacity: 0,
-                                                        }
-                                                }
-                                            >
-                                                {title}
-                                            </motion.span>
-                                        ))}
-                                    </span>
-                                }
+                    <motion.p
+                        className="text-start font-montserrat text-lg leading-tight lg:text-[17px] xl:w-[90%] xl:text-[19px]"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 1 }}
+                    >
+                        {para}
+                    </motion.p>
 
-                            </h1>
-
-                            <motion.p
-                                className={`mt-2 text-lg lg:text-[17px] xl:text-[19px] xl:w-[90%] text-start leading-tight font-montserrat`}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3, duration: 1 }}
+                    <motion.div
+                        className="mt-4 flex flex-wrap gap-4"
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 0.6, type: "spring", stiffness: 300 }}
+                    >
+                        {buttons.map(({ label, href }, idx) => (
+                            <a
+                                key={label ?? idx}
+                                href={href ?? "#"}
+                                className="rounded-lg bg-[#F1813B] px-6 py-2 font-montserrat font-semibold text-white transition hover:bg-[#d46c2d]"
                             >
-                                {para}
-                            </motion.p>
-
-                            <motion.div
-                                className="mt-4 flex flex-wrap gap-4"
-                                initial={{ scale: 0.9, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ delay: 0.6, type: 'spring', stiffness: 300 }}
+                                {label}
+                            </a>
+                        ))}
+                        {!buttons.length ? (
+                            <a
+                                href="#contact"
+                                className="rounded-lg bg-[#F1813B] px-6 py-2 font-montserrat font-semibold text-white transition hover:bg-[#d46c2d]"
                             >
-
-                            </motion.div>
-                        </div>
-                        <button className='bg-[#F1813B]  text-white rounded-lg px-6 py-2'>Book a Free AI Growth Consultation</button>
-                    </div>
+                                Book a Free AI Growth Consultation
+                            </a>
+                        ) : null}
+                    </motion.div>
                 </div>
-
-
-                <spline-viewer url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode" className="relative" ></spline-viewer>
             </div>
-        </>
-    )
-}
 
-export default Herosection
+            <spline-viewer
+                url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode"
+                className="relative h-full w-full"
+            />
+        </div>
+    );
+};
+
+export default Herosection;

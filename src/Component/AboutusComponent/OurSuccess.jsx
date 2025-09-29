@@ -4,8 +4,8 @@ import React from "react";
 
 const OurSuccess = () => {
     return (
-        <div className="flex flex-col-reverse items-center gap-8 px-6 md:px-[72px] my-10 md:flex-row">
-            <div className="w-full md:w-1/2 space-y-5 text-center md:text-left">
+        <div className="flex flex-col items-center gap-8 px-6 md:px-[72px] my-10 md:flex-row">
+            <div className="w-full space-y-5 text-center md:w-1/2 md:text-left">
                 <h2 className="font-unbounded font-bold text-3xl md:text-[40px]">
                     Our Story the Journey That Shaped Our Success
                 </h2>

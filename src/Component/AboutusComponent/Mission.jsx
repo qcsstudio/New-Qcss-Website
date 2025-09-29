@@ -11,8 +11,7 @@ const data = [
         desc: "We help startups, agencies, and enterprises use smart tech to generate leads, convert faster with automation, and achieve sustainable growth.",
         smallTitle: "Mission",
         smallSubtitle: "Present",
-        image:MissionBar
-       
+        image: MissionBar,
     },
     {
         color: "bg-[#2683C6]",
@@ -21,29 +20,27 @@ const data = [
         desc: "A world where every ambitious brand can compete globally—powered by human creativity and intelligent technology.",
         smallTitle: "Vision",
         smallSubtitle: "Target",
-        image:VisionBar
-        
+        image: VisionBar,
     },
     {
         color: "bg-[#F1813B]",
         label: "Our Company",
         title: "Values",
-        desc: "Impact-First drives revenue, CAC, or hours saved. Human AI blends intuition and learning. Transparency, innovation, partnership ensure success.",
+        desc: "Impact-first focus drives revenue, lowers CAC, and saves hours. Human AI blends intuition with learning while transparency, innovation, and partnership keep teams aligned.",
         smallTitle: "Values",
         smallSubtitle: "Beliefs",
-        image:ValuesBar
-       
+        image: ValuesBar,
     },
 ];
 
 export default function Mission() {
     return (
         <>
-            <div className="px-6 md:px-[72px] my-10 ">
+            <div className="px-6 md:px-[72px] my-10">
                 <h2 className="text-3xl md:text-[40px] font-bold font-unbounded text-[#000000]">
-                   Mission & Vision
+                    Mission & Vision
                 </h2>
-                <p className="mt-2 text-[18px] font-montserrat text-[#000000]  ">
+                <p className="mt-2 text-[18px] font-montserrat text-[#000000]">
                     We work to create most attractive & meaningful place for small businesses. Our Team always ready to help You
                 </p>
 
@@ -51,28 +48,26 @@ export default function Mission() {
                     {data.map((item, idx) => (
                         <div key={idx} className={`relative w-full md:w-1/3 pb-8 rounded-xl shadow-md ${item.color}`}>
                             {/* Main Card */}
-                            <div
-                                className={` rounded-xl p-6 text-white `}
-                            >
+                            <div className="rounded-xl p-6 text-white md:p-8">
                                 <span className="text-[16px] bg-black/20 px-3 py-1 rounded-md font-montserrat">
                                     {item.label}
                                 </span>
-                                <h2 className="text-[35px] font-semibold font-unbounded mt-4">{item.title}</h2>
-                                <p className="mt-3 text-[18px] leading-relaxed font-montserrat ">{item.desc}</p>
+                                <h2 className="text-[32px] md:text-[35px] font-semibold font-unbounded mt-4">{item.title}</h2>
+                                <p className="mt-3 text-[16px] md:text-[18px] leading-relaxed font-montserrat">{item.desc}</p>
                             </div>
 
                             {/* Small Overlapping Card */}
-                            <div className="mt-6 mx-6 bg-white p-4 shadow-lg md:absolute md:mt-0 md:mx-0 md:-bottom-20 md:-right-8">
+                            <div className="mt-6 mx-6 max-w-[240px] rounded-xl bg-white p-4 shadow-lg md:absolute md:mt-0 md:mx-0 md:-bottom-20 md:-right-8 md:max-w-[220px]">
                                 <div className="flex justify-between gap-5 items-center">
                                     <div>
-                                        <h3 className="font-semibold text-[35px] font-unbounded text-[#7F7F7F]">
+                                        <h3 className="font-semibold text-[30px] md:text-[35px] font-unbounded text-[#7F7F7F]">
                                             {item.smallTitle}
                                         </h3>
                                         <p className="text-xs text-[#7F7F7F] font-montserrat">{item.smallSubtitle}</p>
                                     </div>
                                     {/* Mini bar chart mock */}
-                                    <div className="flex items-end gap-1 ">
-                                        <Image src={item.image} width={100} height={100} className="w-full h-full "/>
+                                    <div className="flex items-end gap-1">
+                                        <Image src={item.image} width={100} height={100} alt={`${item.smallTitle} visual`} className="h-full w-full" />
                                     </div>
                                 </div>
                             </div>

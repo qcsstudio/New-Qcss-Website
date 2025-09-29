@@ -15,7 +15,9 @@ export default function IndustryImpact({ cardsData }) {
                 {cardsData.map((item, idx) => (
                     <div
                         key={idx}
-                        className={`border border-gray-300 rounded-lg shadow-sm px-5 py-6 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[360px] ${staggerClasses[item.position] ?? ""}`}
+                        className={`border border-gray-300 rounded-lg shadow-sm px-5 py-6 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[360px] ${
+                            staggerClasses[item.position] ?? ""
+                        }`}
                     >
                         <h3 className="text-2xl sm:text-3xl lg:text-[35px] font-semibold font-unbounded mb-3">{item.title}</h3>
                         <p className="text-base sm:text-lg text-[#000000] font-montserrat leading-relaxed mt-4">{item.desc}</p>
