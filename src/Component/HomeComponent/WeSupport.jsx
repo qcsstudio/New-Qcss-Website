@@ -14,24 +14,21 @@ import Heading from '../HeadingComponent/Heading';
 
 
 
-const WeSupport = ({cards,heading,heading1}) => {
+const WeSupport = ({ cards, heading, heading1 }) => {
     return (
         <>
-            <div className="px-[72px] mt-20">
-                
-                {
-                    heading1 ? <Heading heading={heading1}/> : ""
-                }
-                <Heading heading={heading}/>
-                <div className=" py-10">
+            <div className="px-6 md:px-[72px] mt-20">
+                {heading1 ? <Heading heading={heading1} /> : null}
+                <Heading heading={heading} />
+                <div className="py-10">
                     <Swiper
                         modules={[Navigation, Pagination, FreeMode, Autoplay]}
                         spaceBetween={16}
-                        slidesPerView={1.2}
+                        slidesPerView={1}
                         breakpoints={{
-                            640: { slidesPerView: 1.5, spaceBetween: 20 },
+                            480: { slidesPerView: 1.2, spaceBetween: 18 },
                             768: { slidesPerView: 2.2, spaceBetween: 20 },
-                            1024: { slidesPerView: 3.5, spaceBetween: 24 },
+                            1024: { slidesPerView: 3.2, spaceBetween: 24 },
                         }}
                         loop={true}
                         freeMode={true}
@@ -44,22 +41,21 @@ const WeSupport = ({cards,heading,heading1}) => {
                     >
                         {cards?.map((item, index) => (
                             <SwiperSlide key={index} className="flex items-center justify-center">
-                                <div className="bg-[#F5F7F9] rounded-lg p-4 h-[473px] flex flex-col sm:justify-between">
-                                    <div>
-                                        <h3 className={`font-semibold text-lg md:text-[35px] mb-2 font-unbounded  w-[70%]`}>{item.heading}</h3>
+                                <div className="bg-[#F5F7F9] rounded-lg p-6 sm:p-8 flex min-h-[320px] sm:min-h-[360px] md:min-h-[420px] w-full flex-col gap-6">
+                                    <div className="space-y-4">
+                                        <h3 className="font-semibold text-xl md:text-[32px] lg:text-[35px] font-unbounded w-full md:w-[85%] lg:w-[70%]">{item.heading}</h3>
                                         {
-                                            item.desc ?  <p className={`text-gray-600 text-base md:text-[25px] font-medium font-unbounded`}>
+                                            item.desc ?  <p className="text-gray-600 text-base md:text-[22px] lg:text-[24px] font-medium font-unbounded">
                                             {item.desc}
                                         </p> : ""
                                         }
-                                       
-                                        <div className='flex flex-col items-start justify-between  h-60 mt-10'>
-                                        <p className='font-montserrat text-[15px]'>{item.para}</p>
-                                        <button className='flex gap-2 font-montserrat items-center justify-center'>{item.button} <span><MdKeyboardArrowRight className='text-[20px]' /></span></button>
-
-                                        </div>
                                     </div>
 
+                                    <div className='flex flex-col gap-4 md:gap-6 font-montserrat text-[15px] md:text-base mt-auto'>
+                                        <p>{item.para}</p>
+                                        <button className='flex gap-2 items-center justify-start font-semibold text-[#F1813B] hover:text-[#d46c2d] transition-colors'>{item.button} <span><MdKeyboardArrowRight className='text-[20px]' /></span></button>
+
+                                    </div>
                                 </div>
                             </SwiperSlide>
                         ))}

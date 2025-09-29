@@ -10,7 +10,7 @@ export default function Strategy({ heading, desc, cards }) {
 
     return (
         <>
-            <div className="px-[72px] mt-20">
+              <div className="px-6 md:px-[72px] mt-20">
                 <Heading heading={heading} />
                 <p className="font-montserrat text-[18px]">{desc}</p>
                 <div className="flex flex-col md:flex-row gap-6 mt-5">
@@ -18,11 +18,17 @@ export default function Strategy({ heading, desc, cards }) {
                         <Link
                             href={card.link || "#"}
                             key={idx}
-                            className="relative group  w-full  h-[470px] rounded-2xl overflow-hidden  "
+                              className="relative group  w-full  min-h-[360px] md:min-h-[470px] rounded-2xl overflow-hidden"
                         >
                             {/* Background Image on Hover */}
                             <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-                                <Image src={card.image} alt={card.title} fill className="object-cover" />
+                                <Image
+                                    src={card.image}
+                                    alt={card.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                />
                             </div>
 
                             {/* Dark Overlay */}

@@ -12,6 +12,24 @@ const Herosection = ({ heading, para, titles, buttons }) => {
     const [titleNumber, setTitleNumber] = useState(0);
 
     useEffect(() => {
+        if (typeof window === "undefined") return
+        if (window.customElements?.get("spline-viewer")) return
+
+        const script = document.createElement("script")
+        script.src = "https://unpkg.com/@splinetool/viewer@1.10.56/build/spline-viewer.js"
+        script.type = "module"
+        script.async = true
+        script.dataset.splineViewer = "true"
+        document.head.appendChild(script)
+
+        return () => {
+            if (script.parentElement) {
+                script.parentElement.removeChild(script)
+            }
+        }
+    }, [])
+
+    useEffect(() => {
         const timeoutId = setTimeout(() => {
             if (titleNumber === titles.length - 1) {
                 setTitleNumber(0);

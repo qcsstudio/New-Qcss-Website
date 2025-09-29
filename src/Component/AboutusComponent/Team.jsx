@@ -45,14 +45,17 @@ export default function TeamGrid() {
             className="p-2 flex flex-col"
           >
             {/* Profile Image */}
-            <div className="w-full   mb-4">
-              <Image
+              <div className="w-full   mb-4">
+                <Image
 
-                src={member.image}
-                alt={member.name}
-                className="rounded-lg w-full h-full"
-              />
-            </div>
+                  src={member.image}
+                  alt={member.name}
+                  width={400}
+                  height={400}
+                  className="rounded-lg w-full h-full object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
 
             {/* Name & Role */}
             <div className="flex items-center justify-between">
