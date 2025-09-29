@@ -177,3 +177,45 @@ export const ProductFaq = [
   },
 
 ]
+export const WebSaasFaq = [
+  {
+    question: "Can you layer automation onto my existing WordPress?",
+    answer: "Yes—incremental headless decoupling or WP optimisation based on ROI."
+  },
+  {
+    question: "Will migrations hurt SEO?",
+    answer: "301 mapping and prerender testing preserve ranks; voice schema often boosts them."
+  },
+  {
+    question: "What cloud providers do you support?",
+    answer: "AWS, GCP, Azure and on-prem Kubernetes clusters are supported."
+  },
+  {
+    question: "How do you secure PII data?",
+    answer: "Field-level encryption, role-based access, and automated DLP scans protect data."
+  },
+  {
+    question: "Is training included?",
+    answer: "Hands-on workshops, SOP documents and video tutorials are provided with Slack support."
+  },
+  {
+    question: "What about ongoing support?",
+    answer: "24/5 DevOps monitoring plus a success manager with a 60-minute critical incident SLA."
+  },
+  {
+    question: "Typical payback period?",
+    answer: "Most clients recoup investment within 4-6 months via saved hours and higher conversion."
+  },
+  {
+    question: "How fast can we launch MVP?",
+    answer: "Audit to MVP delivery in 6-8 weeks for most projects."
+  },
+  {
+    question: "Do you handle PCI-DSS or HIPAA?",
+    answer: "Yes—secure enclave architecture and compliant hosting options are available."
+  },
+  {
+    question: "Can you integrate with legacy ERP systems?",
+    answer: "Middleware and custom API layers allow integration with SAP, Netsuite, Oracle, and others."
+  },
+  ]
