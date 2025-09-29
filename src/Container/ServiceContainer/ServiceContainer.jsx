@@ -9,11 +9,18 @@ import { ServiceFaq } from '@/Data/FaqQuestions/Questions'
 import { serviceCards1, serviceCards2 } from '@/Data/HomePage/weSupportData'
 import { ServiceGrowthCard } from '@/Data/ServicePage/Growth'
 import { ServiceStrategy } from '@/Data/ServicePage/StrategyData'
+import Herosection from '../HeroSection/Herosection'
 
 const ServiceContainer = () => {
     return (
         <>
             <Navbar />
+            <Herosection heading="Growth Engines That Turn Clicks Into Customers—And Busywork Into Autopilot"
+                para="AI SEO, machine‑learning ads, voice‑first content, Nova chatbots, and no‑code web automation—designed and delivered by one cross‑functional team for faster, smarter scale."
+            // titles={titles}
+            // buttons={buttons}
+
+            />
             <Strategy
                 heading="Choose Your AI Growth Strategy"
                 desc="Choose AI Marketing for 3x traffic & 24/7 leads, or Web & SaaS Automation for 2x conversions & scale-ready tech. Your future starts now!"
