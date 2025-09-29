@@ -22,7 +22,13 @@ export default function Strategy({ heading, desc, cards }) {
                         >
                             {/* Background Image on Hover */}
                             <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-                                <Image src={card.image} alt={card.title} fill className="object-cover" />
+                                <Image
+                                    src={card.image}
+                                    alt={card.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                />
                             </div>
 
                             {/* Dark Overlay */}

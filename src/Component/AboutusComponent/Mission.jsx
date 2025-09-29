@@ -47,9 +47,9 @@ export default function Mission() {
                     We work to create most attractive & meaningful place for small businesses. Our Team always ready to help You
                 </p>
 
-                <div className="flex justify-center gap-10 p-10">
+                <div className="mt-8 flex flex-col gap-8 md:flex-row md:justify-center md:gap-10 md:p-10">
                     {data.map((item, idx) => (
-                        <div key={idx} className={`relative pb-8 rounded-xl  shadow-md  ${item.color}`}>
+                        <div key={idx} className={`relative w-full md:w-1/3 pb-8 rounded-xl shadow-md ${item.color}`}>
                             {/* Main Card */}
                             <div
                                 className={` rounded-xl p-6 text-white `}
@@ -58,11 +58,11 @@ export default function Mission() {
                                     {item.label}
                                 </span>
                                 <h2 className="text-[35px] font-semibold font-unbounded mt-4">{item.title}</h2>
-                                <p className="mt-3 text-[18px] leading-relaxedm font-montserrat ">{item.desc}</p>
+                                <p className="mt-3 text-[18px] leading-relaxed font-montserrat ">{item.desc}</p>
                             </div>
 
                             {/* Small Overlapping Card */}
-                            <div className="absolute -bottom-20 -right-8  bg-white  p-4 shadow-lg ">
+                            <div className="mt-6 mx-6 bg-white p-4 shadow-lg md:absolute md:mt-0 md:mx-0 md:-bottom-20 md:-right-8">
                                 <div className="flex justify-between gap-5 items-center">
                                     <div>
                                         <h3 className="font-semibold text-[35px] font-unbounded text-[#7F7F7F]">
