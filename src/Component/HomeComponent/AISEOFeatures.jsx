@@ -60,45 +60,35 @@ const AISEOFeatures = () => {
 
   return (
     <>
-      <div className="px-6 md:px-[72px] my-10">
-        <div className=" mb-16">
-          <h1 className="text-4xl font-bold font-unbounded leading-tight text-gray-900 sm:text-5xl  lg:text-[40px]">
-            How We Remove Them<br/> (With Numbers)
-          </h1>
-          
-        </div>
-        
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-  {features.map((feature, index) => {
-    const isLastColumn = (index + 1) % 3 === 0; 
-    const isLastRow = index >= features.length - 3; 
+      <section className="w-full bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
+          <div className="max-w-3xl">
+            <h1 className="text-3xl font-unbounded font-bold leading-tight text-gray-900 sm:text-4xl lg:text-[40px]">
+              How We Remove Them
+              <br /> (With Numbers)
+            </h1>
+          </div>
 
-    return (
-      <div
-        key={index}
-        className={`bg-white overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105
-          ${!isLastColumn ? "border-r" : ""}
-          ${!isLastRow ? "border-b" : ""}
-        `}
-      >
-        <div className="px-10 py-8 justify-center items-start">
-          <div className="w-[63%]">
-            <h3 className="mt-4 text-xl font-semibold font-montserrat text-gray-900">
-              {feature.title} :
-            </h3>
-            <p className="mt-2 text-gray-600 text-[15px] font-montserrat">
-              {feature.description}
-            </p>
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="inline-flex w-fit items-center justify-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                <h3 className="mt-4 text-xl font-montserrat font-semibold text-gray-900">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm font-montserrat text-gray-600 sm:text-base">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    );
-  })}
-</div>
-
-        
-      
-      </div>
+      </section>
     </>
   );
 };

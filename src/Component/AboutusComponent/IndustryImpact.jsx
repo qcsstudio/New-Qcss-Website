@@ -9,19 +9,19 @@ export default function IndustryImpact({ cardsData }) {
     };
 
     return (
-        <div className="px-6 md:px-[72px] my-10  ">
-            <h2 className="text-3xl md:text-[40px] font-unbounded font-bold mb-4">Industry Impact</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+        <section className="mx-auto my-12 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+            <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">Industry Impact</h2>
+            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
                 {cardsData.map((item, idx) => (
                     <div
                         key={idx}
-                        className={`h-[394px] border border-gray-300 rounded-lg shadow-sm px-5 py-6 flex flex-col ${staggerClasses[item.position] ?? ""}`}
+                        className={`flex h-full flex-col rounded-2xl border border-gray-200 bg-white px-6 py-8 shadow-sm ${staggerClasses[item.position] ?? ""}`}
                     >
-                        <h3 className="text-[35px] font-semibold  font-unbounded mb-3">{item.title}</h3>
-                        <p className="text-[18px] text-[#000000] font-montserrat leading-relaxed mt-15">{item.desc}</p>
+                        <h3 className="text-2xl font-unbounded font-semibold text-gray-900 sm:text-[28px]">{item.title}</h3>
+                        <p className="mt-4 text-sm font-montserrat text-gray-600 sm:text-base">{item.desc}</p>
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }

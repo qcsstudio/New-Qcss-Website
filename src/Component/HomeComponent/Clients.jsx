@@ -14,13 +14,13 @@ const Clients = () => {
 
 
     return (
-        <div className="px-6 md:px-[72px] my-12 md:my-20">
+        <section className="mx-auto my-20 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
             {/* Heading */}
             <div className="mb-8 md:mb-12">
-                <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
+                <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
                     Real Results. Happy Clients.
                 </h2>
-                <p className="font-montserrat text-base md:text-[18px] my-4">
+                <p className="my-4 text-sm font-montserrat text-gray-600 sm:text-base">
                     Loved & Trusted by <br /> +250 businesses.
                 </p>
             </div>
@@ -71,18 +71,18 @@ const Clients = () => {
                             className="flex justify-center items-center "
                         >
                             {activeIndex === index ? (
-                                <div className="p-4 text-center">
+                                <div className="flex flex-col items-center gap-4 p-4 text-center">
                                     <Image
                                         src={item.logo}
                                         width={80}
                                         height={80}
                                         alt="Client"
-                                        className="w-full h-full"
+                                        className="h-16 w-16 object-contain"
                                     />
-                                    <p className="text-gray-700 text-sm md:text-base mb-4">
+                                    <p className="text-sm font-montserrat text-gray-700 md:text-base">
                                         {item.desc}
                                     </p>
-                                    <h4 className="font-bold text-sm md:text-base">
+                                    <h4 className="text-sm font-unbounded font-semibold text-gray-900 md:text-base">
                                         {item.position}
                                     </h4>
                                 </div>
@@ -102,7 +102,7 @@ const Clients = () => {
                 {/* -----------------Custom Buttons-------------- */}
                 <div className="flex justify-center gap-6 mt-6">
                     <button
-                        className=" p-3 custom-prev1  border rounded-full hover:bg-gray-200 transition"
+                        className="custom-prev1 rounded-full border p-3 transition hover:bg-gray-200"
                     >
                         <Image
                             src={previous}
@@ -114,13 +114,13 @@ const Clients = () => {
                     </button>
                     <button
 
-                        className=" p-3 custom-next1 border rounded-full hover:bg-gray-200 transition"
+                        className="custom-next1 rounded-full border p-3 transition hover:bg-gray-200"
                     >
                         <Image src={next} width={30} height={30} alt="Next button" className="w-full h-full" />
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
