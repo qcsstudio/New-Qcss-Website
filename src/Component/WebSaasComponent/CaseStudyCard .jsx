@@ -2,12 +2,12 @@ import React from "react";
 
 const CaseStudyCard = () => {
   return (
-    <div className=" rounded-xl shadow-md flex flex-col md:flex-row overflow-hidden px-[72px] mt-20">
-        <div className="bg-[#D9D9D9]">
+    <div className=" px-[72px] mt-20">
+        <div className="bg-[#D9D9D9] p-2 flex border">
 
         
       {/* Left Side (Image / Color Block) */}
-      <div className="bg-[#3B1414] w-full md:w-1/2 h-64 md:h-auto rounded-xl md:rounded-r-none"></div>
+      <div className="bg-[#3B1414] w-1/2 h-64 md:h-auto rounded-xl md:rounded-r-none"></div>
 
       {/* Right Side (Content) */}
       <div className="w-full md:w-1/2 p-6 flex flex-col justify-center">
@@ -63,6 +63,8 @@ const CaseStudyCard = () => {
           </table>
         </div>
       </div>
+
+
       </div>
     </div>
   );
