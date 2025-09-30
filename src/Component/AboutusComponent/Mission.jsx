@@ -40,32 +40,41 @@ const Mission = () => {
       <p className="max-w-2xl text-base text-neutral-600 sm:text-lg">
         We are committed to creating an intentional, growth-focused partnership for ambitious teams. Our mission, vision, and values keep us accountable.
       </p>
-      <div className="mt-12 grid gap-12 pb-10 lg:grid-cols-3">
+      <div className="mt-12 grid gap-10 pb-6 lg:grid-cols-3">
         {data.map((item) => (
-          <article key={item.title} className="relative overflow-hidden rounded-3xl shadow-md">
-            <div className={`flex h-full flex-col gap-6 rounded-3xl p-6 text-white ${item.color}`}>
+          <article
+            key={item.title}
+            className="flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm"
+          >
+            <div className={`flex flex-col gap-6 p-6 text-white ${item.color}`}>
               <span className="inline-flex w-max rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
                 {item.label}
               </span>
               <h3 className="text-3xl font-unbounded font-semibold">{item.title}</h3>
               <p className="text-base leading-relaxed text-white/90">{item.desc}</p>
             </div>
-            <div className="absolute inset-x-6 -bottom-16 rounded-2xl bg-white p-5 shadow-xl">
-              <div className="flex items-center justify-between gap-6">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">{item.title}</p>
-                  <p className="text-xs text-neutral-400">{item.badge}</p>
-                </div>
-                <div className="relative h-16 w-28">
-                  <Image
-                    src={item.image}
-                    alt={`${item.title} chart`}
-                    fill
-                    className="object-contain"
-                    sizes="(min-width: 1024px) 112px, 40vw"
-                  />
+            <div className="flex flex-1 flex-col justify-between gap-6 px-6 pb-6 pt-5">
+              <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
+                <div className="flex flex-wrap items-center justify-between gap-6">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-neutral-500">{item.title}</p>
+                    <p className="text-xs text-neutral-400">{item.badge}</p>
+                  </div>
+                  <div className="relative h-16 w-28 shrink-0">
+                    <Image
+                      src={item.image}
+                      alt={`${item.title} chart`}
+                      fill
+                      className="object-contain"
+                      sizes="(min-width: 1024px) 112px, 40vw"
+                    />
+                  </div>
                 </div>
               </div>
+              <p className="text-sm text-neutral-600 sm:text-base">
+                Our {item.title.toLowerCase()} keeps every sprint aligned with measurable outcomes so teams stay focused on the next
+                milestone.
+              </p>
             </div>
           </article>
         ))}

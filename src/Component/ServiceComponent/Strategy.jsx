@@ -6,9 +6,9 @@ import Link from 'next/link'
 import SectionContainer from '@/Component/Layout/SectionContainer'
 import Heading from '@/Component/HeadingComponent/Heading'
 
-const Strategy = ({ heading, desc, cards }) => {
+const Strategy = ({ heading, desc, cards, id }) => {
   return (
-    <SectionContainer>
+    <SectionContainer id={id}>
       <Heading heading={heading} />
       <p className="max-w-3xl text-base text-neutral-600 sm:text-lg">{desc}</p>
       <div className="mt-10 grid gap-6 lg:grid-cols-3">

@@ -27,6 +27,7 @@ const ServiceContainer = () => {
           buttons={heroButtons}
         />
         <Strategy
+          id="aboutus"
           heading="Choose Your AI Growth Strategy"
           desc="Opt for AI Marketing to triple organic traffic and capture 24/7 leads, or Web & SaaS Automation to double conversions with scale-ready workflows."
           cards={ServiceStrategy}

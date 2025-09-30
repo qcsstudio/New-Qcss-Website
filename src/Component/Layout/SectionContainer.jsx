@@ -10,7 +10,8 @@ const SectionContainer = React.forwardRef(function SectionContainer(
       ref={ref}
       id={id}
       className={cn(
-        'mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16',
+        'mx-auto w-full max-w-7xl px-4 py-[clamp(3rem,6vw,6rem)] sm:px-6 lg:px-8',
+        id ? 'scroll-mt-28 md:scroll-mt-32' : '',
         className,
       )}
     >

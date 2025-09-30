@@ -14,16 +14,36 @@ const buttonVariants = {
 const Herosection = ({ heading, para, titles = [], buttons = [], theme = 'dark' }) => {
   const computedTitles = useMemo(() => titles.filter(Boolean), [titles])
   const [activeTitleIndex, setActiveTitleIndex] = useState(0)
+  const [allowMotion, setAllowMotion] = useState(true)
 
   useEffect(() => {
-    if (!computedTitles.length) return
+    if (typeof window === 'undefined') return
+
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+    const handleChange = () => {
+      setAllowMotion(!mediaQuery.matches)
+    }
+
+    handleChange()
+    mediaQuery.addEventListener('change', handleChange)
+
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [])
+
+  useEffect(() => {
+    setActiveTitleIndex(0)
+  }, [computedTitles])
+
+  useEffect(() => {
+    if (!computedTitles.length || !allowMotion) return
 
     const interval = setInterval(() => {
       setActiveTitleIndex((index) => (index + 1) % computedTitles.length)
     }, 3200)
 
     return () => clearInterval(interval)
-  }, [computedTitles])
+  }, [computedTitles, allowMotion])
 
   const isDark = theme === 'dark'
 
@@ -57,18 +77,24 @@ const Herosection = ({ heading, para, titles = [], buttons = [], theme = 'dark' 
             <span className="text-[#F1813B]">{heading}</span>
             {computedTitles.length > 0 && (
               <span className="relative ml-2 inline-flex min-h-[2.5rem] flex-col overflow-hidden align-top sm:min-h-[3rem]">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={computedTitles[activeTitleIndex]}
-                    initial={{ opacity: 0, y: '100%' }}
-                    animate={{ opacity: 1, y: '0%' }}
-                    exit={{ opacity: 0, y: '-100%' }}
-                    transition={{ duration: 0.6, ease: 'easeInOut' }}
-                    className="bg-gradient-to-r from-white via-white/90 to-white bg-clip-text text-transparent"
-                  >
-                    {computedTitles[activeTitleIndex]}
-                  </motion.span>
-                </AnimatePresence>
+                {allowMotion ? (
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={computedTitles[activeTitleIndex]}
+                      initial={{ opacity: 0, y: '100%' }}
+                      animate={{ opacity: 1, y: '0%' }}
+                      exit={{ opacity: 0, y: '-100%' }}
+                      transition={{ duration: 0.6, ease: 'easeInOut' }}
+                      className="bg-gradient-to-r from-white via-white/90 to-white bg-clip-text text-transparent"
+                    >
+                      {computedTitles[activeTitleIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                ) : (
+                  <span className="bg-gradient-to-r from-white via-white/90 to-white bg-clip-text text-transparent">
+                    {computedTitles[0]}
+                  </span>
+                )}
               </span>
             )}
           </h1>
