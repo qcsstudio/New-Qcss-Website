@@ -8,12 +8,11 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 // import {Swiper} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { MdKeyboardArrowRight } from 'react-icons/md';
 
 const AutomationStack = ({ heading, cardData, heading1, slidesPerView }) => {
     return (
         <>
-            <div className="px-[72px] mt-20">
+            <section className="mx-auto mt-16 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
                 <Heading heading={heading} />
                 {
                     heading1 && <Heading heading={heading1} />
@@ -39,27 +38,27 @@ const AutomationStack = ({ heading, cardData, heading1, slidesPerView }) => {
                     className=" my-8"
                 >
                     {cardData?.map((item, index) => (
-                        <SwiperSlide key={index} className="flex items-center justify-center flex-wrap ">
-                            <div className="bg-[#F8F8F8] rounded-xl p-4 h-[409px]  flex flex-col sm:justify-between">
+                        <SwiperSlide key={index} className="flex h-full">
+                            <div className="flex h-full flex-col justify-between rounded-2xl bg-[#F8F8F8] p-6 shadow-sm">
                                 <div>
-                                    <h3 className={`font-semibold text-lg md:text-[35px] mb-2 font-unbounded h-[110px]  ${item.headingWidth}`}>{item.heading}</h3>
+                                    <h3 className={`font-unbounded font-semibold text-2xl text-gray-900 sm:text-[30px] ${item.headingWidth || ""}`}>{item.heading}</h3>
                                     {
-                                        item.ideal && <p className='bg-[#FFE2D0] text-[#F1813B] font-unbounded font-light text-[12px] py-2 px-5 inline-block rounded-lg'>{item.ideal}</p>
+                                        item.ideal && <p className='mt-2 inline-block rounded-lg bg-[#FFE2D0] px-4 py-2 text-xs font-unbounded font-semibold uppercase tracking-wide text-[#F1813B]'>{item.ideal}</p>
 
                                     }
 
 
-                                    <div className='my-5 space-y-2'>
-                                        <h3 className='font-unbounded font-light text-[18px]'>{item.firstField}</h3>
+                                    <div className='my-6 space-y-3'>
+                                        <h3 className='text-sm font-unbounded font-semibold uppercase tracking-wide text-gray-800 sm:text-base'>{item.firstField}</h3>
                                         {item.tech?.map((list, idx) => (
                                             <div key={idx} className='flex flex-col font-montserrat text-[15px]  '>
 
-                                                <div className='flex items-start gap-2'>
-                                                    <div className='w-[20px] h-[20px] rounded-full bg-[#F1813B] flex justify-center items-center'>
-                                                        <div className='w-[10px] h-[10px] rounded-full bg-[#F9D8C3]' />
+                                                <div className='flex items-start gap-3'>
+                                                    <div className='mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#F1813B]'>
+                                                        <div className='h-2.5 w-2.5 rounded-full bg-[#F9D8C3]' />
                                                     </div>
 
-                                                    <div key={idx} className='font-montserrat' dangerouslySetInnerHTML={{ __html: list }} />
+                                                    <div key={idx} className='text-sm font-montserrat text-gray-700 sm:text-base' dangerouslySetInnerHTML={{ __html: list }} />
 
 
                                                 </div>
@@ -68,17 +67,17 @@ const AutomationStack = ({ heading, cardData, heading1, slidesPerView }) => {
                                             </div>
                                         ))}
                                     </div>
-                                    <div className='space-y-2' >
-                                        <h3 className='font-unbounded font-light text-[18px]'>{item.secField}</h3>
+                                    <div className='space-y-3' >
+                                        <h3 className='text-sm font-unbounded font-semibold uppercase tracking-wide text-gray-800 sm:text-base'>{item.secField}</h3>
                                         {item?.Win?.map((list, idx) => (
                                             <div key={idx} className='flex flex-col  font-montserrat text-[15px]  '>
 
-                                                <div className='flex items-start gap-2'>
-                                                    <div className='w-[20px] h-[20px] rounded-full bg-[#F1813B] flex justify-center items-center'>
-                                                        <div className='w-[10px] h-[10px] rounded-full bg-[#F9D8C3]' />
+                                                <div className='flex items-start gap-3'>
+                                                    <div className='mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#F1813B]'>
+                                                        <div className='h-2.5 w-2.5 rounded-full bg-[#F9D8C3]' />
                                                     </div>
 
-                                                    <div key={idx} className='font-montserrat' dangerouslySetInnerHTML={{ __html: list }} />
+                                                    <div key={idx} className='text-sm font-montserrat text-gray-700 sm:text-base' dangerouslySetInnerHTML={{ __html: list }} />
 
 
                                                 </div>
@@ -95,7 +94,7 @@ const AutomationStack = ({ heading, cardData, heading1, slidesPerView }) => {
                     ))}
                 </Swiper>
 
-            </div>
+            </section>
         </>
     )
 }

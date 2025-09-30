@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
     {/* navbar */}
 
-      <nav className="w-[90%] mx-auto flex justify-between items-center py-4 ">
+      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/">
           
           <Image src={NavbarQcsLogo} alt="logo" width={194.82} height={40} className='w-full h-full' />
@@ -30,7 +30,11 @@ const Navbar = () => {
 
 
         <div className="flex items-center md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-900 transition hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
+            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          >
             {menuOpen ? <HiX className=" w-6 h-6" /> : <HiMenu className=" w-6 h-6" />}
           </button>
         </div>
@@ -49,18 +53,21 @@ const Navbar = () => {
 
       {/* responsive navbar */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col items-center bg-black py-4 space-y-4 ">
+        <div className="md:hidden flex flex-col items-center space-y-4 bg-gray-900 py-6 text-white">
           <Link href="/service">Service</Link>
           <Link href="/product">product</Link>
           <Link href="/service#aboutus">About Us</Link>
           <Link href="/blogs">Blogs</Link>
           <Link href="/contactus">Contact Us</Link>
           <div className="flex items-center">
-            <IoGlobeOutline className="w-5 h-5 me-1" /> En
+            <IoGlobeOutline className="me-1 h-5 w-5" /> En
           </div>
-          <button className="border border-white px-4 py-1 rounded-md hover:bg-white hover:text-black">
+          <Link
+            href="/contactus"
+            className="rounded-md border border-white px-5 py-2 font-montserrat transition hover:bg-white hover:text-gray-900"
+          >
             Get a Quote
-          </button>
+          </Link>
         </div>
       )}
       

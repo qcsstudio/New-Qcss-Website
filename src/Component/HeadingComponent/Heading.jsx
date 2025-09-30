@@ -9,7 +9,7 @@ const Heading = ({ heading }) => {
   return (
     <>
       <motion.h2
-        className='lg:text-[40px] sm:text-4xl text-3xl  font-unbounded font-bold  my-5 sm:my-4  max-w-[60%]'
+        className='text-3xl sm:text-4xl lg:text-[40px] font-unbounded font-bold leading-tight my-5 sm:my-6 text-center md:text-left md:max-w-3xl'
         variants={container}
         initial="hidden"
         whileInView="visible"

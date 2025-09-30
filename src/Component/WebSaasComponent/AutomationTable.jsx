@@ -30,25 +30,27 @@ export default function AutomationTable() {
   ];
 
   return (
-    <div className="overflow-x-auto mt-10  my-10  w-[90%] mx-auto">
-      <table className="w-full  rounded-xl overflow-hidden border-collapse">
-        <thead className="font-unbounded text-[35px] font-semibold  ">
-          <tr className="bg-[#F5F5F5]">
-            <th className="px-6 py-4 text-left font-bold  border-r-2 border-white">Bottleneck</th>
-            <th className="px-6 py-4 text-left font-bold  border-r-2 border-white">Automation Fix</th>
-            <th className="px-6 py-4 text-left font-bold ">KPI Uplift</th>
+    <div className="mx-auto my-12 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+      <table className="w-full border-collapse">
+        <thead className="font-unbounded text-lg font-semibold sm:text-xl">
+          <tr className="bg-[#F5F5F5] text-gray-900">
+            <th className="px-4 py-4 text-left sm:px-6">Bottleneck</th>
+            <th className="px-4 py-4 text-left sm:px-6">Automation Fix</th>
+            <th className="px-4 py-4 text-left sm:px-6">KPI Uplift</th>
           </tr>
         </thead>
-        <tbody className="font-montserrat text-[15px] ">
+        <tbody className="font-montserrat text-sm text-gray-700 sm:text-base">
           {data.map((row, i) => (
-            <tr key={i} className="border-b-2 border-[#F5F5F5]">
-              <td className="px-6 py-4 text-gray-800">{row.bottleneck}</td>
-              <td className="px-6 py-4 text-gray-800">{row.fix}</td>
-              <td className="px-6 py-4 text-gray-800">{row.uplift}</td>
+            <tr key={i} className="border-t border-[#F5F5F5]">
+              <td className="px-4 py-4 sm:px-6">{row.bottleneck}</td>
+              <td className="px-4 py-4 sm:px-6">{row.fix}</td>
+              <td className="px-4 py-4 sm:px-6">{row.uplift}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

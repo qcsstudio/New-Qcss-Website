@@ -7,54 +7,53 @@ import { IoMdPause } from "react-icons/io";
 const Brands = () => {
     return (
         <>
-            <div className="px-[72px]">
-      {/* Heading */}
-      <div className=" mb-12">
-        <h2 className="text-3xl md:text-[40px] font-bold font-unbounded text-[#000000]">
-          QuantumCrafters: <br />
-          <span className="text-black">The Growth Engine Behind Modern Brands</span>
-        </h2>
-        <p className="mt-4 text-[20px] font-montserrat font-semibold text-[#000000]">
-          We're not just another agency. We're your AI-native growth partner.
-        </p>
-        <p className="mt-2 text-[18px] font-montserrat text-[#000000]  ">
-          At QuantumCrafters Studio, we blend human creativity with AI precision to help
-          brands grow faster, work smarter, and scale effortlessly. From startups chasing
-          traction to enterprises optimizing every touchpoint we turn digital chaos into
-          automated clarity.
-        </p>
-      </div>
+            <section className="w-full bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
+        {/* Heading */}
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
+            QuantumCrafters:
+            <br />
+            <span className="text-gray-900">The Growth Engine Behind Modern Brands</span>
+          </h2>
+          <p className="mt-4 text-base font-montserrat font-semibold text-gray-900 sm:text-lg">
+            We're not just another agency. We're your AI-native growth partner.
+          </p>
+          <p className="mt-3 text-sm font-montserrat text-gray-600 sm:text-base">
+            At QuantumCrafters Studio, we blend human creativity with AI precision so brands can grow faster, work smarter, and scale effortlessly. From startups chasing traction to enterprises optimising every touchpoint, we turn digital chaos into automated clarity.
+          </p>
+        </div>
 
-      {/* Features Grid */}
-      <div className="grid md:grid-cols-3 gap-8">
-        {BrandsData.map((item, index) => (
-          <div
-            key={index}
-            className="rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition bg-[#F8F8F8] p-[20px]"
-          >
-            <Image
-              src={item.image}
-              alt="brandimage"
-              // alt={item.title}
-              className="w-full h-48 object-cover rounded-2xl"
-            />
-            <div className="text-[#000000] py-4">
-              <h3 className="text-[35px] font-semibold font-unbounded mb-2">{item.heading}</h3>
-                <div className="mt-8 rounded-lg  flex">
-                  <p className="text-[#F1813B] text-3xl leading-none">
-                    <IoMdPause />
-                  </p>
-                  <p
-                    className={`text-[#0F0F0F] text-left text-sm mt-4 ms-3 font-medium font-montserrat`}
-                  >
-                    {item.para}
-                  </p>
+        {/* Features Grid */}
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {BrandsData.map((item, index) => (
+            <div
+              key={index}
+              className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-[#F8F8F8] shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <Image
+                src={item.image}
+                alt={item.heading}
+                className="h-52 w-full object-cover"
+              />
+              <div className="flex flex-1 flex-col justify-between px-6 pb-6 pt-5 text-gray-900">
+                <div>
+                  <h3 className="text-2xl font-unbounded font-semibold sm:text-[28px]">{item.heading}</h3>
+                  <div className="mt-5 flex items-start gap-3">
+                    <span className="mt-1 text-2xl text-[#F1813B]">
+                      <IoMdPause />
+                    </span>
+                    <p className="text-sm font-montserrat text-gray-700 sm:text-base">
+                      {item.para}
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
         </>
     )
 }

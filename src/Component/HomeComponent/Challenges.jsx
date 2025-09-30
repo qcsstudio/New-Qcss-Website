@@ -12,10 +12,11 @@ export default function Challenges() {
   const [activeIndex, setActiveIndex] = useState(1);
 
   return (
-    <div className="px-[72px] my-20">
+    <section className="w-full bg-white">
+    <div className="mx-auto my-20 max-w-7xl px-6 sm:px-8 lg:px-12">
       {/* Heading */}
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
+      <div className="mb-12 max-w-4xl">
+        <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
           The Biggest Challenges We Help You <br />
           <span className="text-black">Overcome</span>
         </h2>
@@ -42,7 +43,7 @@ export default function Challenges() {
       >
         {challenges.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="rounded-[25px] bg-white overflow-hidden h-full flex flex-col  justify-center transition-all duration-300">
+            <div className="flex h-full flex-col justify-center overflow-hidden rounded-[25px] bg-white shadow-sm transition-all duration-300">
               {activeIndex === index ? (
                 // ✅ Active Slide => Image + Overlay Text
                 <div className="relative">
@@ -51,30 +52,30 @@ export default function Challenges() {
                     alt="swiperimages"
                     width={600}
                     height={400}
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white">
-                    <span className="text-[60px] font-unbounded font-extralight">
+                  <div className="absolute inset-0 flex flex-col justify-end bg-black/50 p-6 text-white">
+                    <span className="text-4xl font-unbounded font-light sm:text-[52px]">
                       {item.number}
                     </span>
-                    <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
+                    <h3 className="mt-2 text-2xl font-unbounded font-semibold sm:text-[32px]">
                       {item.title}
                     </h3>
-                    <p className="text-[15px] mt-2 font-montserrat">
+                    <p className="mt-3 text-sm font-montserrat sm:text-base">
                       {item.desc}
                     </p>
                   </div>
                 </div>
               ) : (
                 // ❌ Inactive Slide => Text-only
-                <div className="p-6 flex flex-col justify-end h-[580px]">
-                  <span className="text-[60px] font-unbounded font-extralight">
+                <div className="flex min-h-[320px] flex-col justify-end p-6 sm:min-h-[420px]">
+                  <span className="text-4xl font-unbounded font-light text-gray-900 sm:text-[52px]">
                     {item.number}
                   </span>
-                  <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
+                  <h3 className="mt-2 text-2xl font-unbounded font-semibold text-gray-900 sm:text-[32px]">
                     {item.title}
                   </h3>
-                  <p className="text-[15px] mt-2 font-montserrat">
+                  <p className="mt-3 text-sm font-montserrat text-gray-600 sm:text-base">
                     {item.desc}
                   </p>
                 </div>
@@ -94,5 +95,6 @@ export default function Challenges() {
         </button>
       </div>
     </div>
+    </section>
   );
 }
