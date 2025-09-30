@@ -52,9 +52,9 @@ const Navbar = () => {
         <div className="md:hidden flex flex-col items-center bg-black py-4 space-y-4 ">
           <Link href="/service">Service</Link>
           <Link href="/product">product</Link>
-          <Link href="service/#aboutus">About Us</Link>
+          <Link href="/service#aboutus">About Us</Link>
           <Link href="/blogs">Blogs</Link>
-          <Link href="/service/contactus">Contact Us</Link>
+          <Link href="/contactus">Contact Us</Link>
           <div className="flex items-center">
             <IoGlobeOutline className="w-5 h-5 me-1" /> En
           </div>
