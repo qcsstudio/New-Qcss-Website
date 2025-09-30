@@ -3,6 +3,7 @@ import React from 'react'
 const NextGenTools = () => {
     return (
         <>
+        {/* <spline-viewer url="https://prod.spline.design/4oGcOV7UFAINEPUM/scene.splinecode"></spline-viewer> */}
             <div className="px-6 md:px-[72px] my-12 md:my-20">
                 {/* Heading */}
                 <div className="mb-8 md:mb-12">
