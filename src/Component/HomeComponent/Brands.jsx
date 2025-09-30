@@ -1,62 +1,45 @@
-import { BrandsData } from '@/Data/HomePage/BrandsData'
 import Image from 'next/image'
 import React from 'react'
-import { IoMdPause } from "react-icons/io";
-
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import { BrandsData } from '@/Data/HomePage/BrandsData'
 
 const Brands = () => {
-    return (
-        <>
-            <div className="px-[72px]">
-      {/* Heading */}
-      <div className=" mb-12">
-        <h2 className="text-3xl md:text-[40px] font-bold font-unbounded text-[#000000]">
-          QuantumCrafters: <br />
-          <span className="text-black">The Growth Engine Behind Modern Brands</span>
+  return (
+    <SectionContainer>
+      <div className="space-y-6 text-center md:text-left">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F1813B]">Who trusts us</p>
+        <h2 className="text-balance text-3xl font-unbounded font-bold text-neutral-900 sm:text-4xl lg:text-[40px]">
+          QuantumCrafters: The Growth Engine Behind Modern Brands
         </h2>
-        <p className="mt-4 text-[20px] font-montserrat font-semibold text-[#000000]">
-          We're not just another agency. We're your AI-native growth partner.
-        </p>
-        <p className="mt-2 text-[18px] font-montserrat text-[#000000]  ">
-          At QuantumCrafters Studio, we blend human creativity with AI precision to help
-          brands grow faster, work smarter, and scale effortlessly. From startups chasing
-          traction to enterprises optimizing every touchpoint we turn digital chaos into
-          automated clarity.
+        <p className="text-base text-neutral-600 sm:text-lg">
+          We blend human creativity with AI precision so your marketing, automation, and product teams can deliver results faster.
         </p>
       </div>
 
-      {/* Features Grid */}
-      <div className="grid md:grid-cols-3 gap-8">
-        {BrandsData.map((item, index) => (
-          <div
-            key={index}
-            className="rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition bg-[#F8F8F8] p-[20px]"
+      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+        {BrandsData.map((item) => (
+          <article
+            key={item.heading}
+            className="flex flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-[#F8F8F8] shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
           >
-            <Image
-              src={item.image}
-              alt="brandimage"
-              // alt={item.title}
-              className="w-full h-48 object-cover rounded-2xl"
-            />
-            <div className="text-[#000000] py-4">
-              <h3 className="text-[35px] font-semibold font-unbounded mb-2">{item.heading}</h3>
-                <div className="mt-8 rounded-lg  flex">
-                  <p className="text-[#F1813B] text-3xl leading-none">
-                    <IoMdPause />
-                  </p>
-                  <p
-                    className={`text-[#0F0F0F] text-left text-sm mt-4 ms-3 font-medium font-montserrat`}
-                  >
-                    {item.para}
-                  </p>
-                </div>
+            <div className="relative h-56 w-full">
+              <Image
+                src={item.image}
+                alt={item.heading}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1280px) 384px, (min-width: 768px) 50vw, 100vw"
+              />
             </div>
-          </div>
+            <div className="flex flex-1 flex-col gap-4 p-6 text-left">
+              <h3 className="text-2xl font-unbounded font-semibold text-neutral-900">{item.heading}</h3>
+              <p className="text-sm text-neutral-600 sm:text-base">{item.para}</p>
+            </div>
+          </article>
         ))}
       </div>
-    </div>
-        </>
-    )
+    </SectionContainer>
+  )
 }
 
 export default Brands

@@ -1,35 +1,36 @@
-import { success } from "@/AllAssets/AllAsssets";
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import Heading from '@/Component/HeadingComponent/Heading'
+import { success } from '@/AllAssets/AllAsssets'
 
 const OurSuccess = () => {
-    return (
-        <div className="flex flex-col-reverse items-center gap-8 px-6 md:px-[72px] my-10 md:flex-row">
-            <div className="w-full md:w-1/2 space-y-5 text-center md:text-left">
-                <h2 className="font-unbounded font-bold text-3xl md:text-[40px]">
-                    Our Story the Journey That Shaped Our Success
-                </h2>
-                <p className="font-montserrat text-base md:text-[18px]">
-                    Frustrated by siloed marketing and clunky tech, two friends—a growth marketer and a full-stack engineer—
-                    founded QuantumCrafters Studio in 2025. Their vision: blend data-driven marketing with intelligent
-                    automation so businesses can grow faster, spend smarter, and work lighter.
-                </p>
-                <button className="font-montserrat font-bold text-[16px] bg-[#F1813B] px-6 py-2 text-white rounded-lg">
-                    Get Started a Project
-                </button>
-            </div>
-            <div className="flex w-full justify-center md:w-1/2">
-                <Image
-                    src={success}
-                    width={559}
-                    height={100}
-                    alt="success"
-                    className="h-auto w-full max-w-[559px] object-contain"
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                />
-            </div>
-        </div>
-    );
-};
+  return (
+    <SectionContainer className="flex flex-col items-center gap-10 lg:flex-row">
+      <div className="flex-1 space-y-6 text-center lg:text-left">
+        <Heading heading="Our Story — the Journey That Shaped Our Success" />
+        <p className="text-base text-neutral-600 sm:text-lg">
+          Frustrated by siloed marketing and clunky tech, a growth marketer and a full-stack engineer founded QuantumCrafters Studio. Their vision: blend data-driven marketing with intelligent automation so businesses can grow faster, spend smarter, and work lighter.
+        </p>
+        <a
+          href="/contactus"
+          className="inline-flex items-center justify-center rounded-full bg-[#F1813B] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#d96d2b]"
+        >
+          Start a Project
+        </a>
+      </div>
+      <div className="flex-1">
+        <Image
+          src={success}
+          alt="QuantumCrafters success metrics"
+          width={559}
+          height={420}
+          className="h-auto w-full max-w-xl object-contain"
+          sizes="(min-width: 1024px) 420px, (min-width: 768px) 50vw, 100vw"
+        />
+      </div>
+    </SectionContainer>
+  )
+}
 
-export default OurSuccess;
+export default OurSuccess

@@ -1,127 +1,73 @@
-"use client";
-import { next, previous } from "@/AllAssets/AllAsssets";
-import { Happyclients } from "@/Data/HomePage/Clients";
-import React, { useRef, useState } from "react";
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import Image from "next/image";
+'use client'
 
+import React, { useState } from 'react'
+import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import Heading from '@/Component/HeadingComponent/Heading'
+import { Happyclients } from '@/Data/HomePage/Clients'
+import { next, previous } from '@/AllAssets/AllAsssets'
 
 const Clients = () => {
-    const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0)
 
+  return (
+    <SectionContainer>
+      <Heading heading="Real Results. Happy Clients." />
+      <p className="mt-2 max-w-2xl text-base text-neutral-600 sm:text-lg">
+        Loved and trusted by more than 250 growth-focused businesses worldwide.
+      </p>
+      <div className="relative mt-10">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={16}
+          slidesPerView={1}
+          loop
+          navigation={{ nextEl: '.clients-next', prevEl: '.clients-prev' }}
+          breakpoints={{
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            768: { slidesPerView: 3, spaceBetween: 24 },
+            1024: { slidesPerView: 4, spaceBetween: 24 },
+            1280: { slidesPerView: 5, spaceBetween: 24 },
+          }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          className="pb-16"
+        >
+          {Happyclients.map((item, index) => (
+            <SwiperSlide key={item.position} className="flex items-center justify-center">
+              <div className="flex w-full flex-col items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <Image src={item.logo} alt={item.position} width={96} height={96} className="h-16 w-auto object-contain" />
+                {activeIndex === index && (
+                  <p className="text-sm text-neutral-600 sm:text-base">{item.desc}</p>
+                )}
+                <h4 className="text-sm font-semibold text-neutral-900 sm:text-base">{item.position}</h4>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-    return (
-        <div className="px-6 md:px-[72px] my-12 md:my-20">
-            {/* Heading */}
-            <div className="mb-8 md:mb-12">
-                <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
-                    Real Results. Happy Clients.
-                </h2>
-                <p className="font-montserrat text-base md:text-[18px] my-4">
-                    Loved & Trusted by <br /> +250 businesses.
-                </p>
-            </div>
-
-            <div className="relative flex flex-col items-center">
-                <Swiper
-                    modules={[Navigation]}
-                    spaceBetween={16}
-                    slidesPerView={1}
-                    loop={true}
-                    initialSlide={0}
-                    navigation={{
-                        nextEl: ".custom-next1",
-                        prevEl: ".custom-prev1",
-                    }}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 24,
-                        },
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 24,
-                        },
-                        1280: {
-                            slidesPerView: 6,
-                            spaceBetween: 24,
-                        },
-                    }}
-                    onSwiper={(swiper) => {
-                        setActiveIndex(swiper.realIndex);
-                    }}
-                    onSlideChange={(swiper) => {
-                        setActiveIndex(swiper.realIndex);
-                    }}
-                    scrollbar={true}
-                    grabCursor={true}       // cursor ko grab banata hai
-                    freeMode={false}
-                    className="w-full pb-12"
-                >
-                    {Happyclients.map((item, index) => (
-                        <SwiperSlide
-                            key={index}
-                            className="flex justify-center items-center "
-                        >
-                            {activeIndex === index ? (
-                                <div className="p-4 text-center">
-                                    <Image
-                                        src={item.logo}
-                                        width={80}
-                                        height={80}
-                                        alt="Client"
-                                        className="w-full h-full"
-                                    />
-                                    <p className="text-gray-700 text-sm md:text-base mb-4">
-                                        {item.desc}
-                                    </p>
-                                    <h4 className="font-bold text-sm md:text-base">
-                                        {item.position}
-                                    </h4>
-                                </div>
-                            ) : (
-                                <Image
-                                    src={item.image}
-                                    width={80}
-                                    height={80}
-                                    alt="Client"
-                                    className="w-full h-full"
-                                />
-                            )}
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-
-                {/* -----------------Custom Buttons-------------- */}
-                <div className="flex justify-center gap-6 mt-6">
-                    <button
-                        className=" p-3 custom-prev1  border rounded-full hover:bg-gray-200 transition"
-                    >
-                        <Image
-                            src={previous}
-                            width={30}
-                            height={30}
-                            alt="Previous button"
-                            className="w-full h-full"
-                        />
-                    </button>
-                    <button
-
-                        className=" p-3 custom-next1 border rounded-full hover:bg-gray-200 transition"
-                    >
-                        <Image src={next} width={30} height={30} alt="Next button" className="w-full h-full" />
-                    </button>
-                </div>
-            </div>
+        <div className="flex justify-center gap-6">
+          <button
+            type="button"
+            className="clients-prev inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-700 transition hover:border-[#F1813B] hover:text-[#F1813B]"
+            aria-label="Previous client"
+          >
+            <Image src={previous} alt="Previous" width={20} height={20} />
+          </button>
+          <button
+            type="button"
+            className="clients-next inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-700 transition hover:border-[#F1813B] hover:text-[#F1813B]"
+            aria-label="Next client"
+          >
+            <Image src={next} alt="Next" width={20} height={20} />
+          </button>
         </div>
-    );
-};
+      </div>
+    </SectionContainer>
+  )
+}
 
-export default Clients;
+export default Clients

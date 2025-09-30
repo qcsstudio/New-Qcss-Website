@@ -1,37 +1,42 @@
-import { cta } from "@/AllAssets/AllAsssets";
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import { cta } from '@/AllAssets/AllAsssets'
 
 const CTA = () => {
   return (
-    <section className="relative mt-20 rounded-2xl overflow-hidden bg-[#F4F2F2]">
-      {/* Background Image */}
-      <Image
-        src={cta}
-        alt="cta background"
-        width={1200}
-        height={600}
-        className="w-full h-full object-cover"
-        priority
-      />
-
-      {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-20 ">
-        <h2 className="text-2xl md:text-[40px] font-unbounded font-bold text-white max-w-[45rem] leading-snug ">
-          Ready to transform growth with AI native strategies and tech?
-        </h2>
-
-        <div className="mt-6 flex flex-wrap gap-4 text-[20px]">
-          <button className="px-10 py-3 bg-[#000000] font-unbounded text-[#F5F5F5] font-medium rounded-md hover:bg-gray-900 transition">
-            Book a Discovery Call
-          </button>
-          <button className="px-10 py-3 bg-[#000000] font-unbounded text-[#F5F5F5] font-medium rounded-md hover:bg-gray-900 transition">
-            Test Your Samples
-          </button>
+    <SectionContainer className="relative overflow-hidden rounded-3xl bg-[#F4F2F2] px-0 py-0">
+      <div className="relative h-full w-full">
+        <Image
+          src={cta}
+          alt="Team collaborating"
+          width={1600}
+          height={900}
+          className="h-full w-full rounded-3xl object-cover"
+          priority
+        />
+        <div className="absolute inset-0 flex flex-col justify-center gap-6 bg-neutral-900/70 p-8 sm:p-12 lg:p-16">
+          <h2 className="max-w-3xl text-balance text-3xl font-unbounded font-bold text-white sm:text-4xl lg:text-[40px]">
+            Ready to transform growth with AI-native strategies and tech?
+          </h2>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/contactus"
+              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200"
+            >
+              Book a Discovery Call
+            </a>
+            <a
+              href="/service"
+              className="inline-flex items-center justify-center rounded-full border border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              See How We Work
+            </a>
+          </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </SectionContainer>
+  )
+}
 
-export default CTA;
+export default CTA

@@ -1,77 +1,46 @@
-import { team1, team2, team3 } from "@/AllAssets/AllAsssets";
-import Image from "next/image";
-import { FaLinkedinIn } from "react-icons/fa";
+import Image from 'next/image'
+import { FaLinkedinIn } from 'react-icons/fa'
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import Heading from '@/Component/HeadingComponent/Heading'
+import { team1, team2, team3 } from '@/AllAssets/AllAsssets'
 
 const teamMembers = [
-  {
-    name: "Poonam Kumari",
-    role: "Founder & CEO",
-    image: team1,
-  },
-  {
-    name: "Ravi K Sankhyan",
-    role: "Founder & CEO",
-    image: team2,
-  },
-  {
-    name: "Diksha Chauhan",
-    role: "Digital Marketing Expert",
-    image: team3,
-  },
-  {
-    name: "Poonam Kumari",
-    role: "Founder & CEO",
-    image: team1,
-  },
-  {
-    name: "Ravi K Sankhyan",
-    role: "Founder & CEO",
-    image: team2,
-  },
-  {
-    name: "Diksha Chauhan",
-    role: "Digital Marketing Expert",
-    image: team3,
-  },
-];
+  { name: 'Poonam Kumari', role: 'Founder & CEO', image: team1 },
+  { name: 'Ravi K Sankhyan', role: 'Founder & CEO', image: team2 },
+  { name: 'Diksha Chauhan', role: 'Digital Marketing Expert', image: team3 },
+  { name: 'Poonam Kumari', role: 'Founder & CEO', image: team1 },
+  { name: 'Ravi K Sankhyan', role: 'Founder & CEO', image: team2 },
+  { name: 'Diksha Chauhan', role: 'Digital Marketing Expert', image: team3 },
+]
 
-export default function TeamGrid() {
+const TeamGrid = ({ id }) => {
   return (
-    <div className="px-6 md:px-[72px] py-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {teamMembers.map((member, idx) => (
-          <div
-            key={idx}
-            className="p-2 flex flex-col"
-          >
-            {/* Profile Image */}
-            <div className="w-full   mb-4">
-              <Image
-
-                src={member.image}
-                alt={member.name}
-                className="rounded-lg w-full h-full"
-              />
+    <SectionContainer id={id}>
+      <Heading heading="Meet the Humans Behind the AI" />
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {teamMembers.map((member) => (
+          <article key={`${member.name}-${member.role}`} className="flex flex-col gap-4">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl">
+              <Image src={member.image} alt={member.name} fill className="object-cover" sizes="(min-width: 1024px) 320px, 50vw" />
             </div>
-
-            {/* Name & Role */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-4">
               <div>
-                <h3 className="text-[19px] font-unbounded font-semibold">{member.name}</h3>
-                <p className="text-gray-500 font-montserrat text-[19px]">{member.role}</p>
+                <h3 className="text-lg font-unbounded font-semibold text-neutral-900">{member.name}</h3>
+                <p className="text-sm text-neutral-600 sm:text-base">{member.role}</p>
               </div>
-
-              {/* LinkedIn Icon */}
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition"
+                href="https://www.linkedin.com/company/qcsstudio"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-neutral-700 transition hover:bg-neutral-200"
+                aria-label={`View ${member.name}'s LinkedIn profile`}
               >
-                <FaLinkedinIn className="text-gray-700 text-lg" />
+                <FaLinkedinIn />
               </a>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
-  );
+    </SectionContainer>
+  )
 }
+
+export default TeamGrid

@@ -1,98 +1,86 @@
-"use client";
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import { challenges } from "@/Data/HomePage/challenges";
-import Image from "next/image";
-import { next, previous } from "@/AllAssets/AllAsssets";
+'use client'
 
-export default function Challenges() {
-  const [activeIndex, setActiveIndex] = useState(1);
+import React, { useState } from 'react'
+import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import Heading from '@/Component/HeadingComponent/Heading'
+import { challenges } from '@/Data/HomePage/challenges'
+import { next, previous } from '@/AllAssets/AllAsssets'
+
+const Challenges = () => {
+  const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <div className="px-[72px] my-20">
-      {/* Heading */}
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
-          The Biggest Challenges We Help You <br />
-          <span className="text-black">Overcome</span>
-        </h2>
-      </div>
-
-      {/* Swiper */}
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={30}
-        slidesPerView={1}
-        centeredSlides
-        initialSlide={0}
-        navigation={{
-          nextEl: ".custom-next",
-          prevEl: ".custom-prev",
-        }}
-        loop={true}
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        breakpoints={{
-          768: { slidesPerView: 2, centeredSlides: true, initialSlide: 1 },
-          1024: { slidesPerView: 3, centeredSlides: true, initialSlide: 1 },
-        }}
-        className="pb-12"
-      >
-        {challenges.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="rounded-[25px] bg-white overflow-hidden h-full flex flex-col  justify-center transition-all duration-300">
-              {activeIndex === index ? (
-                // ✅ Active Slide => Image + Overlay Text
-                <div className="relative">
-                  <Image
-                    src={item.image}
-                    alt="swiperimages"
-                    width={600}
-                    height={400}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white">
-                    <span className="text-[60px] font-unbounded font-extralight">
-                      {item.number}
-                    </span>
-                    <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
-                      {item.title}
-                    </h3>
-                    <p className="text-[15px] mt-2 font-montserrat">
-                      {item.desc}
-                    </p>
+    <SectionContainer className="pt-6">
+      <Heading heading="The Biggest Challenges We Help You Overcome" />
+      <div className="relative mt-10">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={24}
+          slidesPerView={1}
+          centeredSlides
+          loop
+          navigation={{ nextEl: '.challenge-next', prevEl: '.challenge-prev' }}
+          breakpoints={{
+            768: { slidesPerView: 2, centeredSlides: true },
+            1024: { slidesPerView: 3, centeredSlides: true },
+          }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          className="pb-16"
+        >
+          {challenges.map((item, index) => (
+            <SwiperSlide key={item.title}>
+              <article className="h-full overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
+                {activeIndex === index ? (
+                  <div className="relative h-[420px] w-full">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"
+                    />
+                    <div className="absolute inset-0 flex flex-col justify-end bg-neutral-900/60 p-6 text-white">
+                      <span className="text-4xl font-unbounded font-extralight">{item.number}</span>
+                      <h3 className="mt-2 text-2xl font-unbounded font-semibold">{item.title}</h3>
+                      <p className="mt-3 text-sm text-white/80 sm:text-base">{item.desc}</p>
+                    </div>
                   </div>
-                </div>
-              ) : (
-                // ❌ Inactive Slide => Text-only
-                <div className="p-6 flex flex-col justify-end h-[580px]">
-                  <span className="text-[60px] font-unbounded font-extralight">
-                    {item.number}
-                  </span>
-                  <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
-                    {item.title}
-                  </h3>
-                  <p className="text-[15px] mt-2 font-montserrat">
-                    {item.desc}
-                  </p>
-                </div>
-              )}
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+                ) : (
+                  <div className="flex h-full flex-col justify-end gap-4 p-6">
+                    <span className="text-4xl font-unbounded font-extralight text-neutral-400">{item.number}</span>
+                    <h3 className="text-2xl font-unbounded font-semibold text-neutral-900">{item.title}</h3>
+                    <p className="text-sm text-neutral-600 sm:text-base">{item.desc}</p>
+                  </div>
+                )}
+              </article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      {/* Custom Navigation Buttons at Bottom */}
-      <div className="flex justify-center gap-6 mt-6">
-        <button className="custom-prev  transition">
-        <Image src={previous} width={100} height={100} className="w-full h-full" alt="previuosbutton"/>
-        </button>
-        <button className="custom-next  transition">
-            <Image src={next} width={100} height={100} className="w-full h-full" alt="nextbutton"/>
-        </button>
+        <div className="flex justify-center gap-6">
+          <button
+            type="button"
+            className="challenge-prev inline-flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-700 transition hover:border-[#F1813B] hover:text-[#F1813B]"
+            aria-label="Previous challenge"
+          >
+            <Image src={previous} alt="Previous" width={24} height={24} />
+          </button>
+          <button
+            type="button"
+            className="challenge-next inline-flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-700 transition hover:border-[#F1813B] hover:text-[#F1813B]"
+            aria-label="Next challenge"
+          >
+            <Image src={next} alt="Next" width={24} height={24} />
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    </SectionContainer>
+  )
 }
+
+export default Challenges

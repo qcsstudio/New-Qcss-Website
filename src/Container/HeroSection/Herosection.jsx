@@ -1,97 +1,97 @@
 'use client'
+
 import React, { useEffect, useMemo, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion'
+import SectionContainer from '@/Component/Layout/SectionContainer'
 
+const buttonVariants = {
+  primary:
+    'inline-flex items-center justify-center rounded-full bg-[#F1813B] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#d96d2b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F1813B]',
+  secondary:
+    'inline-flex items-center justify-center rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
+}
 
-const Herosection = ({ heading, para, titles, buttons }) => {
+const Herosection = ({ heading, para, titles = [], buttons = [], theme = 'dark' }) => {
+  const computedTitles = useMemo(() => titles.filter(Boolean), [titles])
+  const [activeTitleIndex, setActiveTitleIndex] = useState(0)
 
-    const titles1 = useMemo(
-        () => titles,
-        []
-    );
-    const [titleNumber, setTitleNumber] = useState(0);
+  useEffect(() => {
+    if (!computedTitles.length) return
 
-    useEffect(() => {
-        const timeoutId = setTimeout(() => {
-            if (titleNumber === titles.length - 1) {
-                setTitleNumber(0);
-            } else {
-                setTitleNumber(titleNumber + 1);
-            }
-        }, 3000);
-        return () => clearTimeout(timeoutId);
-    }, [titleNumber, titles]);
-    return (
-        <>
-            <div className='w-full h-screen relative'>
-                {/* // hide spline mark */}
-                <div className='w-[300px] h-[100px]  absolute bottom-0 right-0 bg-[#ececec] z-50'></div>
+    const interval = setInterval(() => {
+      setActiveTitleIndex((index) => (index + 1) % computedTitles.length)
+    }, 3200)
 
-                <div className='w-full h-full  absolute z-100 ' >
-                    <div className='  absolute z-101 top-[20%] px-8 py-3 '>
-                        <div className="w-full sm:w-[50%] lg:w-[60%] xl:w-[65%] flex flex-col justify-center text-black sm:mt-[25rem] md:mt-[0rem] min-[320px]:mt-[20rem]  ">
+    return () => clearInterval(interval)
+  }, [computedTitles])
 
-                            <h1 className="text-5xl md:text-[45px] xl:text-[70px] font-unbounded xl:w-4xl tracking-tighter leading-[1.3] w-full font-bold ">
-                                <span className="text-spektr-cyan-50">
-                                    {heading}
-                                </span>
-                                {
-                                    titles &&
-                                    <span className="relative flex w-full  overflow-hidden  md:pb-4 md:pt-1">
-                                        &nbsp;
-                                        {titles1.map((title, index) => (
-                                            <motion.span
-                                                key={index}
-                                                className="absolute font-semibold"
-                                                initial={{ opacity: 0, y: "-100" }}
-                                                transition={{ type: "spring", stiffness: 50 }}
-                                                animate={
-                                                    titleNumber === index
-                                                        ? {
-                                                            y: 0,
-                                                            opacity: 1,
-                                                        }
-                                                        : {
-                                                            y: titleNumber > index ? -150 : 150,
-                                                            opacity: 0,
-                                                        }
-                                                }
-                                            >
-                                                {title}
-                                            </motion.span>
-                                        ))}
-                                    </span>
-                                }
+  const isDark = theme === 'dark'
 
-                            </h1>
+  return (
+    <section
+      className={`relative isolate overflow-hidden ${
+        isDark ? 'bg-neutral-950 text-white' : 'bg-neutral-100 text-neutral-900'
+      }`}
+    >
+      <div className="absolute inset-0 -z-10 h-full w-full">
+        <spline-viewer
+          url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode"
+          className="h-full w-full"
+        ></spline-viewer>
+        <div
+          aria-hidden="true"
+          className={`absolute inset-0 ${
+            isDark
+              ? 'bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/30'
+              : 'bg-gradient-to-t from-white via-white/90 to-transparent'
+          }`}
+        />
+      </div>
 
-                            <motion.p
-                                className={`mt-2 text-lg lg:text-[17px] xl:text-[19px] xl:w-[90%] text-start leading-tight font-montserrat`}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3, duration: 1 }}
-                            >
-                                {para}
-                            </motion.p>
-
-                            <motion.div
-                                className="mt-4 flex flex-wrap gap-4"
-                                initial={{ scale: 0.9, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ delay: 0.6, type: 'spring', stiffness: 300 }}
-                            >
-
-                            </motion.div>
-                        </div>
-                        <button className='bg-[#F1813B]  text-white rounded-lg px-6 py-2'>Book a Free AI Growth Consultation</button>
-                    </div>
-                </div>
-
-
-                <spline-viewer url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode" className="relative" ></spline-viewer>
+      <SectionContainer className="relative flex min-h-[70vh] flex-col justify-center gap-10 py-20 lg:py-28">
+        <div className="max-w-3xl space-y-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F1813B]">
+            QuantumCrafters Studio
+          </p>
+          <h1 className="text-balance text-4xl font-unbounded font-bold leading-tight sm:text-5xl lg:text-6xl">
+            <span className="text-[#F1813B]">{heading}</span>
+            {computedTitles.length > 0 && (
+              <span className="relative ml-2 inline-flex min-h-[2.5rem] flex-col overflow-hidden align-top sm:min-h-[3rem]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={computedTitles[activeTitleIndex]}
+                    initial={{ opacity: 0, y: '100%' }}
+                    animate={{ opacity: 1, y: '0%' }}
+                    exit={{ opacity: 0, y: '-100%' }}
+                    transition={{ duration: 0.6, ease: 'easeInOut' }}
+                    className="bg-gradient-to-r from-white via-white/90 to-white bg-clip-text text-transparent"
+                  >
+                    {computedTitles[activeTitleIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            )}
+          </h1>
+          <p
+            className={`text-lg leading-relaxed sm:text-xl ${
+              isDark ? 'text-white/80' : 'text-neutral-700'
+            }`}
+          >
+            {para}
+          </p>
+          {buttons.length > 0 && (
+            <div className="flex flex-wrap items-center gap-3 pt-4">
+              {buttons.map(({ label, href = '#', variant = 'primary' }, index) => (
+                <a key={`${label}-${index}`} href={href} className={buttonVariants[variant] || buttonVariants.primary}>
+                  {label}
+                </a>
+              ))}
             </div>
-        </>
-    )
+          )}
+        </div>
+      </SectionContainer>
+    </section>
+  )
 }
 
 export default Herosection

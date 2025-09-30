@@ -1,69 +1,53 @@
-import { automation, marketing } from "@/Data/HomePage/PowerSection";
-import React from "react";
-import { IoMdPause } from "react-icons/io";
+import React from 'react'
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import Heading from '@/Component/HeadingComponent/Heading'
+import { IoMdPause } from 'react-icons/io'
+import { automation, marketing } from '@/Data/HomePage/PowerSection'
 
-export default function PowerSection() {
+const List = ({ items }) => (
+  <ul className="space-y-4">
+    {items.map((item) => (
+      <li key={item.title} className="flex items-start gap-4">
+        <span className="mt-1 text-2xl text-[#F1813B]">
+          <IoMdPause aria-hidden />
+        </span>
+        <div>
+          <p className="text-lg font-semibold text-neutral-900">{item.title}</p>
+          <p className="text-sm text-neutral-600 sm:text-base">{item.desc}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+)
 
-
-    return (
-        <>
-            <div className="px-[72px] mt-20">   
-                {/* Heading */}
-                <div className="mb-12">
-                    <h2 className="text-3xl md:text-[40px] font-bold font-unbounded ">
-                        Double the Power: <br />
-                        <span className="text-black">AI Marketing & SaaS Automation</span>
-                    </h2>
-                </div>
-
-                {/* Two Columns */}
-                <div className="grid md:grid-cols-2 gap-8 mb-10">
-                    {/* Left box */}
-                    <div className="bg-gray-50 rounded-2xl p-5 shadow-sm">
-                        <h3 className="text-[35px] font-bold mb-6 font-unbounded">
-                            AI-Powered Digital <br/>Marketing{" "}
-                            <span className=" text-[25px] font-medium">(Grow Demand)</span>
-                        </h3>
-                        <ul className="space-y-4">
-                            {marketing.map((item, i) => (
-                                <li key={i} className="flex items-center gap-4">
-                                    <span className="text-[#F1813B]  text-2xl"> <IoMdPause /></span>
-                                    <div>
-                                        <p className="font-semibold font-montserrat text-[20px]">{item.title}</p>
-                                        <p className="font-montserrat text-[15px]">{item.desc}</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Right box */}
-                    <div className="bg-gray-50 rounded-2xl p-5 shadow-sm">
-                        <h3 className="text-[35px] font-bold mb-6 font-unbounded">
-                            Intelligent Web & SaaS <br/>Automation{" "}
-                            <span className="  text-[25px] font-medium">(Scale Operations)</span>
-                        </h3>
-                        <ul className="space-y-4">
-                            {automation.map((item, i) => (
-                                <li key={i} className="flex items-center gap-4">
-                                    <span className="text-[#F1813B] text-2xl"> <IoMdPause /></span>
-                                    <div>
-                                            <p className="font-semibold font-montserrat text-[20px]">{item.title}</p>
-                                        <p className="font-montserrat text-[15px]">{item.desc}</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Button */}
-                <div className="text-center">
-                    <button className="bg-[#F1813B] text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-orange-600 transition font-montserrat">
-                        Get My Custom AI Roadmap
-                    </button>
-                </div>
-            </div>
-        </>
-    );
+const PowerSection = () => {
+  return (
+    <SectionContainer>
+      <Heading heading="Double the Power: AI Marketing & SaaS Automation" />
+      <div className="mt-10 grid gap-8 lg:grid-cols-2">
+        <div className="rounded-3xl bg-neutral-50 p-8 shadow-sm">
+          <h3 className="text-2xl font-unbounded font-bold text-neutral-900 sm:text-3xl">
+            AI-Powered Digital Marketing <span className="block text-lg font-medium">(Grow Demand)</span>
+          </h3>
+          <List items={marketing} />
+        </div>
+        <div className="rounded-3xl bg-neutral-50 p-8 shadow-sm">
+          <h3 className="text-2xl font-unbounded font-bold text-neutral-900 sm:text-3xl">
+            Intelligent Web & SaaS Automation <span className="block text-lg font-medium">(Scale Operations)</span>
+          </h3>
+          <List items={automation} />
+        </div>
+      </div>
+      <div className="mt-10 text-center">
+        <a
+          href="/contactus"
+          className="inline-flex items-center justify-center rounded-full bg-[#F1813B] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#d96d2b]"
+        >
+          Get My Custom AI Roadmap
+        </a>
+      </div>
+    </SectionContainer>
+  )
 }
+
+export default PowerSection

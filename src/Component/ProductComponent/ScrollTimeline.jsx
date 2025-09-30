@@ -1,35 +1,31 @@
 'use client'
-import React, { useState, useEffect, useRef } from "react";
-import {
-    motion,
-    useScroll,
-    useTransform,
-    useSpring,
-} from "framer-motion";
-import { cn } from "@/lib/utils";
-import { Card, CardContent } from "./Cards";
-import { Calendar } from "lucide-react";
-import Heading from "../HeadingComponent/Heading";
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { cn } from '@/lib/utils'
+import { Card, CardContent } from './Cards'
+import Heading from '../HeadingComponent/Heading'
+import SectionContainer from '@/Component/Layout/SectionContainer'
 
 
 
 export const ScrollTimeline = ({
-    events,
-    animationOrder = "sequential",
-    cardAlignment = "alternating",
-    lineColor = "bg-primary/30",
-    progressIndicator = true,
-    cardVariant = "default",
-    cardEffect = "none",
-    parallaxIntensity = 0.2,
-    progressLineWidth = 2,
-    progressLineCap = "round",
-    revealAnimation = "fade",
-    className = "",
-    connectorStyle = "line",
-    perspective = false,
-    darkMode = false,
-    heading, heading1
+  events,
+  animationOrder = 'sequential',
+  cardAlignment = 'alternating',
+  lineColor = 'bg-primary/30',
+  progressIndicator = true,
+  cardVariant = 'default',
+  cardEffect = 'none',
+  parallaxIntensity = 0.2,
+  progressLineWidth = 2,
+  progressLineCap = 'round',
+  revealAnimation = 'fade',
+  className = '',
+  connectorStyle = 'line',
+  perspective = false,
+  darkMode = false,
+  heading,
+  heading1,
 }) => {
     const scrollRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(-1);
@@ -195,22 +191,20 @@ export const ScrollTimeline = ({
 
 
     return (
-        <div
+        <SectionContainer
             ref={scrollRef}
             className={cn(
-                "relative min-h-screen w-full   px-6 md:px-[72px] my-10   ",
-                darkMode ? "bg-background text-foreground" : "",
-                className
+                'relative min-h-[60vh]',
+                darkMode ? 'bg-background text-foreground' : 'bg-white text-neutral-900',
+                className,
             )}
         >
             <Heading heading={heading} />
-            {
-                heading1 && <Heading heading={heading1} />
-            }
+            {heading1 && <Heading heading={heading1} />}
 
 
-            <div className="relative px-5 ">
-                <div className="relative mx-auto ">
+            <div className="relative px-2 sm:px-4">
+                <div className="relative mx-auto">
                     <div
                         className={cn(getConnectorClasses(), "h-full absolute top-0 border z-10")}
                     ></div>
@@ -335,26 +329,25 @@ export const ScrollTimeline = ({
                                         style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
                                     >
                                         {/* =========== cards ================== */}
-                                        <Card className="bg-background ">
-                                            <CardContent className="pb-6  ">
-                                                <div className="flex items-center justify-between ">
-                                                    <h3 className="text-[56px] font-unbounded font-semibold bg-gradient-to-b from-orange-200 to-white bg-clip-text text-transparent">
+                                        <Card className="bg-background">
+                                            <CardContent className="pb-6">
+                                                <div className="flex items-center justify-between">
+                                                    <h3 className="text-4xl font-unbounded font-semibold text-[#F1813B] sm:text-5xl">
                                                         {event.no}
                                                     </h3>
-                                                    <p className={`px-3 py-1 rounded-lg font-unbounded font-light text-[12px] 
-                                                                    ${labelColors[event.label]?.bg || "bg-gray-100"} 
+                                                    <p className={`px-3 py-1 rounded-lg font-unbounded font-light text-[12px]
+                                                                    ${labelColors[event.label]?.bg || "bg-gray-100"}
                                                                     ${labelColors[event.label]?.text || "text-gray-600"}`}>
                                                         {event.label}
                                                     </p>
 
                                                 </div>
-
-                                                <h2 className="text-muted-foreground text-[35px] font-semibold font-unbounded  w-[70%] mb-2">
+                                                <h2 className="text-2xl font-unbounded font-semibold text-neutral-900 sm:text-3xl">
                                                     {event.Milestone}
                                                 </h2>
                                                 <p className="text-[#F1813B] font-unbounded font-light text-[12px]">OUTCOME</p>
 
-                                                <p className="text-muted-foreground font-montserrat text-[18px] bg-[#F8F8F8] p-2 rounded-xl border-l-4 border-[#F1813B] mt-3">
+                                                <p className="mt-3 rounded-xl border-l-4 border-[#F1813B] bg-[#F8F8F8] p-3 text-sm text-neutral-700 sm:text-base">
                                                     {event.Outcome}
                                                 </p>
                                             </CardContent>
@@ -366,6 +359,6 @@ export const ScrollTimeline = ({
                     </div>
                 </div>
             </div>
-        </div>
-    );
-};
+        </SectionContainer>
+    )
+}

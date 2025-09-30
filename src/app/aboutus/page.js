@@ -1,13 +1,7 @@
 import AboutusContainer from '@/Container/AboutusContainer/AboutusContainer'
-import React from 'react'
 
-const page = () => {
-  return (
-    <>
-    <AboutusContainer/>
-    
-    </>
-  )
+const AboutUsPage = () => {
+  return <AboutusContainer />
 }
 
-export default page
+export default AboutUsPage

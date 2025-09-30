@@ -1,12 +1,7 @@
 import HomeContainer from '@/Container/HomeContainer/HomeContainer'
-import React from 'react'
 
-const page = () => {
-  return (
-    <>
-    <HomeContainer/>
-    </>
-  )
+const HomePage = () => {
+  return <HomeContainer />
 }
 
-export default page
+export default HomePage

@@ -1,57 +1,36 @@
-import { middleFeatures, rightFeatures } from "@/Data/HomePage/FeaturesData";
-import React from "react";
+import React from 'react'
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import Heading from '@/Component/HeadingComponent/Heading'
 
-const Features = ({middleFeature,rightFeature}) => {
-
-   
-
-    return (
-        <>
-            <div className="px-6 md:px-[72px] my-10">
-                <div className="flex flex-col md:flex-row gap-8   ">
-                    {/* Left Section */}
-                    <div className="md:w-2/4   flex flex-col justify-center  ">
-                        <div className="w-[88%] ">
-                            <h2 className="text-3xl md:text-[40px] font-unbounded font-bold mb-4">What Makes QuantumCrafters Different</h2>
-                            <p className="text-gray- font-montserrat">At QuantumCrafters Studio, we blend human creativity with AI precision to help brands grow faster, work smarter,
-                                and scale effortlessly. From startups chasing traction to enterprises optimizing every touchpoint we turn digital chaos into automated clarity
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Middle Section */}
-                    <div className="md:w-1/4 flex flex-col justify-center gap-6  border-r-2 border-gray-300 px-6">
-                        {middleFeature.map((feature, idx) => (
-                            <div key={idx} >
-                                <div className="p-3">
-                                    <h3 className="font-semibold mb-2 font-montserrat text-[20px]">{feature.title}</h3>
-                                    <p className="text-[#000000] font-montserrat text-[15px]">{feature.description}</p>
-                                </div>
-                                <hr className="border-1 border-gray-300" />
-                            </div>
-
-                        ))}
-                    </div>
-
-                    {/* Right Section */}
-                    <div className="md:w-1/4 flex flex-col gap-6 ">
-                        {rightFeature.map((feature, idx) => (
-                            <div key={idx}>
-                                     
-                                <div  className=" p-5">
-                                    <h3 className="font-semibold mb-2 font-montserrat text-[20px]">{feature.title}</h3>
-                                    <p className="text-gray-600   font-montserrat text-[15px] ">{feature.description}</p>
-                                </div>
-
-                                <hr className=" border-b border-gray-300" />
-
-                            </div>
-                        ))}
-                    </div>
-                </div>
+const Features = ({ middleFeature, rightFeature }) => {
+  return (
+    <SectionContainer>
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
+        <div className="space-y-6">
+          <Heading heading="What Makes QuantumCrafters Different" />
+          <p className="text-base text-neutral-600 sm:text-lg">
+            We partner with your team across marketing, product, and operations. Every playbook blends human strategy with automation so you can grow faster without adding overhead.
+          </p>
+        </div>
+        <div className="flex flex-col gap-6 border-t border-neutral-200 pt-6 lg:border-t-0 lg:border-r lg:pr-6">
+          {middleFeature.map((feature) => (
+            <div key={feature.title} className="space-y-2">
+              <h3 className="text-lg font-semibold text-neutral-900">{feature.title}</h3>
+              <p className="text-sm text-neutral-600 sm:text-base">{feature.description}</p>
             </div>
-        </>
-    );
-};
+          ))}
+        </div>
+        <div className="flex flex-col gap-6 border-t border-neutral-200 pt-6 lg:border-t-0">
+          {rightFeature.map((feature) => (
+            <div key={feature.title} className="space-y-2">
+              <h3 className="text-lg font-semibold text-neutral-900">{feature.title}</h3>
+              <p className="text-sm text-neutral-600 sm:text-base">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </SectionContainer>
+  )
+}
 
-export default Features;
+export default Features

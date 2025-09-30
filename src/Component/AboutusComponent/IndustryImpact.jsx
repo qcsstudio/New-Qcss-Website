@@ -1,27 +1,33 @@
-"use client";
-import React from "react";
+'use client'
 
+import React from 'react'
+import SectionContainer from '@/Component/Layout/SectionContainer'
+import Heading from '@/Component/HeadingComponent/Heading'
 
-export default function IndustryImpact({ cardsData }) {
-    const staggerClasses = {
-        "md:mt-0": "md:mt-0",
-        "md:mt-12": "md:mt-12",
-    };
-
-    return (
-        <div className="px-6 md:px-[72px] my-10  ">
-            <h2 className="text-3xl md:text-[40px] font-unbounded font-bold mb-4">Industry Impact</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
-                {cardsData.map((item, idx) => (
-                    <div
-                        key={idx}
-                        className={`h-[394px] border border-gray-300 rounded-lg shadow-sm px-5 py-6 flex flex-col ${staggerClasses[item.position] ?? ""}`}
-                    >
-                        <h3 className="text-[35px] font-semibold  font-unbounded mb-3">{item.title}</h3>
-                        <p className="text-[18px] text-[#000000] font-montserrat leading-relaxed mt-15">{item.desc}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+const staggerClasses = {
+  'md:mt-0': 'md:mt-0',
+  'md:mt-12': 'md:mt-12',
 }
+
+const IndustryImpact = ({ cardsData }) => {
+  return (
+    <SectionContainer>
+      <Heading heading="Industry Impact" />
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {cardsData.map((item, idx) => (
+          <article
+            key={`${item.title}-${idx}`}
+            className={`flex h-full flex-col rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${
+              staggerClasses[item.position] ?? ''
+            }`}
+          >
+            <h3 className="text-2xl font-unbounded font-semibold text-neutral-900">{item.title}</h3>
+            <p className="mt-4 text-sm text-neutral-600 sm:text-base">{item.desc}</p>
+          </article>
+        ))}
+      </div>
+    </SectionContainer>
+  )
+}
+
+export default IndustryImpact
