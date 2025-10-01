@@ -7,10 +7,9 @@ import { IoMdPause } from "react-icons/io";
 const Brands = () => {
     return (
         <>
-            <section className="w-full bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
+      <div className="px-[72px]">
         {/* Heading */}
-        <div className="max-w-3xl">
+        <div className="mb-12">
           <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
             QuantumCrafters:
             <br />
@@ -53,7 +52,6 @@ const Brands = () => {
           ))}
         </div>
       </div>
-    </section>
         </>
     )
 }

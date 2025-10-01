@@ -19,21 +19,19 @@ const Questions = ({FaqData}) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
-    return (
+  return (
         <>
             {/* <IconNtext text="FAQ's" link="/images/Icons/FAQ.png" /> */}
-             <div className="mx-auto mb-12 max-w-4xl px-6 text-center">
-                    <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
+             <div className="my-12">
+                    <h2 className="text-3xl md:text-[40px] font-bold font-unbounded text-center ">
                         Frequently Asked Question's
                     </h2>
                 </div>
-            <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-10 px-6 md:flex-row">
+            <div className="flex flex-col md:flex-row justify-between items-start  w-[90%] mx-auto">
                 {/* Left Section */}
-
-                <div className="flex w-full flex-col justify-center space-y-4 md:w-1/2 md:pr-6">
-
+                <div className="md:w-1/2 space-y-4 p flex flex-col justify-center  mt-20">
                     <motion.h2
-                        className={`text-center text-3xl font-unbounded font-bold leading-tight text-gray-900 md:text-left md:text-[38px] lg:text-[44px]`}
+                        className={`text-center lg:text-start text-3xl md:text-[48px] font-bold leading-tight mt-3 font-unbounded`}
                         variants={container}
                         initial="hidden"
                         whileInView="visible"
@@ -49,24 +47,23 @@ const Questions = ({FaqData}) => {
                             </motion.span>
                         ))}
                     </motion.h2>
-                    <p className={`text-center text-base font-montserrat font-medium text-gray-600 md:text-left`}>
+                    <p className={`text-gray-500 font-medium text-lg text-center lg:text-start lg:w-[80%] font-montserrat`}>
                         We've gathered all the important info right here. Explore our FAQs and find the answers you need.
                     </p>
                 </div>
-
                 {/* Right Section (FAQ List) */}
-                <div className={`w-full space-y-4 font-montserrat md:w-1/2`}>
+                <div className={`md:w-1/2 space-y-4 mt-6 md:mt-0 font-montserrat`}>
                     {FaqData?.map((item, index) => (
-                        <div key={index} className="rounded-xl bg-gray-100 p-5 transition hover:bg-gray-200/80"
+                        <div key={index} className="bg-gray-100 p-4 rounded-lg cursor-pointer"
                             onClick={() => toggleAnswer(index)}>
-                            <div className=" flex items-center justify-between gap-4">
-                                <span className="text-left text-base font-semibold text-gray-800 sm:text-lg">{item.question}</span>
+                            <div className=" flex justify-between items-center py-2">
+                                <span className="text-gray-800 font-medium">{item.question}</span>
                                 <button>
                                     {openIndex === index ? <ImCross className="text-xs" /> : <FaPlus />}
                                 </button>
                             </div>
                             {openIndex === index && (
-                                <div className="mt-3 text-sm text-gray-600 sm:text-base">{item.answer}</div>
+                                <div className="mt-2 text-gray-600 py-2">{item.answer}</div>
                             )}
                         </div>
                     ))}

@@ -14,17 +14,15 @@ import Heading from '../HeadingComponent/Heading';
 
 
 
-const WeSupport = ({cards,heading,heading1}) => {
+const WeSupport = ({ cards, heading, heading1 }) => {
     return (
         <>
-            <section className="w-full bg-white">
-            <div className="mx-auto mt-16 max-w-7xl px-6 sm:px-8 lg:px-12">
-
+            <div className="px-[72px] mt-20">
                 {
-                    heading1 ? <Heading heading={heading1}/> : ""
+                    heading1 ? <Heading heading={heading1} /> : ""
                 }
-                <Heading heading={heading}/>
-                <div className="py-10">
+                <Heading heading={heading} />
+                <div className=" py-10">
                     <Swiper
                         modules={[Navigation, Pagination, FreeMode, Autoplay]}
                         spaceBetween={16}
@@ -44,37 +42,29 @@ const WeSupport = ({cards,heading,heading1}) => {
                         className="pb-10"
                     >
                         {cards?.map((item, index) => (
-                            <SwiperSlide key={index} className="flex h-full items-stretch">
-                                <div className="flex h-full flex-col justify-between rounded-2xl bg-[#F5F7F9] p-6 shadow-sm">
+                            <SwiperSlide key={index} className="flex items-center justify-center">
+                                <div className="bg-[#F5F7F9] rounded-lg p-4 h-[473px] flex flex-col sm:justify-between">
                                     <div>
-                                        <h3 className={`font-unbounded font-semibold text-2xl text-gray-900 sm:text-[30px]`}>{item.heading}</h3>
+                                        <h3 className={`font-semibold text-lg md:text-[35px] mb-2 font-unbounded  w-[70%]`}>{item.heading}</h3>
                                         {
-                                            item.desc ?  <p className={`mt-2 text-base font-montserrat text-gray-600 sm:text-lg`}>
-                                            {item.desc}
-                                        </p> : ""
+                                            item.desc ? <p className={`text-gray-600 text-base md:text-[25px] font-medium font-unbounded`}>
+                                                {item.desc}
+                                            </p> : ""
                                         }
-
-                                        <div className='mt-8 flex flex-col items-start gap-6'>
-                                        <p className='text-sm font-montserrat text-gray-700 sm:text-base'>{item.para}</p>
-                                        <button className='inline-flex items-center gap-2 rounded-lg bg-[#F1813B] px-5 py-2 font-montserrat text-sm font-semibold text-white transition hover:bg-[#d46f2c]'>
-                                            {item.button}
-                                            <span>
-                                                <MdKeyboardArrowRight className='text-lg' />
-                                            </span>
-                                        </button>
-
+                                        <div className='flex flex-col items-start justify-between  h-60 mt-10'>
+                                            <p className='font-montserrat text-[15px]'>{item.para}</p>
+                                            <button className='flex gap-2 font-montserrat items-center justify-center'>{item.button} <span><MdKeyboardArrowRight className='text-[20px]' /></span></button>
                                         </div>
                                     </div>
-
                                 </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 </div>
             </div>
-            </section>
         </>
     )
+
 }
 
 export default WeSupport

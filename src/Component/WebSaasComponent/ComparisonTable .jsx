@@ -40,7 +40,7 @@ const ComparisonTable = ({heading}) => {
   ];
 
   return (
-    <div className="mx-auto my-16 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+    <div className="px-[72px] mt-12">
         <Heading heading={heading}/>
       <div className="mt-10 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
       <table className="w-full font-unbounded">

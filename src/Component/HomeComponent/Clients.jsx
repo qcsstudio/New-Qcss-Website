@@ -7,8 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from "next/image";
-
-
 const Clients = () => {
     const [activeIndex, setActiveIndex] = useState(1);
     const prevRef = useRef(null);
@@ -20,23 +18,20 @@ const Clients = () => {
     const handlePrevious = () => {
         if (activeIndex > 0) {
             setActiveIndex(activeIndex - 1)
-
         }
     }
     console.log(activeIndex, "activeIndexactiveIndexactiveIndex")
     return (
-        <section className="mx-auto my-20 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="px-6 md:px-[72px] my-12 md:my-20">
             {/* Heading */}
             <div className="mb-8 md:mb-12">
-                <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
+                <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
                     Real Results. Happy Clients.
                 </h2>
-                <p className="my-4 text-sm font-montserrat text-gray-600 sm:text-base">
+                <p className="font-montserrat text-base md:text-[18px] my-4">
                     Loved & Trusted by <br /> +250 businesses.
                 </p>
             </div>
-
-
             {/* Swiper */}
             <div className="">
                 <Swiper
@@ -91,7 +86,6 @@ const Clients = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
                 {/* Custom Navigation Buttons at Bottom */}
                 <div className="flex justify-center  gap-6 mt-6 b">
                     <button className="custom-prev1 transition">
@@ -104,12 +98,7 @@ const Clients = () => {
                     </button>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
-
 export default Clients;
-
-
-
-

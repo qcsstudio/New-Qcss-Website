@@ -9,15 +9,15 @@ import "swiper/css/free-mode";
 // import {Swiper} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const AutomationStack = ({ heading, cardData, heading1, slidesPerView }) => {
+const AutomationStack = ({ heading, cardData, heading1, slidesPerView ,para}) => {
     return (
         <>
-            <section className="mx-auto mt-16 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+            <section className="px-[72px] mt-12">
                 <Heading heading={heading} />
                 {
                     heading1 && <Heading heading={heading1} />
                 }
-
+        {para && <p className='font-montserrat text-[18px]'>{para}</p>}
 
                 <Swiper
                     modules={[Navigation, Pagination, FreeMode, Autoplay]}
@@ -38,8 +38,8 @@ const AutomationStack = ({ heading, cardData, heading1, slidesPerView }) => {
                     className=" my-8"
                 >
                     {cardData?.map((item, index) => (
-                        <SwiperSlide key={index} className="flex h-full">
-                            <div className="flex h-full flex-col justify-between rounded-2xl bg-[#F8F8F8] p-6 shadow-sm">
+                        <SwiperSlide key={index} className="flex items-center justify-center flex-wrap ">
+                            <div className="bg-[#F8F8F8] rounded-xl p-4 h-[420px]  flex flex-col sm:justify-between">
                                 <div>
                                     <h3 className={`font-unbounded font-semibold text-2xl text-gray-900 sm:text-[30px] ${item.headingWidth || ""}`}>{item.heading}</h3>
                                     {

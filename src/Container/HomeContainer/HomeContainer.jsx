@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import React from "react";
 const Navbar = dynamic(() => import("@/Component/Navbar"), { ssr: false, loading: () => <p>Loading...</p> });
 const Footer = dynamic(() => import("@/Component/FooterComponent/Footer"), { ssr: false, loading: () => <p>Loading...</p> });
-const HeroSection = dynamic(() => import("@/Component/HomeComponent/HeroSection"), { ssr: false, loading: () => <p>Loading...</p> });
+const HeroSection3D = dynamic(() => import("@/container/HeroSection/Herosection3d"), { ssr: false, loading: () => <p>Loading...</p> });
 const AISEOFeatures = dynamic(() => import("@/Component/HomeComponent/AISEOFeatures"), { ssr: false, loading: () => <p>Loading...</p> });
 const Brands = dynamic(() => import("@/Component/HomeComponent/Brands"), { ssr: false, loading: () => <p>Loading...</p> });
 const Challenges = dynamic(() => import("@/Component/HomeComponent/Challenges"), { ssr: false, loading: () => <p>Loading...</p> });
@@ -21,6 +21,7 @@ const Herosection = dynamic(() => import("@/Container/HeroSection/Herosection"),
 import { HomePageFaq } from "@/Data/FaqQuestions/Questions";
 import { HomemiddleFeatures, HomerightFeatures } from "@/Data/HomePage/FeaturesData";
 import { supportCards } from "@/Data/HomePage/weSupportData";
+import Herosection3d from "@/Container/HeroSection/Herosection3d";
 
 const HomeContainer = () => {
   
@@ -45,8 +46,8 @@ const HomeContainer = () => {
   return (
     <>
       <Navbar />
-      <main id="main-content" role="main" className="flex flex-col">
-        <Herosection
+      
+        <Herosection3d
           heading="Your Partner in AI‑Driven Growth in"
           para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
           titles={titles}
@@ -54,7 +55,7 @@ const HomeContainer = () => {
         />
         <AISEOFeatures />
         <NextGenTools />
-        <div>
+       
           {/* <HeroSection/> */}
           <Brands />
           <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" />
@@ -63,9 +64,9 @@ const HomeContainer = () => {
           <Clients />
           <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures} />
           <CTA />
-        </div>
+    
         <Questions FaqData={HomePageFaq} />
-      </main>
+      
       <Footer />
     </>
   )

@@ -9,13 +9,13 @@ import { ProductGrowthCard, ProductGrowthCard2 } from '@/Data/ServicePage/Growth
 import { ProductStrategy } from '@/Data/ServicePage/StrategyData'
 import { ScrollTimeline } from '@/Component/ProductComponent/ScrollTimeline '
 import { ElevatrX_Social_AI, Nova_Chatbot } from '@/Data/ProductPage/Product'
-import Herosection from '../HeroSection/Herosection'
+import Herosection3d from '../HeroSection/Herosection3d'
 
 const ProductContainer = () => {
     return (
         <>
             <Navbar />
-            <Herosection heading="Your 24/7 Growth Duo AI Social & AI Chat, Ready in Days"
+            <Herosection3d heading="Your 24/7 Growth Duo AI Social & AI Chat, Ready in Days"
                 para=" ElevatrX amplifies every post; Nova turns visitors into booked calls. Integrate both in under a week and watch engagement and leads skyrocket—on autopilot."
             // titles={titles}
             // buttons={buttons}

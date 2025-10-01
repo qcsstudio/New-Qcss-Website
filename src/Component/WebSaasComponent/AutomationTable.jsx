@@ -30,7 +30,7 @@ export default function AutomationTable() {
   ];
 
   return (
-    <div className="mx-auto my-12 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+    <div className="px-[72px] mt-12">
       <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
       <table className="w-full border-collapse">
         <thead className="font-unbounded text-lg font-semibold sm:text-xl">

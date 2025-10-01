@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
     {/* navbar */}
 
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex w-[90%]  items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/">
           
           <Image src={NavbarQcsLogo} alt="logo" width={194.82} height={40} className='w-full h-full' />

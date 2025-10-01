@@ -218,4 +218,39 @@ export const WebSaasFaq = [
     question: "Can you integrate with legacy ERP systems?",
     answer: "Middleware and custom API layers allow integration with SAP, Netsuite, Oracle, and others."
   },
-  ]
+]
+
+export const AimarketingFaq = [
+  {
+    question: "How quickly can we see SEO gains?",
+    answer: "Schema wins visible in 2–3 weeks; sustained traffic uplift begins around 90 days."
+  },
+  {
+    question: "What ad budget is ideal for ML bidding?",
+    answer: "Ideally $5k+/mo per channel, though improvements are possible on smaller test budgets."
+  },
+  {
+    question: "Will Nova replace live chat reps?",
+    answer: "Nova handles Tier‑1 queries and booking; complex chats escalate to humans instantly."
+  },
+  {
+    question: "Do you support regulated industries?",
+    answer: "Yes—FinTech, HealthTech and EduTech engagements follow strict compliance workflows."
+  },
+  {
+    question: "Can we start with one module?",
+    answer: "Yes—many clients pilot Nova or ML ads first, then layer additional modules."
+  },
+  {
+    question: "How is reporting delivered?",
+    answer: "Live KPI dashboard, weekly loom recap videos and a monthly strategy call."
+  },
+  {
+    question: "What’s the contract term?",
+    answer: "90‑day pilot then month‑to‑month; cancel anytime with 30‑day notice."
+  },
+  {
+    question: "Does voice SEO require new content?",
+    answer: "Often not—we optimise existing pages with micro‑copy and schema, then expand."
+  },
+]
