@@ -8,7 +8,7 @@
                 "Voice-First SEO, ML ad bidding, GPT content, Nova chatbots, ElevatX social automation",
             points: ["3x traffic", "-40% CAC", "24/7 lead capture"],
             image: Strategy1,
-            link:"#"
+            link:"/ai-marketing"
         },
         {
             number: "02",

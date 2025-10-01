@@ -6,6 +6,8 @@ body {
   background-color: white;
   /* padding:0px 33px */
 }
+
+/* fonts--------- */
 .font-montserrat {
   font-family: "Montserrat", sans-serif !important;
 }
@@ -14,31 +16,40 @@ body {
   font-family: "Unbounded", sans-serif !important;
 }
 
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+.no-scrollbar {
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
-.skip-link:focus-visible {
-  left: 1.5rem;
-  top: 1.5rem;
-  width: auto;
-  height: auto;
-  clip: auto;
-  padding: 0.75rem 1.5rem;
-  background-color: #0f172a;
-  color: #ffffff;
-  border-radius: 9999px;
-  z-index: 1000;
-  box-shadow: 0 10px 25px -10px rgba(15, 23, 42, 0.6);
-  text-decoration: none;
+/* Hero section classes -----------*/
+ :root{
+  --clr:white
+ }
+.Innermain {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--clr);
+  width: 100%;
+  height: 100%;
+  border-radius: 19px;
+  /* background-image: url('/images/Images/memories.png'); */
+
 }
+.Innermain::before {
+  z-index: 100;
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  right: 117px;
+  border-top-right-radius: 15px;
+  box-shadow: 9px -10px 0 0 var(--clr);
+
+}
+
+
 
 /* bottom to top scrolling */
 #scroll-container {

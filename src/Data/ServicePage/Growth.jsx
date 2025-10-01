@@ -113,10 +113,142 @@ export const ProductGrowthCard2 = [
         ]
     },
 ]
+export const AimarketingGrowthCard2 = [
+    {
+        heading: "Voice‑First SEO & AEO",
+        cardlist: [
+            "Schema, Q&A clusters & conversational keywords win answer boxes and voice assistants.",
+            "<strong>Impact: </strong> Featured‑snippet share grows 180 %; clicks +300 %.",
+           
+        ]
+    },
+    {
+        heading: "ML‑Powered Performance Ads",
+        cardlist: [
+            "Algorithmic bidding reallocates budget every 15 minutes.",
+            "NLP scores creatives, auto‑tests new angles.",
+            "<strong>Impact: </strong> CAC drops 30‑40 %; ROAS +22 % average."
+        ]
+    },
+    {
+        heading: "GPT Content Accelerator",
+        cardlist: [
+            "Strategy → AI draft → Expert edit pipeline quadruples velocity.",
+            "Embedded voice triggers improve conversational ranking.",
+            "<strong>Impact: </strong> 4× content output with consistent brand tone."
+        ]
+    },
+    {
+        heading: "ElevatrX Social AI",
+        cardlist: [
+            "Optimal post timing & hashtag AI deliver 2‑3× engagement.",
+            "Sentiment monitor flags PR risks in real time.",
+            "<strong>Impact: </strong> 65 % follower growth YoY."
+        ]
+    },
+    {
+        heading: "Nova Chatbot Funnels",
+        cardlist: [
+            "Intent detection qualifies visitors in 3‑4 messages.",
+            "Calendar & CRM sync books demos instantly.",
+            "<strong>Impact: </strong>  Lead capture 3× static forms; response time under 60 seconds."
+        ]
+    },
+    {
+        heading: "AI ROI Dashboard",
+        cardlist: [
+            "All channels, one dashboard; GPT surfaces anomalies in Slack.",
+           
+            "<strong>Impact: </strong>  Lead capture 3× static forms; response time under 60 secondsDecision‑making 90 % faster; wastage spotted daily."
+        ]
+    },
+]
 
 export const WebSaasAutomationCard = [
     {
         heading: "AI-Integrated Websites",
+        firstField: "Tech",
+        secField: "Win",
+        headingWidth:"w-[369px]",
+        tech: [
+            " Next.js / Astro headless",
+            " Edge middleware",
+            "voice schema."
+        ],
+        Win: [
+            " Load < 1 s worldwide",
+            "CWV 90+",
+            "<strong>+70 % </strong>mobile CR"
+        ]
+    },
+    {
+        heading: "Workflows & RPA",
+        firstField: "Tech",
+        secField: "Win",
+         headingWidth:"w-[350px]",
+        tech: [
+            "n8n + custom Python micro-bots",
+        ],
+        Win: [
+            "1 200 tasks automated monthly",
+            "team saves <strong>30 hrs / week</strong>.",
+
+        ]
+    },
+    {
+        heading: "GPT Insight Dashboards",
+        firstField: "Tech",
+        secField: "Win",
+        headingWidth:"w-[369px]",
+        tech: [
+            "Snowflake",
+            "Looker Studio",
+            "GPT-4o commentary."
+        ],
+        Win: [
+            "Report prep 8 hrs → <strong>20 min</strong>",
+            "anomalies pinged in Slack",
+
+        ]
+    },
+    {
+        heading: "Modular SaaS Development",
+        firstField: "Tech",
+        secField: "Win",
+        headingWidth:"w-[369px]",
+        tech: [
+            "Micro-services",
+            "GraphQL",
+            "CI/CD (GitHub Actions)",
+            "K8s autoscale"
+        ],
+        Win: [
+            " Feature-to-prod in <strong>2 weeks</strong>",
+            "zero big-bang risk",
+
+        ]
+    },
+    {
+        heading: "Cloud Ops & Security",
+        firstField: "Tech",
+        secField: "Win",
+        headingWidth:"w-[369px]",
+        tech: [
+            "Terraform IaC",
+            "blue-green deploys",
+            "Snyk scans.",
+
+        ],
+        Win: [
+            "<strong>0</strong> critical vulns in 12 mo",
+            "60-min incident SLA",
+
+        ]
+    },
+]
+export const AimarketingAutomationCard = [
+    {
+        heading: "Voice‑First SEO & AEO",
         firstField: "Tech",
         secField: "Win",
         headingWidth:"w-[369px]",
@@ -283,6 +415,71 @@ export const WebsaasGrowthCard = [
     },
 ]
 
+export const AimarketingGrowthCard = [
+    {
+        heading: "Ignite",
+        time: " Week 1",
+        cardlist: [
+            "Audit",
+            " KPI baseline",
+            "competitor AEO gap report"
+        ],
+        metricsName: "KPI Goal",
+        metricsData: "Alignment"
+
+    },
+    {
+        heading: "Blueprint",
+        time: "Week 2",
+        cardlist: [
+            "Tracking plan",
+            "schema map",
+            "bid model config"
+        ],
+        metricsName: "KPI Goal",
+        metricsData: "Data integrity 100 %"
+
+    },
+    {
+        heading: "Accelerate",
+        time: "Weeks 3-4",
+        cardlist: [
+            "Nova live",
+            "pilot ML ads",
+            "quick‑win schema fixes"
+        ],
+        metricsName: "KPI Goal",
+        metricsData: "+15 % conversions"
+
+    },
+    {
+        heading: "Optimize",
+        time: "Weeks 5-7",
+        cardlist: [
+            "GPT content calendar",
+            "ElevatrX posting",
+            "bid algorithm fine‑tunes"
+
+        ],
+        metricsName: "KPI Goal",
+        metricsData: "–20 % CAC"
+
+    },
+    {
+        heading: "Scale",
+        time: "Week 8",
+        cardlist: [
+            "Multi‑channel ads",
+            "CRO tests",
+            " industry expansion"
+        ],
+        metricsName: "KPI Goal",
+        metricsData: "+35 % MoM leads"
+
+    },
+    
+]
+
 export const WebSaasSLAsCard = [
     {
         heading: "Automation Ignite",
@@ -325,6 +522,60 @@ export const WebSaasSLAsCard = [
         tech: [
             "Modular SaaS",
             "auto-scaling K8s",
+            "DevOps team"
+        ],
+        Win: [
+            "99.99 % uptime SLA",
+
+
+        ]
+    },
+
+]
+export const AiMarketingSLAsCard = [
+    {
+        heading: "LaunchPad Ignite",
+        firstField: "Includes",
+        secField: "KPI Guarantee",
+        ideal: "Seed & D2C launch",
+        headingWidth: "w-[215px]",
+        tech: [
+            "AEO sprint",
+            "Nova Lite",
+            "Single‑channel ML ads",
+            "Mini GPT blog pack"
+        ],
+        Win: [
+            "2× qualified leads in 90 days",
+
+        ]
+    },
+    {
+        heading: "Workflow Surge",
+        firstField: "Includes",
+        secField: "KPI Guarantee",
+        headingWidth: "w-[215px]",
+        ideal: "Enterprise / ARR > $20M",
+        tech: [
+            "Full stack modules",
+            "ElevatrX",
+            "Multi‑channel ML ads",
+            "CRO split testing"
+        ],
+        Win: [
+            "–30 % CAC & +25 % LTV",
+
+        ]
+    },
+    {
+        heading: "Revenue Catalyst",
+        firstField: "Includes",
+        secField: "KPI Guarantee",
+        headingWidth: "w-[215px]",
+        ideal: "Enterprise",
+        tech: [
+            "Dedicated data scientist ",
+            "custom ML models",
             "DevOps team"
         ],
         Win: [

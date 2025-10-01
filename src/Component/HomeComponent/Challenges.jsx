@@ -11,17 +11,15 @@ import { next, previous } from "@/AllAssets/AllAsssets";
 export default function Challenges() {
   const [activeIndex, setActiveIndex] = useState(1);
 
-  return (
-    <section className="w-full bg-white">
-    <div className="mx-auto my-20 max-w-7xl px-6 sm:px-8 lg:px-12">
+ return (
+    <div className="px-[72px] my-20">
       {/* Heading */}
-      <div className="mb-12 max-w-4xl">
-        <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
+      <div className="mb-12">
+        <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
           The Biggest Challenges We Help You <br />
           <span className="text-black">Overcome</span>
         </h2>
       </div>
-
       {/* Swiper */}
       <Swiper
         modules={[Navigation]}
@@ -44,7 +42,6 @@ export default function Challenges() {
         {challenges.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="rounded-[25px] bg-white overflow-hidden h-full flex flex-col  justify-center transition-all duration-300">
-
               <div
                 className={`absolute inset-0 flex flex-col justify-center p-6 text-white transition-opacity duration-300 ${activeIndex === index ? "bg-white opacity-100 rounded-[23px]" : "bg-black/0 opacity-0  rounded"
                   }`}
@@ -61,18 +58,15 @@ export default function Challenges() {
                     <span className="text-[60px] font-unbounded font-extralight">
                       {item.number}
                     </span>
-                    <h3 className="mt-2 text-2xl font-unbounded font-semibold sm:text-[32px]">
+                    <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm font-montserrat sm:text-base">
+                    <p className="text-[15px] mt-2 font-montserrat">
                       {item.desc}
                     </p>
                   </div>
                 </div>
-
               </div>
-
-
               <div className="p-6 flex flex-col justify-end h-[580px]">
                 <span className="text-[60px] font-unbounded font-extralight">
                   {item.number}
@@ -88,7 +82,6 @@ export default function Challenges() {
           </SwiperSlide>
         ))}
       </Swiper>
-
       {/* Custom Navigation Buttons at Bottom */}
       <div className="flex justify-center gap-6 mt-6">
         <button className="custom-prev  transition">
@@ -99,6 +92,6 @@ export default function Challenges() {
         </button>
       </div>
     </div>
-    </section>
   );
+
 }
