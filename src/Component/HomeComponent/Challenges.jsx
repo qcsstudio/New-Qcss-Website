@@ -43,17 +43,20 @@ export default function Challenges() {
         {challenges.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="rounded-[25px] bg-white overflow-hidden h-full flex flex-col  justify-center transition-all duration-300">
-              {activeIndex === index ? (
-                // ✅ Active Slide => Image + Overlay Text
+
+              <div
+                className={`absolute inset-0 flex flex-col justify-center p-6 text-white transition-opacity duration-300 ${activeIndex === index ? "bg-white opacity-100 rounded-[23px]" : "bg-black/0 opacity-0  rounded"
+                  }`}
+              >
                 <div className="relative">
                   <Image
                     src={item.image}
                     alt="swiperimages"
                     width={600}
                     height={400}
-                    className="w-full h-full object-cover"
+                    className="w-full  rounded-xl h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white">
+                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white rounded-2xl">
                     <span className="text-[60px] font-unbounded font-extralight">
                       {item.number}
                     </span>
@@ -65,20 +68,21 @@ export default function Challenges() {
                     </p>
                   </div>
                 </div>
-              ) : (
-                // ❌ Inactive Slide => Text-only
-                <div className="p-6 flex flex-col justify-end h-[580px]">
-                  <span className="text-[60px] font-unbounded font-extralight">
-                    {item.number}
-                  </span>
-                  <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
-                    {item.title}
-                  </h3>
-                  <p className="text-[15px] mt-2 font-montserrat">
-                    {item.desc}
-                  </p>
-                </div>
-              )}
+
+              </div>
+
+
+              <div className="p-6 flex flex-col justify-end h-[580px]">
+                <span className="text-[60px] font-unbounded font-extralight">
+                  {item.number}
+                </span>
+                <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
+                  {item.title}
+                </h3>
+                <p className="text-[15px] mt-2 font-montserrat">
+                  {item.desc}
+                </p>
+              </div>
             </div>
           </SwiperSlide>
         ))}
@@ -87,10 +91,10 @@ export default function Challenges() {
       {/* Custom Navigation Buttons at Bottom */}
       <div className="flex justify-center gap-6 mt-6">
         <button className="custom-prev  transition">
-        <Image src={previous} width={100} height={100} className="w-full h-full" alt="previuosbutton"/>
+          <Image src={previous} width={100} height={100} className="w-full h-full" alt="previuosbutton" />
         </button>
         <button className="custom-next  transition">
-            <Image src={next} width={100} height={100} className="w-full h-full" alt="nextbutton"/>
+          <Image src={next} width={100} height={100} className="w-full h-full" alt="nextbutton" />
         </button>
       </div>
     </div>

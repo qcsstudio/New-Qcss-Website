@@ -1,18 +1,29 @@
 "use client";
 import { next, previous } from "@/AllAssets/AllAsssets";
 import { Happyclients } from "@/Data/HomePage/Clients";
-import React, { useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/navigation';
 import Image from "next/image";
 
 
 const Clients = () => {
-    const [activeIndex, setActiveIndex] = useState(0)
+    const [activeIndex, setActiveIndex] = useState(1);
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+    console.log("client")
+    const handleNext = useCallback(() => {
+        setActiveIndex(activeIndex + 1)
+    }, [activeIndex])
+    const handlePrevious = () => {
+        if (activeIndex > 0) {
+            setActiveIndex(activeIndex - 1)
 
-
+        }
+    }
+    console.log(activeIndex, "activeIndexactiveIndexactiveIndex")
     return (
         <div className="px-6 md:px-[72px] my-12 md:my-20">
             {/* Heading */}
@@ -25,98 +36,71 @@ const Clients = () => {
                 </p>
             </div>
 
-            <div className="relative flex flex-col items-center">
+
+            {/* Swiper */}
+            <div className="">
                 <Swiper
                     modules={[Navigation]}
-                    spaceBetween={16}
+                    spaceBetween={30}
                     slidesPerView={1}
-                    loop={true}
+                    centeredSlides={true}
                     initialSlide={0}
                     navigation={{
                         nextEl: ".custom-next1",
                         prevEl: ".custom-prev1",
                     }}
+                    // speed={200}
+                    // lazy={true}
+                    loop={true}
+                    onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                     breakpoints={{
-                        640: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 24,
-                        },
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 24,
-                        },
-                        1280: {
-                            slidesPerView: 6,
-                            spaceBetween: 24,
-                        },
+                        768: { slidesPerView: 2, centeredSlides: true, initialSlide: 1 },
+                        1024: { slidesPerView: 3, centeredSlides: true, initialSlide: 1 },
                     }}
-                    onSwiper={(swiper) => {
-                        setActiveIndex(swiper.realIndex);
-                    }}
-                    onSlideChange={(swiper) => {
-                        setActiveIndex(swiper.realIndex);
-                    }}
-                    scrollbar={true}
-                    grabCursor={true}       // cursor ko grab banata hai
-                    freeMode={false}
-                    className="w-full pb-12"
                 >
                     {Happyclients.map((item, index) => (
-                        <SwiperSlide
-                            key={index}
-                            className="flex justify-center items-center "
-                        >
-                            {activeIndex === index ? (
-                                <div className="p-4 text-center">
-                                    <Image
-                                        src={item.logo}
-                                        width={80}
-                                        height={80}
-                                        alt="Client"
-                                        className="w-full h-full"
-                                    />
-                                    <p className="text-gray-700 text-sm md:text-base mb-4">
-                                        {item.desc}
-                                    </p>
-                                    <h4 className="font-bold text-sm md:text-base">
-                                        {item.position}
-                                    </h4>
-                                </div>
-                            ) : (
+                        <SwiperSlide key={index}>
+                            <div className="rounded-[25px] bg-white overflow-hidden h-full flex flex-col justify-center transition-all duration-300 relative">
                                 <Image
                                     src={item.image}
-                                    width={80}
-                                    height={80}
+                                    width={184}
+                                    height={230}
+                                    // loading="lazy"
                                     alt="Client"
-                                    className="w-full h-full"
+                                    className="w-full h-full object-cover"
                                 />
-                            )}
+                                {/* Overlay */}
+                                <div
+                                    className={`absolute inset-0 flex flex-col justify-center p-6 text-white transition-opacity duration-300 ${activeIndex === index ? "bg-white opacity-100" : "bg-black/0 opacity-0"
+                                        }`}
+                                >
+                                    <div className="text-center">
+                                        <Image
+                                            src={item.logo}
+                                            width={80}
+                                            height={80}
+                                            // loading="lazy"
+                                            alt="Client Logo"
+                                            className="mx-auto mb-4"
+                                        />
+                                        <p className="text-gray-700 text-sm md:text-base mb-2">{item.desc}</p>
+                                        <h4 className="font-bold text-sm md:text-base">{item.position}</h4>
+                                    </div>
+                                </div>
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
-                {/* -----------------Custom Buttons-------------- */}
-                <div className="flex justify-center gap-6 mt-6">
-                    <button
-                        className=" p-3 custom-prev1  border rounded-full hover:bg-gray-200 transition"
-                    >
-                        <Image
-                            src={previous}
-                            width={30}
-                            height={30}
-                            alt="Previous button"
-                            className="w-full h-full"
-                        />
+                {/* Custom Navigation Buttons at Bottom */}
+                <div className="flex justify-center  gap-6 mt-6 b">
+                    <button className="custom-prev1 transition">
+                        prev1
+                        <Image src={previous} width={100} height={100} className="w-full h-full" alt="previuosbutton" />
                     </button>
-                    <button
-
-                        className=" p-3 custom-next1 border rounded-full hover:bg-gray-200 transition"
-                    >
-                        <Image src={next} width={30} height={30} alt="Next button" className="w-full h-full" />
+                    <button className="custom-next1  transition">
+                        NEXY
+                        <Image src={next} width={100} height={100} className="w-full h-full" alt="nextbutton" />
                     </button>
                 </div>
             </div>
@@ -125,3 +109,7 @@ const Clients = () => {
 };
 
 export default Clients;
+
+
+
+
