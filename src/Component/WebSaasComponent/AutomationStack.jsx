@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const AutomationStack = ({ heading, cardData, heading1, slidesPerView ,para}) => {
     return (
         <>
-            <section className="px-[72px] mt-12">
+            <section className=" sm:mx-[20px] sm:p-[10px] lg:px-[72px]  mt-12">
                 <Heading heading={heading} />
                 {
                     heading1 && <Heading heading={heading1} />

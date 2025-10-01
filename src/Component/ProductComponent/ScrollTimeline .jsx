@@ -212,14 +212,14 @@ export const ScrollTimeline = ({
             <div className="relative px-5 ">
                 <div className="relative mx-auto ">
                     <div
-                        className={cn(getConnectorClasses(), "h-full absolute top-0 border z-10  sm:hidden")}
+                        className={cn(getConnectorClasses(), "h-full absolute top-0 border z-10  lg:block sm:hidden")}
                     ></div>
 
                     {/* === MODIFICATION START === */}
                     {progressIndicator && (
                         <>
                             <motion.div
-                                className="absolute top-0 z-10  sm:hidden"
+                                className="absolute top-0 z-10 lg:block sm:hidden"
                                 style={{
                                     height: progressHeight,
                                     width: progressLineWidth,
@@ -235,7 +235,7 @@ export const ScrollTimeline = ({
                                 }}
                             />
                             <motion.div
-                                className="absolute z-20  sm:hidden" 
+                                className="absolute z-20  lg:block  sm:hidden" 
                                 style={{
                                     top: progressHeight,
                                     left: "50%",

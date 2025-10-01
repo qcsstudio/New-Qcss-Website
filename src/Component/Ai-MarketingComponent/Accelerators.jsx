@@ -22,7 +22,7 @@ const features = [
 
 const FeatureCards = ({heading}) => {
   return (
-    <div className="px-[72px] mt-20">
+    <div className=" sm:mx-[20px] sm:p-[10px] lg:px-[72px] mt-20">
         <Heading heading={heading}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((item, idx) => (
