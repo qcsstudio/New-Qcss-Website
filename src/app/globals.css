@@ -2,7 +2,9 @@
 
 .Container {
   max-width: 1280px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0px 20px;
+  border: 1px solid black;
 }
 
 body {
@@ -107,9 +109,9 @@ body {
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
 
-  -moz-animation: my-animation 5s linear infinite;
-  -webkit-animation: my-animation 5s linear infinite;
-  animation: my-animation 5s linear infinite;
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
 }
 
 /* for Firefox */
@@ -166,9 +168,9 @@ body {
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 
-  -moz-animation: my-animation1 5s linear infinite;
-  -webkit-animation: my-animation1 5s linear infinite;
-  animation: my-animation1 5s linear infinite;
+  -moz-animation: my-animation1 15s linear infinite;
+  -webkit-animation: my-animation1 15s linear infinite;
+  animation: my-animation1 15s linear infinite;
 }
 
 

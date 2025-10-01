@@ -2,29 +2,18 @@ import { BrandsData } from '@/Data/HomePage/BrandsData'
 import Image from 'next/image'
 import React from 'react'
 import { IoMdPause } from "react-icons/io";
+import Heading from '../HeadingComponent/Heading';
 
 
-const Brands = () => {
+const Brands = ({heading,heading1}) => {
     return (
         <>
-      <div className="px-[72px]">
+      <div className="container mx-auto px-10 ">
+     <Heading heading={heading} heading1={heading1}/>
         {/* Heading */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
-            QuantumCrafters:
-            <br />
-            <span className="text-gray-900">The Growth Engine Behind Modern Brands</span>
-          </h2>
-          <p className="mt-4 text-base font-montserrat font-semibold text-gray-900 sm:text-lg">
-            We're not just another agency. We're your AI-native growth partner.
-          </p>
-          <p className="mt-3 text-sm font-montserrat text-gray-600 sm:text-base">
-            At QuantumCrafters Studio, we blend human creativity with AI precision so brands can grow faster, work smarter, and scale effortlessly. From startups chasing traction to enterprises optimising every touchpoint, we turn digital chaos into automated clarity.
-          </p>
-        </div>
 
         {/* Features Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-3">
           {BrandsData.map((item, index) => (
             <div
               key={index}

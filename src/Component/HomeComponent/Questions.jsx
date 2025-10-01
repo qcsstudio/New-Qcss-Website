@@ -22,12 +22,12 @@ const Questions = ({FaqData}) => {
   return (
         <>
             {/* <IconNtext text="FAQ's" link="/images/Icons/FAQ.png" /> */}
-             <div className="my-12">
-                    <h2 className="text-3xl md:text-[40px] font-bold font-unbounded text-center ">
+             
+                    <h2 className="text-3xl md:text-[45px] font-bold font-unbounded text-center mt-10">
                         Frequently Asked Question's
                     </h2>
-                </div>
-            <div className="flex flex-col md:flex-row justify-between items-start  w-[90%] mx-auto">
+             
+            <div className="flex flex-col md:flex-row justify-between items-start container mx-auto px-10">
                 {/* Left Section */}
                 <div className="md:w-1/2 space-y-4 p flex flex-col justify-center  mt-20">
                     <motion.h2

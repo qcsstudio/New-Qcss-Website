@@ -1,24 +1,20 @@
 import { automation, marketing } from "@/Data/HomePage/PowerSection";
 import React from "react";
 import { IoMdPause } from "react-icons/io";
+import Heading from "../HeadingComponent/Heading";
 
-export default function PowerSection() {
+export default function PowerSection({heading,heading1}) {
 
     return (
         <>
-            <div className="px-[72px] mt-20">
+            <div className="container mx-auto px-10">
                 {/* Heading */}
-                <div className="mb-12">
-                    <h2 className="text-3xl md:text-[40px] font-bold font-unbounded ">
-                        Double the Power: <br />
-                        <span className="text-black">AI Marketing & SaaS Automation</span>
-                    </h2>
-                </div>
+               <Heading heading={heading} heading1={heading1}/>
                 {/* Two Columns */}
-                <div className="grid md:grid-cols-2 gap-8 mb-10">
+                <div className="grid lg:grid-cols-2 gap-8 mb-10">
                     {/* Left box */}
                     <div className="bg-gray-50 rounded-2xl p-5 shadow-sm">
-                        <h3 className="text-[35px] font-bold mb-6 font-unbounded">
+                        <h3 className="md:text-[35px] text-[30px] font-bold mb-6 font-unbounded">
                             AI-Powered Digital <br />Marketing{" "}
                             <span className=" text-[25px] font-medium">(Grow Demand)</span>
                         </h3>

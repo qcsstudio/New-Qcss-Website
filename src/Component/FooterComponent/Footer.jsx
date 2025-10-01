@@ -18,7 +18,7 @@ const Footer = () => {
               </div>
               <p className={`text-[#FFFFFF]  mt-4 text-lg leading-relaxed px-4 md:px-0 text-center md:text-start  lg:w-[72%] font-unbounded `}>The next big thing starts here— drop us a line and let's get creating!</p>
             </div>
-            <div className='flex flex-col sm:flex-row items-start gap-8 md:gap-24 mt-8 md:mt-0'>
+            <div className='flex  sm:flex-row items-start gap-8 md:gap-24 mt-8 md:mt-0'>
               <div>
                 <h2 className={`font-semibold mb-4 text-[15px] font-unbounded`}>Quick Links</h2>
                 <ul className={`text-[#FFFFFF] space-y-3 text-sm font-montserrat`}>

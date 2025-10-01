@@ -9,21 +9,21 @@
             description:
                 "Machine learning powers every campaign, workflow and build. Machine learning powers every campaign, workflow and build.",
         },
-        // {
-        //     title: "Result-Centric KPIs",
-        //     description:
-        //         " Projects measured against revenue, CAC, LTV and pipeline velocity.",
-        // },
-        // {
-        //     title: "Human-Plus-AI Creativity",
-        //     description:
-        //         "Original ideas scaled by generative models for speed.",
-        // },
-        // {
-        //     title: "Enterprise-Grade Security",
-        //     description:
-        //         "GDPR and SOC-2 aligned processes protect data.",
-        // },
+        {
+            title: "Result-Centric KPIs",
+            description:
+                " Projects measured against revenue, CAC, LTV and pipeline velocity.",
+        },
+        {
+            title: "Human-Plus-AI Creativity",
+            description:
+                "Original ideas scaled by generative models for speed.",
+        },
+        {
+            title: "Enterprise-Grade Security",
+            description:
+                "GDPR and SOC-2 aligned processes protect data.",
+        },
     ];
 
     export const HomerightFeatures = [
@@ -42,14 +42,14 @@
             description:
                 "Real-time dashboards + monthly strategy calls.",
         },
-        // {
-        //     title: "Scalable Architecture",
-        //     description: "Modular SaaS, API-first builds grow with demand.",
-        // },
-        // {
-        //     title: "Dedicated Success Team",
-        //     description: "One point of contact, proactive optimisation.",
-        // },
+        {
+            title: "Scalable Architecture",
+            description: "Modular SaaS, API-first builds grow with demand.",
+        },
+        {
+            title: "Dedicated Success Team",
+            description: "One point of contact, proactive optimisation.",
+        },
     ];
 
     export const AboutusMiddle = [

@@ -24,7 +24,7 @@ import { supportCards } from "@/Data/HomePage/weSupportData";
 import Herosection3d from "@/Container/HeroSection/Herosection3d";
 
 const HomeContainer = () => {
-  
+
   const titles = [
     "Marketing",
     "Automation",
@@ -46,30 +46,30 @@ const HomeContainer = () => {
   return (
     <>
       <Navbar />
-      
-        <Herosection3d
-          heading="Your Partner in AI‑Driven Growth in"
-          para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
-          titles={titles}
-          buttons={buttons}
-        />
-        <AISEOFeatures />
-        <NextGenTools />
-       
-          {/* <HeroSection/> */}
-          <Brands />
-          <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" />
-          <PowerSection />
-          <Challenges />
-          <Clients />
-          <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures} />
-          <CTA />
-    
-        <Questions FaqData={HomePageFaq} />
-      
+
+      <Herosection3d
+        heading="Your Partner in AI‑Driven Growth in"
+        para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
+        titles={titles}
+        buttons={buttons}
+      />
+      <Brands heading="QuantumCrafters: " heading1="The Growth Engine Behind Modern Brands" />
+      <AISEOFeatures heading="How We Remove Them" heading1="(With Numbers)" />
+      {/* <NextGenTools /> */}
+
+
+      <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" headingHeight="h-[80px]" />
+      <PowerSection heading="Double the Power:" heading1="AI Marketing & SaaS Automation"/>
+      <Challenges heading="The Biggest Challenges We Help You" heading1="Overcome"/>
+      <Clients />
+      <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures} />
+      <CTA />
+
+      <Questions FaqData={HomePageFaq} />
+
       <Footer />
     </>
   )
 }
 
-export default  React.memo(HomeContainer)
+export default React.memo(HomeContainer)

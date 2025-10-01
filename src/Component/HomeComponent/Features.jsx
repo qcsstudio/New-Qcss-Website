@@ -6,10 +6,10 @@ const Features = ({ middleFeature, rightFeature }) => {
 
   return (
     <>
-      <div className="px-6 md:px-[72px] my-10">
+      <div className="container mx-auto px-10 mt-10">
         <div className="flex flex-col md:flex-row gap-8   ">
           {/* Left Section */}
-          <div className="md:w-2/4   flex flex-col justify-center  ">
+          <div className="md:w-2/4 h-[600px]  flex flex-col justify-center  ">
             <div className="w-[88%] ">
               <h2 className="text-3xl md:text-[40px] font-unbounded font-bold mb-4">What Makes QuantumCrafters Different</h2>
               <p className="text-gray- font-montserrat">At QuantumCrafters Studio, we blend human creativity with AI precision to help brands grow faster, work smarter,
