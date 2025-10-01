@@ -13,7 +13,7 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 const Growth = ({ heading, cardData, heading1 }) => {
  return (
         <>
-            <div className="px-[72px] mt-20">
+            <div className=" sm:mx-[20px] sm:p-[10px] lg:px-[72px] mt-20">
                 <Heading heading={heading} />
                 {
                     heading1 && <Heading heading={heading1} />
@@ -40,7 +40,7 @@ const Growth = ({ heading, cardData, heading1 }) => {
                         <SwiperSlide key={index} className="flex items-center justify-center">
                             <div className="bg-[#F8F8F8] rounded-xl p-4 h-[409px] flex flex-col sm:justify-between">
                                 <div>
-                                    <h3 className={`font-semibold text-lg md:text-[35px] mb-2 font-unbounded  w-[70%]`}>{item.heading}</h3>
+                                    <h3 className={` font-semibold text-lg md:text-[35px] mb-2 font-unbounded  w-[70%]`}>{item.heading}</h3>
                                     {
                                         item.time ? <p className={`text-gray-600 text-base md:text-[18px] font-light font-unbounded`}>
                                             {item.time}

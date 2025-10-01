@@ -7,19 +7,15 @@ import "swiper/css/navigation";
 import { challenges } from "@/Data/HomePage/challenges";
 import Image from "next/image";
 import { next, previous } from "@/AllAssets/AllAsssets";
+import Heading from "../HeadingComponent/Heading";
 
-export default function Challenges() {
+export default function Challenges({ heading, heading1 }) {
   const [activeIndex, setActiveIndex] = useState(1);
 
- return (
-    <div className="px-[72px] my-20">
-      {/* Heading */}
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
-          The Biggest Challenges We Help You <br />
-          <span className="text-black">Overcome</span>
-        </h2>
-      </div>
+  return (
+    <div className="container mx-auto px-10">
+
+      <Heading heading={heading} heading1={heading1} />
       {/* Swiper */}
       <Swiper
         modules={[Navigation]}
@@ -40,10 +36,10 @@ export default function Challenges() {
         className="pb-12"
       >
         {challenges.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="rounded-[25px] bg-white overflow-hidden h-full flex flex-col  justify-center transition-all duration-300">
+          <SwiperSlide key={index} className="rounded-[25px] overflow-hidden h-full flex  transition-all duration-300">
+            <div >
               <div
-                className={`absolute inset-0 flex flex-col justify-center p-6 text-white transition-opacity duration-300 ${activeIndex === index ? "bg-white opacity-100 rounded-[23px]" : "bg-black/0 opacity-0  rounded"
+                className={`absolute inset-0 flex flex-col justify-center p-6 text-white transition-opacity duration-300 ${activeIndex === index ? "bg-white  rounded-[23px]" : "bg-black/0 opacity-0  rounded"
                   }`}
               >
                 <div className="relative">
@@ -54,7 +50,7 @@ export default function Challenges() {
                     height={400}
                     className="w-full  rounded-xl h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white rounded-2xl">
+                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-center p-6 h-[580px] text-white rounded-2xl">
                     <span className="text-[60px] font-unbounded font-extralight">
                       {item.number}
                     </span>
@@ -67,7 +63,9 @@ export default function Challenges() {
                   </div>
                 </div>
               </div>
-              <div className="p-6 flex flex-col justify-end h-[580px]">
+
+              
+              <div className="p-6 flex flex-col justify-center h-[580px] rounded-2xl">
                 <span className="text-[60px] font-unbounded font-extralight">
                   {item.number}
                 </span>

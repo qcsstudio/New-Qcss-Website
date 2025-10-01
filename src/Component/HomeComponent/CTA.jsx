@@ -14,15 +14,15 @@ const CTA = () => {
         priority
       />
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-20 ">
-        <h2 className="text-2xl md:text-[40px] font-unbounded font-bold text-white max-w-[45rem] leading-snug ">
+      <div className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-20  sm:w-[50%] lg:w-full">
+        <h2 className="text-2xl lg:text-[40px] font-unbounded font-bold text-white max-w-[45rem] leading-snug sm:text-[12px]  ">
           Ready to transform growth with AI native strategies and tech?
         </h2>
         <div className="mt-6 flex flex-wrap gap-4 text-[20px]">
-          <button className="px-10 py-3 bg-[#000000] font-unbounded text-[#F5F5F5] font-medium rounded-md hover:bg-gray-900 transition">
+          <button className="sm:px-3  lg:px-6 py-3 bg-[#000000] font-unbounded text-[#F5F5F5] font-medium rounded-md hover:bg-gray-900 transition sm:text-[5px]  lg:text-[40px]">
             Book a Discovery Call
           </button>
-          <button className="px-10 py-3 bg-[#000000] font-unbounded text-[#F5F5F5] font-medium rounded-md hover:bg-gray-900 transition">
+          <button className="sm:px-3  lg:px-6 py-3 bg-[#000000] font-unbounded text-[#F5F5F5] font-medium rounded-md hover:bg-gray-900 transition sm:text-[5px] lg:text-[40px]">
             Test Your Samples
           </button>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
+import Heading from '../HeadingComponent/Heading';
 
-const AISEOFeatures = () => {
+const AISEOFeatures = ({heading,heading1}) => {
   const features = [
     {
       title: "AI SEO + AEO",
@@ -60,15 +61,11 @@ const AISEOFeatures = () => {
 
   return (
     <>
-      <div className="px-6 md:px-[72px] my-10">
-        <div className=" mb-16">
-          <h1 className="text-4xl font-bold font-unbounded leading-tight text-gray-900 sm:text-5xl  lg:text-[40px]">
-            How We Remove Them<br /> (With Numbers)
-          </h1>
+      <div className="container mx-auto px-10 ">
+       <Heading heading={heading} heading1={heading1}/>
+       
 
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
           {features.map((feature, index) => {
             const isLastColumn = (index + 1) % 3 === 0;
             const isLastRow = index >= features.length - 3;
@@ -77,17 +74,17 @@ const AISEOFeatures = () => {
               <div
                 key={index}
                 className={`bg-white   overflow-hidden
-          ${!isLastColumn ? "border-r" : ""}
-          ${!isLastRow ? "border-b" : ""}
+          ${!isLastColumn ? "md:border-r" : ""}
+          ${!isLastRow ? "md:border-b" : ""}
         `}
               >
                 <div className='transition-all duration-300 hover:shadow-xl hover:scale-105 '>
-                  <div className="px-10 py-8 justify-center items-start">
-                    <div className="w-[63%]">
-                      <h3 className="mt-4 text-xl font-semibold font-montserrat text-gray-900">
+                  <div className="lg:px-10 md:px-3 py-8 justify-center items-start">
+                    <div className=" ">
+                      <h3 className="mt-4 text-xl font-semibold   font-montserrat text-gray-900">
                         {feature.title} :
                       </h3>
-                      <p className="mt-2 text-gray-600 text-[15px] font-montserrat">
+                      <p className="mt-2 text-gray-600 text-[15px] font-montserrat lg:w-[63%] md:w-full">
                         {feature.description}
                       </p>
                     </div>

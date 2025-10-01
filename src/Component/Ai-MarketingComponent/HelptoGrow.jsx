@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const HelptoGrow = ({ heading, heading1, para }) => {
     return (
         <>
-            <div className="px-[72px] mt-20">
+            <div className=" sm:mx-[20px] sm:p-[10px] lg:px-[72px] mt-20">
                 <Heading heading={heading} />
                 {
                     heading1 && <Heading heading={heading1} />

@@ -23,15 +23,16 @@ const Herosection3d = ({ heading, para, titles }) => {
     }, [titleNumber, titles]);
     return (
         <>
-            <div className='w-full h-screen relative'>
+            <div className='w-full h-[90vh]  lg:h-[90vh] relative '>
+                
                 {/* // hide spline mark */}
-                <div className='w-[300px] h-[100px]  absolute bottom-0 right-0 bg-[#ececec] z-50'></div>
+                <div className='w-[300px] md:w-[160px] hidden md:block  sm:h-[70px]  absolute bottom-0 right-0  bg-[#ececec] z-101'></div>
 
                 <div className='w-full h-full  absolute z-100 ' >
-                    <div className='  absolute z-101 top-[20%] px-8 py-3 '>
-                        <div className="w-full sm:w-[50%] lg:w-[60%] xl:w-[65%] flex flex-col justify-center text-black sm:mt-[25rem] md:mt-[0rem] min-[320px]:mt-[20rem]  ">
+                    <div className='  absolute z-101 sm:top-0 lg:top-[20%] px-8 py-3 '>
+                        <div className="w-full sm:w-[100%] lg:w-[60%] xl:w-[65%] flex flex-col justify-center text-black  md:mt-[0rem] min-[320px]  ">
 
-                            <h1 className="text-5xl md:text-[45px] xl:text-[70px] font-unbounded xl:w-4xl tracking-tighter leading-[1.3] w-full font-bold ">
+                            <h1 className="text-4xl md:text-[48px] xs:text-[20px] xl:text-[70px]  font-unbounded xl:w-4xl tracking-tighter leading-[1.3] w-full font-bold ">
                                 <span className="text-spektr-cyan-50">
                                     {heading}
                                 </span>
@@ -83,12 +84,14 @@ const Herosection3d = ({ heading, para, titles }) => {
 
                             </motion.div>
                         </div>
-                        <button className='bg-[#F1813B]  text-white rounded-lg px-6 py-2'>Book a Free AI Growth Consultation</button>
+                        <button className='bg-[#F1813B]  text-white text-nowrap rounded-lg px-6 py-2'>Book a Free AI Growth Consultation</button>
                     </div>
                 </div>
 
 
-                <spline-viewer url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode" className="relative" ></spline-viewer>
+<spline-viewer className='md:block  hidden relative md:' url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode"></spline-viewer>
+
+                
             </div>
         </>
     )

@@ -6,17 +6,17 @@ const CaseStudyCard = ({ heading, heading1,data }) => {
     <>
 
 
-   <div className="px-[72px] mt-20">
+   <div className=" sm:mx-[20px] sm:p-[10px] lg:px-[72px]  mt-20">
       <Heading heading={heading} />
       {heading1 && <Heading heading={heading1} />}
 
       <div className="bg-[#D9D9D9] p-3">
-        <div className="bg-white p-3 flex gap-3 rounded-xl">
+        <div className="sm:block  bg-white p-3  lg:flex gap-3 rounded-xl">
           {/* Left Side (Image / Color Block) */}
-          <div className="bg-[#3B1414] w-1/2 h-[484px] rounded-xl "></div>
+          <div className="bg-[#3B1414] lg:w-1/2 sm:w-full sm:mb-2 h-[484px]  rounded-xl "></div>
 
           {/* Right Side */}
-          <div className="w-full md:w-1/2 p-6 flex flex-col justify-center border border-[#D9D9D9] rounded-xl">
+          <div className="w-full md:w-1/2  lg:w-1/2  sm:w-full p-6 flex flex-col justify-center border border-[#D9D9D9] rounded-xl">
             
             {/* Grey Box Placeholder */}
             {data.greyBox && (

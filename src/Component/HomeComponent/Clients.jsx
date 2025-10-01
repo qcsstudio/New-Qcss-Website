@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from "next/image";
+import Heading from "../HeadingComponent/Heading";
 const Clients = () => {
     const [activeIndex, setActiveIndex] = useState(1);
     const prevRef = useRef(null);
@@ -22,18 +23,14 @@ const Clients = () => {
     }
     console.log(activeIndex, "activeIndexactiveIndexactiveIndex")
     return (
-        <div className="px-6 md:px-[72px] my-12 md:my-20">
-            {/* Heading */}
-            <div className="mb-8 md:mb-12">
-                <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
-                    Real Results. Happy Clients.
-                </h2>
-                <p className="font-montserrat text-base md:text-[18px] my-4">
+        <div className="container mx-auto px-10">
+           
+            <Heading heading="Real Results. Happy Clients."/>
+             <p className="font-montserrat text-base md:text-[18px] my-4">
                     Loved & Trusted by <br /> +250 businesses.
                 </p>
-            </div>
             {/* Swiper */}
-            <div className="">
+           
                 <Swiper
                     modules={[Navigation]}
                     spaceBetween={30}
@@ -50,7 +47,7 @@ const Clients = () => {
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                     breakpoints={{
                         768: { slidesPerView: 2, centeredSlides: true, initialSlide: 1 },
-                        1024: { slidesPerView: 3, centeredSlides: true, initialSlide: 1 },
+                        1024: { slidesPerView: 5, centeredSlides: true, initialSlide: 1 },
                     }}
                 >
                     {Happyclients.map((item, index) => (
@@ -89,15 +86,15 @@ const Clients = () => {
                 {/* Custom Navigation Buttons at Bottom */}
                 <div className="flex justify-center  gap-6 mt-6 b">
                     <button className="custom-prev1 transition">
-                        prev1
+                        
                         <Image src={previous} width={100} height={100} className="w-full h-full" alt="previuosbutton" />
                     </button>
                     <button className="custom-next1  transition">
-                        NEXY
+                        
                         <Image src={next} width={100} height={100} className="w-full h-full" alt="nextbutton" />
                     </button>
                 </div>
-            </div>
+            
         </div>
     );
 };
