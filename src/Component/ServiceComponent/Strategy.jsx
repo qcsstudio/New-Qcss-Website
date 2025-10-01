@@ -10,18 +10,18 @@ export default function Strategy({ heading, desc, cards }) {
 
     return (
         <>
-            <div className="px-[72px] mt-20">
+            <section className="mx-auto mt-16 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
                 <Heading heading={heading} />
-                <p className="font-montserrat text-[18px]">{desc}</p>
-                <div className="flex flex-col md:flex-row gap-6 mt-5">
+                <p className="text-sm font-montserrat text-gray-600 sm:text-base">{desc}</p>
+                <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
                     {cards?.map((card, idx) => (
                         <Link
                             href={card.link || "#"}
                             key={idx}
-                            className="relative group  w-full  h-[470px] rounded-2xl overflow-hidden  "
+                            className="group relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                         >
                             {/* Background Image on Hover */}
-                            <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                            <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                                 <Image
                                     src={card.image}
                                     alt={card.title}
@@ -35,18 +35,18 @@ export default function Strategy({ heading, desc, cards }) {
                             {/* <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div> */}
 
                             {/* Content */}
-                            <div className="relative z-10 p-6 flex flex-col justify-center h-full gap-4">
-                                <div className="group-hover:text-white">
-                                    <h2 className="text-[60px] font-unbounded font-extralight">{card.number}</h2>
-                                    <h3 className="text-[35px] font-unbounded font-semibold">{card.title}</h3>
-                                    <p className="text-gray-600 font-montserrat text-[15px] group-hover:text-white">{card.subtitle}</p>
+                            <div className="relative z-10 flex h-full flex-col justify-between gap-6 p-6">
+                                <div className="space-y-3 group-hover:text-white">
+                                    <h2 className="text-4xl font-unbounded font-light text-gray-900 group-hover:text-white sm:text-[48px]">{card.number}</h2>
+                                    <h3 className="text-2xl font-unbounded font-semibold text-gray-900 group-hover:text-white sm:text-[30px]">{card.title}</h3>
+                                    <p className="text-sm font-montserrat text-gray-600 group-hover:text-white sm:text-base">{card.subtitle}</p>
                                 </div>
 
-                                <ul className="space-y-2 mt-4">
+                                <ul className="space-y-2">
                                     {card?.points.map((point, i) => (
-                                        <li key={i} className="flex items-center gap-2 text-[15px] font-montserrat group-hover:text-white">
-                                            <div className='w-[20px] h-[20px] rounded-full bg-[#F1813B] flex justify-center items-center'>
-                                                <div className='w-[10px] h-[10px] rounded-full bg-[#F9D8C3]' />
+                                        <li key={i} className="flex items-start gap-3 text-sm font-montserrat text-gray-700 transition group-hover:text-white sm:text-base">
+                                            <div className='mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#F1813B]'>
+                                                <div className='h-2.5 w-2.5 rounded-full bg-[#F9D8C3]' />
                                             </div> {point}
                                         </li>
                                     ))}
@@ -55,7 +55,7 @@ export default function Strategy({ heading, desc, cards }) {
                         </Link>
                     ))}
                 </div>
-            </div>
+            </section>
         </>
     );
 }

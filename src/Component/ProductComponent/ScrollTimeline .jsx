@@ -198,7 +198,7 @@ export const ScrollTimeline = ({
         <div
             ref={scrollRef}
             className={cn(
-                "relative min-h-screen w-full   px-6 md:px-[72px] my-10   ",
+                "relative mx-auto my-16 w-full max-w-7xl px-6 py-16 sm:px-8 lg:px-12",
                 darkMode ? "bg-background text-foreground" : "",
                 className
             )}

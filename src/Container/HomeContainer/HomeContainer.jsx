@@ -28,34 +28,44 @@ const HomeContainer = () => {
     "Marketing",
     "Automation",
     "SaaS Solutions"
-
   ]
   const buttons = [
-    {text:"Book a Free AI Growth Consultation"},
-    {link:"#"}
+    {
+      text: 'Book a Free AI Growth Consultation',
+      href: '/contactus',
+      variant: 'primary'
+    },
+    {
+      text: 'Explore AI Growth Playbooks',
+      href: '#ai-growth-playbooks',
+      variant: 'secondary'
+    }
   ]
+
   return (
     <>
       <Navbar />
-      <Herosection heading="Your Partner in AI‑Driven Growth in "
-        para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo‑charged by AI."
-        titles={titles}
-        buttons={buttons}
-
-    />
-      <AISEOFeatures />
-      <NextGenTools />
-      <div className=''>
-        {/* <HeroSection/> */}
-        <Brands />
-        <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" />
-        <PowerSection />
-        <Challenges />
-        <Clients />
-        <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures} />
-        <CTA />
-      </div>
-      <Questions FaqData={HomePageFaq} />
+      <main id="main-content" role="main" className="flex flex-col">
+        <Herosection
+          heading="Your Partner in AI‑Driven Growth in"
+          para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
+          titles={titles}
+          buttons={buttons}
+        />
+        <AISEOFeatures />
+        <NextGenTools />
+        <div>
+          {/* <HeroSection/> */}
+          <Brands />
+          <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" />
+          <PowerSection />
+          <Challenges />
+          <Clients />
+          <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures} />
+          <CTA />
+        </div>
+        <Questions FaqData={HomePageFaq} />
+      </main>
       <Footer />
     </>
   )

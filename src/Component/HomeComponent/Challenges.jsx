@@ -12,10 +12,11 @@ export default function Challenges() {
   const [activeIndex, setActiveIndex] = useState(1);
 
   return (
-    <div className="px-[72px] my-20">
+    <section className="w-full bg-white">
+    <div className="mx-auto my-20 max-w-7xl px-6 sm:px-8 lg:px-12">
       {/* Heading */}
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
+      <div className="mb-12 max-w-4xl">
+        <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
           The Biggest Challenges We Help You <br />
           <span className="text-black">Overcome</span>
         </h2>
@@ -60,10 +61,10 @@ export default function Challenges() {
                     <span className="text-[60px] font-unbounded font-extralight">
                       {item.number}
                     </span>
-                    <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
+                    <h3 className="mt-2 text-2xl font-unbounded font-semibold sm:text-[32px]">
                       {item.title}
                     </h3>
-                    <p className="text-[15px] mt-2 font-montserrat">
+                    <p className="mt-3 text-sm font-montserrat sm:text-base">
                       {item.desc}
                     </p>
                   </div>
@@ -98,5 +99,6 @@ export default function Challenges() {
         </button>
       </div>
     </div>
+    </section>
   );
 }

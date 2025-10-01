@@ -39,47 +39,47 @@ const data = [
 export default function Mission() {
     return (
         <>
-            <div className="px-6 md:px-[72px] my-10 ">
-                <h2 className="text-3xl md:text-[40px] font-bold font-unbounded text-[#000000]">
+            <section className="mx-auto my-12 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+                <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
                    Mission & Vision
                 </h2>
-                <p className="mt-2 text-[18px] font-montserrat text-[#000000]  ">
+                <p className="mt-2 text-sm font-montserrat text-gray-600 sm:text-base">
                     We work to create most attractive & meaningful place for small businesses. Our Team always ready to help You
                 </p>
 
-                <div className="mt-8 flex flex-col gap-8 md:flex-row md:justify-center md:gap-10 md:p-10">
+                <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
                     {data.map((item, idx) => (
-                        <div key={idx} className={`relative w-full md:w-1/3 pb-8 rounded-xl shadow-md ${item.color}`}>
+                        <div key={idx} className={`relative flex h-full flex-col overflow-hidden rounded-2xl shadow-md ${item.color}`}>
                             {/* Main Card */}
                             <div
-                                className={` rounded-xl p-6 text-white `}
+                                className="rounded-2xl p-6 text-white"
                             >
-                                <span className="text-[16px] bg-black/20 px-3 py-1 rounded-md font-montserrat">
+                                <span className="inline-block rounded-md bg-black/20 px-3 py-1 text-xs font-montserrat uppercase tracking-wide">
                                     {item.label}
                                 </span>
-                                <h2 className="text-[35px] font-semibold font-unbounded mt-4">{item.title}</h2>
-                                <p className="mt-3 text-[18px] leading-relaxed font-montserrat ">{item.desc}</p>
+                                <h2 className="mt-4 text-2xl font-unbounded font-semibold sm:text-[32px]">{item.title}</h2>
+                                <p className="mt-3 text-sm font-montserrat leading-relaxed text-white/90 sm:text-base">{item.desc}</p>
                             </div>
 
                             {/* Small Overlapping Card */}
-                            <div className="mt-6 mx-6 bg-white p-4 shadow-lg md:absolute md:mt-0 md:mx-0 md:-bottom-20 md:-right-8">
-                                <div className="flex justify-between gap-5 items-center">
+                            <div className="mx-6 -mt-6 rounded-xl bg-white p-4 shadow-lg md:-mt-10 md:self-end">
+                                <div className="flex items-center justify-between gap-5">
                                     <div>
-                                        <h3 className="font-semibold text-[35px] font-unbounded text-[#7F7F7F]">
+                                        <h3 className="text-2xl font-unbounded font-semibold text-[#7F7F7F] sm:text-[28px]">
                                             {item.smallTitle}
                                         </h3>
-                                        <p className="text-xs text-[#7F7F7F] font-montserrat">{item.smallSubtitle}</p>
+                                        <p className="text-xs font-montserrat uppercase tracking-wide text-[#7F7F7F]">{item.smallSubtitle}</p>
                                     </div>
                                     {/* Mini bar chart mock */}
-                                    <div className="flex items-end gap-1 ">
-                                        <Image src={item.image} width={100} height={100} className="w-full h-full "/>
+                                    <div className="flex items-end gap-1">
+                                        <Image src={item.image} width={100} height={100} className="h-16 w-auto object-contain" alt={`${item.title} chart`}/>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
+            </section>
         </>
     );
 }

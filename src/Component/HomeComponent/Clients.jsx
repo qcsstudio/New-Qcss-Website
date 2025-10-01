@@ -25,13 +25,13 @@ const Clients = () => {
     }
     console.log(activeIndex, "activeIndexactiveIndexactiveIndex")
     return (
-        <div className="px-6 md:px-[72px] my-12 md:my-20">
+        <section className="mx-auto my-20 w-full max-w-7xl px-6 sm:px-8 lg:px-12">
             {/* Heading */}
             <div className="mb-8 md:mb-12">
-                <h2 className="text-3xl md:text-[40px] font-bold font-unbounded">
+                <h2 className="text-3xl font-unbounded font-bold text-gray-900 sm:text-4xl lg:text-[40px]">
                     Real Results. Happy Clients.
                 </h2>
-                <p className="font-montserrat text-base md:text-[18px] my-4">
+                <p className="my-4 text-sm font-montserrat text-gray-600 sm:text-base">
                     Loved & Trusted by <br /> +250 businesses.
                 </p>
             </div>
@@ -104,7 +104,7 @@ const Clients = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
