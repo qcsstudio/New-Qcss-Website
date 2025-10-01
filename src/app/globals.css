@@ -94,6 +94,8 @@ body {
   animation: my-animation1 5s linear infinite;
 }
 
+
+
 /* for Firefox */
 @-moz-keyframes my-animation1 {
   from {
