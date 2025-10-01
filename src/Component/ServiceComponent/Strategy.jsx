@@ -10,7 +10,7 @@ export default function Strategy({ heading, desc, cards }) {
 
 return (
         <>
-            <div className="px-[72px] mt-20">
+            <div className="px-[72px] mt-20 sm:mt-[200px]">
                 <Heading heading={heading} />
                 <p className="font-montserrat text-[18px]">{desc}</p>
                 <div className="flex flex-col md:flex-row gap-6 mt-5">

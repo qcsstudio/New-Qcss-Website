@@ -212,14 +212,14 @@ export const ScrollTimeline = ({
             <div className="relative px-5 ">
                 <div className="relative mx-auto ">
                     <div
-                        className={cn(getConnectorClasses(), "h-full absolute top-0 border z-10")}
+                        className={cn(getConnectorClasses(), "h-full absolute top-0 border z-10  sm:hidden")}
                     ></div>
 
                     {/* === MODIFICATION START === */}
                     {progressIndicator && (
                         <>
                             <motion.div
-                                className="absolute top-0 z-10 "
+                                className="absolute top-0 z-10  sm:hidden"
                                 style={{
                                     height: progressHeight,
                                     width: progressLineWidth,
@@ -235,7 +235,7 @@ export const ScrollTimeline = ({
                                 }}
                             />
                             <motion.div
-                                className="absolute z-20"
+                                className="absolute z-20  sm:hidden" 
                                 style={{
                                     top: progressHeight,
                                     left: "50%",
@@ -244,7 +244,7 @@ export const ScrollTimeline = ({
                                 }}
                             >
                                 <motion.div
-                                    className="w-5 h-5 rounded-full"
+                                    className="w-5 h-5 rounded-full "
                                     style={{
                                         background:
                                             "radial-gradient(circle, rgba(241,129,59,0.8) 0%, rgba(241,180,120,0.5) 40%, rgba(241,129,59,0) 70%)",
@@ -296,7 +296,7 @@ export const ScrollTimeline = ({
                                     <div                    // circles
                                         className={cn(
                                             "absolute top-1/2 transform -translate-y-1/2 z-30",
-                                            "left-1/2 -translate-x-1/2  "
+                                            "left-1/2 -translate-x-1/2  sm:hidden  "
                                         )}
                                     >
                                         <motion.div

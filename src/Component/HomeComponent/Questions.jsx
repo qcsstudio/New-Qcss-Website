@@ -52,7 +52,7 @@ const Questions = ({FaqData}) => {
                     </p>
                 </div>
                 {/* Right Section (FAQ List) */}
-                <div className={`md:w-1/2 space-y-4 mt-6 md:mt-0 font-montserrat`}>
+                <div className={`md:w-1/2 sm:w-full space-y-4 mt-6 md:mt-0 font-montserrat`}>
                     {FaqData?.map((item, index) => (
                         <div key={index} className="bg-gray-100 p-4 rounded-lg cursor-pointer"
                             onClick={() => toggleAnswer(index)}>
