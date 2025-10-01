@@ -29,10 +29,10 @@ const Navbar = () => {
         </div>
 
 
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center md:hidden ">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-900 transition hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-900 transition hover:bg-gray-100 focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-gray-400"
             aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
             {menuOpen ? <HiX className=" w-6 h-6" /> : <HiMenu className=" w-6 h-6" />}
