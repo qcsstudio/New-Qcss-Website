@@ -44,58 +44,55 @@ const HomeContainer = () => {
   return (
     <>
       <Navbar />
-
+      <HeroSection3D
+        heading="Your Partner in AI‑Driven Growth in"
+        para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
+        titles={titles}
+        buttons={buttons}
+      />
       <Suspense fallback={<div>Loading...</div>}>
-        <HeroSection3D
-          heading="Your Partner in AI‑Driven Growth in"
-          para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
-          titles={titles}
-          buttons={buttons}
-        />
-      </Suspense>
- <Suspense fallback={<div>Loading...</div>}>
-       <Brands heading="QuantumCrafters: " heading1="The Growth Engine Behind Modern Brands" />
+        <Brands heading="QuantumCrafters: " heading1="The Growth Engine Behind Modern Brands" />
 
- </Suspense>
-  <Suspense fallback={<div>Loading...</div>}>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <AISEOFeatures heading="How We Remove Them" heading1="(With Numbers)" />
 
-  </Suspense>
+      </Suspense>
 
       {/* <NextGenTools /> */}
 
-  <Suspense fallback={<div>Loading...</div>}>
-      <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" headingHeight="h-[80px]" />
-
-  </Suspense>
-  <Suspense fallback={<div>Loading...</div>}>
-      <PowerSection heading="Double the Power:" heading1="AI Marketing & SaaS Automation" />
-
-  </Suspense>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Challenges heading="The Biggest Challenges We Help You" heading1="Overcome" />
-
-  </Suspense>
-
-    <Suspense fallback={<div>Loading...</div>}>
-      <Clients />
-
-  </Suspense>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures} />
-
-  </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
-    <CTA />
-  </Suspense>
-  
-  <Suspense fallback={<div>Loading...</div>}>
-      <Questions FaqData={HomePageFaq} />
-  </Suspense>
- <Suspense fallback={<div>Loading...</div>}>
-       <Footer />
-  </Suspense>
-     
+        <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" headingHeight="h-[80px]" />
+
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <PowerSection heading="Double the Power:" heading1="AI Marketing & SaaS Automation" />
+
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Challenges heading="The Biggest Challenges We Help You" heading1="Overcome" />
+
+      </Suspense>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Clients />
+
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures} />
+
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <CTA />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Questions FaqData={HomePageFaq} />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Footer />
+      </Suspense>
+
     </>
   )
 }
