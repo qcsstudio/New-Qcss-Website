@@ -2,7 +2,7 @@
 import Navbar from '@/components/Navbar'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-const page = () => {
+const Page = () => {
 
     const [students, setStudents] = useState([])
     const [userId, setUserId] = useState(null)
@@ -76,8 +76,6 @@ const page = () => {
                 router.push("/quiz")
                 setIsLoading(false)
             }
-            console.log(jsonData, "jsonDatajsonDatajsonData")
-            // router.push("/quiz")
         } catch (error) {
             console.log(error, "===>")
             setIsLoading(false)
@@ -119,7 +117,7 @@ const page = () => {
                             <li className='leading-[50px]'>Do not switch tabs or minimize the browser — the quiz will end automatically!</li>
                             <li className='leading-[50px]'>There are 30 questions.</li>
                             <li className='leading-[50px]'>Each question has a 50-second timer.</li>
-                            <li className='leading-[50px]'>Do not refresh screen. you can't re-submit test.</li>
+                           <li className='leading-[50px]'>Do not refresh screen. you can&apos;t re-submit test.</li>
                             <li className='leading-[50px]'>Make sure you have good  internet conectivity</li>
                         </ul>
                         <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-[30px]' disabled={isLoading?true:false} onClick={() => startQuiz()}>{isLoading?"Loading..":"Start Quiz"}</button>
@@ -133,4 +131,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
