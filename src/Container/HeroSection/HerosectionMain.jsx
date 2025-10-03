@@ -89,7 +89,7 @@ const HerosectionMain = ({ heading, para, titles }) => {
                 </div>
 
 
-                {/* <spline-viewer className='md:block  hidden relative md:' url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode"></spline-viewer> */}
+                <spline-viewer className='md:block  hidden relative md:' url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode"></spline-viewer>
 
 
             </div>
