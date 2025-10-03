@@ -1,42 +1,18 @@
 'use client'
 import React from 'react'
 import Heading from '../HeadingComponent/Heading'
-import { Navigation, Pagination, FreeMode, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
-// import {Swiper} from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { MdKeyboardArrowRight } from 'react-icons/md';
 
-const Growth = ({ heading, cardData, heading1 }) => {
+
+const DetailsBenefits = ({ heading, cardData, heading1 }) => {
  return (
         <>
             <div className="container mx-auto px-10 ">
                 <Heading heading={heading} heading1={heading1} />
                 
-                <Swiper
-                    modules={[Navigation, Pagination, FreeMode, Autoplay]}
-                    spaceBetween={16}
-                    slidesPerView={1.2}
-                    breakpoints={{
-                        640: { slidesPerView: 1.5, spaceBetween: 20 },
-                        768: { slidesPerView: 2.2, spaceBetween: 20 },
-                        1024: { slidesPerView: 3.5, spaceBetween: 24 },
-                    }}
-                    loop={true}
-                    freeMode={true}
-                    // autoplay={{
-                    //     delay: 1000,
-                    //     disableOnInteraction: false,
-                    // }}
-                    speed={1000}
-                    className=" my-8"
-                >
+             
+                <div className="flex justify-between gap-5 ">
                     {cardData?.map((item, index) => (
-                        <SwiperSlide key={index} className="flex items-center justify-center w-full ">
-                            <div className="bg-[#F8F8F8] rounded-xl p-4 h-[409px] flex flex-col sm:justify-between">
+                            <div key={index}  className="bg-[#F8F8F8] rounded-xl p-4 h-[409px] flex flex-col sm:justify-between  w-full">
                                 <div>
                                     <h3 className={` font-semibold text-[25px] md:text-[30px] lg:text-[35px] mb-2 font-unbounded  h-[112px] md:w-full lg:w-[90%] xl:w-[89%] 2xl:w-[72%] w-[85%]`}>{item.heading}</h3>
                                     {
@@ -70,9 +46,9 @@ const Growth = ({ heading, cardData, heading1 }) => {
                                         }
                                 </div>
                             </div>
-                        </SwiperSlide>
                     ))}
-                </Swiper>
+                    </div>
+               
             </div>
         </>
     )
@@ -85,4 +61,4 @@ const Growth = ({ heading, cardData, heading1 }) => {
 
 }
 
-export default Growth
+export default DetailsBenefits

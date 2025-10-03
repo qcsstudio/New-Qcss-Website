@@ -94,6 +94,23 @@ console.log("Original slug:", decodedSlug);
     else pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
     return pages;
   };
+  const cleanDescription = (html, wordLimit = 54) => {
+  if (!html) return "";
+
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = html;
+
+  // Normal text nikalna
+  const text = tempDiv.textContent || tempDiv.innerText || "";
+  const words = text.trim().split(/\s+/);
+
+  if (words.length > wordLimit) {
+    const truncatedText = words.slice(0, wordLimit).join(" ") + " ...";
+    return `<p>${truncatedText}</p>`; // HTML safe truncate
+  }
+
+  return tempDiv.innerHTML;
+};
 
   return (
     <>
@@ -183,11 +200,11 @@ console.log("Original slug:", decodedSlug);
                   </p>
                   <div
                     className=" text-[15px] text-gray-700 mb-3 font-montserrat Blog-description"
-                    dangerouslySetInnerHTML={{ __html: blog.description }}
+                    dangerouslySetInnerHTML={{ __html: cleanDescription(blog.description,54)}}
                   />
                   <Link
                     href={`/blogs/${blog.heading?.trim().replace(/\s+/g, "_")}`}
-                    className="text-white bg-black w-full text-center px-6 py-2 rounded-md inline-block"
+                    className="text-white bg-black w-full text-center px-6 py-2 rounded-md inline-block text-nowrap"
                   >
                     Read More
                   </Link>

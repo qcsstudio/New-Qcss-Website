@@ -43,14 +43,14 @@ const WeSupport = ({ cards, heading, heading1 ,headingHeight}) => {
                             <SwiperSlide key={index} className="flex items-center justify-center ">
                                 <div className="bg-[#F5F7F9] rounded-lg p-4 h-[473px] flex flex-col sm:justify-between ">
                                     <div >
-                                        <h3 className={`font-semibold text-[18px] lg:text-[25px] mb-2 font-unbounded h-[69px] md:h-[${headingHeight}] w-full   `}>{item.heading}</h3>
+                                        <h3 className={`font-semibold text-[20px] md:text-[25px] lg:text-[27px] 2xl:text-[32px] mb-2 font-unbounded  h-[69px] md:h-[${headingHeight}] w-full    `}>{item.heading}</h3>
                                         {
-                                            item.desc ? <p className={`text-gray-600 text-base h-[50px] lg:h-[70px] md:text-[18px] lg:text-[25px] font-medium font-unbounded `}>
+                                            item.desc && <p className={`text-gray-600 text-base h-[50px] lg:h-[70px] md:text-[18px] lg:text-[25px] font-medium font-unbounded `}>
                                                 {item.desc}
-                                            </p> : ""
+                                            </p> 
                                         }
-                                        <div className='flex flex-col items-start justify-between  h-60 mt-10'>
-                                            <p className='font-montserrat text-[15px]'>{item.para}</p>
+                                        <div className='flex flex-col items-start justify-between  h-60 mt-12 lg:mt-14 xl:mt-18'>
+                                            <p className='font-montserrat text-[13px] md:text-[15px] '>{item.para}</p>
                                             <button className='flex gap-2 font-montserrat items-center justify-center'>{item.button} <span><MdKeyboardArrowRight className='text-[20px]' /></span></button>
                                         </div>
                                     </div>

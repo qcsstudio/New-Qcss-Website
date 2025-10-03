@@ -26,9 +26,9 @@ const ServiceContainer = () => {
                 desc="Choose AI Marketing for 3x traffic & 24/7 leads, or Web & SaaS Automation for 2x conversions & scale-ready tech. Your future starts now!"
                 cards={ServiceStrategy}
             />
-            <WeSupport cards={serviceCards1} heading="AI Marketing That Never Sleeps" heading1="Engine 01 " headingHeight="120"/>
-            <WeSupport cards={serviceCards2} heading="Web & SaaS Automation Built to Scale" heading1="Engine 02 " />
-            <Growth heading="Our Step-by-Step System for AI-Powered Growth" cardData={ServiceGrowthCard} />
+            <WeSupport cards={serviceCards1} heading1="AI Marketing That Never Sleeps" heading="Engine 01 " headingHeight="120"/>
+            <WeSupport cards={serviceCards2} heading1="Web & SaaS Automation Built to Scale" heading="Engine 02 " />
+            <Growth heading="Our Step-by-Step System for " heading1="AI-Powered Growth" cardData={ServiceGrowthCard} />
             <Questions FaqData={ServiceFaq} />
             <Footer />
         </>

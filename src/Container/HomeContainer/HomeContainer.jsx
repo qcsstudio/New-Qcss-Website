@@ -46,6 +46,10 @@ const HomeContainer = () => {
   return (
     <>
       <Navbar />
+       {/* <div className='w-full h-[70vh] border border-yellow-500'>
+        <spline-viewer url="https://prod.spline.design/vaeipBbBSnz7e-mE/scene.splinecode" className="h-[90vh] w-full"/>
+
+        </div> */}
 
       <Herosection3d
         heading="Your Partner in AI‑Driven Growth in"

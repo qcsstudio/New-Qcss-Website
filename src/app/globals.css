@@ -12,7 +12,7 @@ body {
   /* padding:0px 33px */
 }
 
-/* fonts--------- */
+                           /*-------------- fonts--------- */
 .font-montserrat {
   font-family: "Montserrat", sans-serif !important;
 }
@@ -31,68 +31,24 @@ body {
   --clr: green
 }
 
-
+                        /*----------- HeroSection Design-------------- */
 
 .shape {
-    width: 389px;
+    width: 395px;
     overflow: hidden;
-    height: 177px;
-    background: #ffffff;
+    height: 180px;
+    /* background: #ffffff; */
     clip-path: path(    "M 0 373      H 373     V 0     H 155     Q 130 0 130 25     L 130 75     Q 130 100 105 100     L 25 100     Q 0 100 0 125 Z"  );
 }
-
-
-/* .shape1 {
-    width: 369px;
-    height: 158px;
-    clip-path: path("M 0 373      H 330     V 0     H 155     Q 130 0 130 25     L 130 75     Q 130 100 105 100     L 25 100     Q 0 100 0 125 Z");
-    background: #858282;
-} */
 
 .shape1 {
   width: 369px;
   height: 158px;
-  background: #858282;
+  /* background: #858282; */
   clip-path: path("M 0 133 Q 0 143 10 143 H 320 Q 330 143 330 133 V 10 Q 330 0 320 0 H 155 Q 130 0 130 25 L 130 75 Q 130 100 105 100 L 25 100 Q 0 100 0 125 Z");
 }
 
-
-.Innermain {
-    background-color: #000000;
-    border-bottom-right-radius: 15px;
-    width: 170px;
-    height: 105px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-bottom-right-radius: 38px;
-}
-.Innermain2 {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: yellow;
-  width: 100px;
-  height: 100px;
-  border-top-left-radius: 15px;
-
-}
-
-.Innermain4::before {
-  z-index: 100;
-  content: "";
-  position: absolute;
-  background-color: gray;
-  width: 50px;
-  height: 50px;
-  left: 0px;
-  top: 0;
-  box-shadow: 9px 10px 0 0 var(--clr);  
-
-
-}
-
-
+                    /*-------- Home Page Scoll Animation ------------*/
 
 /* bottom to top scrolling */
 #scroll-container {

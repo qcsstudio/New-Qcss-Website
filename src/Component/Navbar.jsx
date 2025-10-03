@@ -15,12 +15,13 @@ const Navbar = () => {
     {/* navbar */}
 
       <nav className="mx-auto flex w-[90%]  items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      
         <Link href="/">
           
-          <Image src={NavbarQcsLogo} alt="logo" width={194.82} height={40} className='w-full h-full' />
+          <Image src={NavbarQcsLogo} alt="logo" width={194.82} height={40} className='w-full h-full object-fill' />
         </Link>
 
-        <div className={`hidden md:flex space-x-11 text-[17px] font-montserrat`}>
+        <div className='hidden lg:flex lg:space-x-11 text-[17px] font-montserrat '>
           <Link href="/service" className="hover:text-gray-400">Service</Link>
           <Link href="/product" className="hover:text-gray-400">product</Link>
           <Link href="/aboutus" className="hover:text-gray-400">About Us</Link>
@@ -29,7 +30,7 @@ const Navbar = () => {
         </div>
 
 
-        <div className="flex items-center md:hidden ">
+        <div className="flex items-center lg:hidden ">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="inline-flex items-center justify-center rounded-md p-2 text-gray-900 transition hover:bg-gray-100 focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-gray-400"
@@ -40,7 +41,7 @@ const Navbar = () => {
         </div>
 
 
-        <div className={`hidden md:flex items-center space-x-4 gap-2 font-montserrat`}>
+        <div className={`hidden lg:flex items-center space-x-4 gap-2 font-montserrat`}>
           
           
           <Link href='/contactus' >
@@ -53,7 +54,7 @@ const Navbar = () => {
 
       {/* responsive navbar */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col items-center space-y-4 bg-gray-900 py-6 text-white">
+        <div className="lg:hidden flex flex-col items-center space-y-4 bg-gray-900 py-6 text-white">
           <Link href="/service">Service</Link>
           <Link href="/product">product</Link>
           <Link href="/service#aboutus">About Us</Link>

@@ -64,10 +64,19 @@ import Checklogo from '../../public/HeroImages/checklogo.svg'
 
 import bloglogo from '../../public/HeroImages/OurServices.png'
 
+//Contactus------
+import projectimage1 from '../../public/HeroImages/projectimage.png'
+import projectimage2 from '../../public/HeroImages/projectimage2.png'
+import projectimage3 from '../../public/HeroImages/projectimage3.png'
+import projectimage4 from '../../public/HeroImages/projectimage4.png'
+import upload from '../../public/HeroImages/upload.png'
+import flag from '../../public/HeroImages/flag.png'
+
 
 export {
     HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
     challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar,success,team1,team2,team3,
-    AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2,Crosslogo,Checklogo,bloglogo
+    AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2,Crosslogo,Checklogo,bloglogo,
+    projectimage1,projectimage2,projectimage3,projectimage4,upload,flag
     
 }

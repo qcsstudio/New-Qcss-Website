@@ -9,15 +9,13 @@ import "swiper/css/free-mode";
 // import {Swiper} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const AutomationStack = ({ heading, cardData, heading1, slidesPerView ,para}) => {
+const AutomationStack = ({ heading, cardData, heading1, slidesPerView, para }) => {
     return (
         <>
-            <section className=" sm:mx-[20px] sm:p-[10px] lg:px-[72px]  mt-12">
-                <Heading heading={heading} />
-                {
-                    heading1 && <Heading heading={heading1} />
-                }
-        {para && <p className='font-montserrat text-[18px]'>{para}</p>}
+            <section className="container mx-auto px-10">
+                <Heading heading={heading} heading1={heading1} />
+
+                {para && <p className='font-montserrat text-[18px]'>{para}</p>}
 
                 <Swiper
                     modules={[Navigation, Pagination, FreeMode, Autoplay]}
@@ -39,16 +37,16 @@ const AutomationStack = ({ heading, cardData, heading1, slidesPerView ,para}) =>
                 >
                     {cardData?.map((item, index) => (
                         <SwiperSlide key={index} className="flex items-center justify-center flex-wrap ">
-                            <div className="bg-[#F8F8F8] rounded-xl p-4 h-[420px]  flex flex-col sm:justify-between">
+                            <div className="bg-[#F8F8F8] rounded-xl p-4 h-[430px]  flex flex-col sm:justify-between">
                                 <div>
-                                    <h3 className={`font-unbounded font-semibold text-2xl text-gray-900 sm:text-[30px] ${item.headingWidth || ""}`}>{item.heading}</h3>
+                                    <h3 className={`font-unbounded font-semibold text-2xl text-gray-900 sm:text-[30px] h-[72px] ${item.headingWidth || ""}`}>{item.heading}</h3>
                                     {
-                                        item.ideal && <p className='mt-2 inline-block rounded-lg bg-[#FFE2D0] px-4 py-2 text-xs font-unbounded font-semibold uppercase tracking-wide text-[#F1813B]'>{item.ideal}</p>
+                                        item.ideal && <p className='mt-5 inline-block rounded-lg bg-[#FFE2D0] px-4 py-2 text-xs font-unbounded font-semibold uppercase tracking-wide text-[#F1813B]'>{item.ideal}</p>
 
                                     }
 
-
-                                    <div className='my-6 space-y-3'>
+                                <div className='flex flex-col justify-between '>
+                                    <div className='my-6 space-y-3  h-[150px] '>
                                         <h3 className='text-sm font-unbounded font-semibold uppercase tracking-wide text-gray-800 sm:text-base'>{item.firstField}</h3>
                                         {item.tech?.map((list, idx) => (
                                             <div key={idx} className='flex flex-col font-montserrat text-[15px]  '>
@@ -86,6 +84,7 @@ const AutomationStack = ({ heading, cardData, heading1, slidesPerView ,para}) =>
                                             </div>
                                         ))}
 
+                                    </div>
                                     </div>
                                 </div>
 
