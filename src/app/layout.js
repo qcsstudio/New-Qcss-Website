@@ -1,7 +1,8 @@
 import Script from "next/script";
 import { Geist, Geist_Mono, Montserrat, Unbounded } from "next/font/google";
 import "./globals.css";
-
+import ChatBotComponent from "@/components/ChatBotComponent/ChatBotComponent";
+import { BotProvider } from "@/context/Bot.context";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -118,8 +119,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       
-        {children}
+        <BotProvider>
+          <ChatBotComponent>{children}</ChatBotComponent>
+        </BotProvider>
+
       </body>
     </html>
   );
