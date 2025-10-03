@@ -60,6 +60,7 @@ body {
   height: 100%;
   text-align: center;
 
+  
   /* animation properties */
   -moz-transform: translateY(100%);
   -webkit-transform: translateY(100%);
