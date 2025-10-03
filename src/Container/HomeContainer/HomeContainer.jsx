@@ -3,8 +3,8 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import Navbar from "@/components/Navbar";
+import HeroSection3D from "@/container/HeroSection/Herosection3d"
 const Footer = dynamic(() => import("@/components/FooterComponent/Footer"), { ssr: false, loading: () => <p>Loading...</p> });
-const HeroSection3D = dynamic(() => import("@/container/HeroSection/Herosection3d"), { ssr: false, loading: () => <p>Loading...</p> });
 const AISEOFeatures = dynamic(() => import("@/components/HomeComponent/AISEOFeatures"), { ssr: false, loading: () => <p>Loading...</p> });
 const Brands = dynamic(() => import("@/components/HomeComponent/Brands"), { ssr: false, loading: () => <p>Loading...</p> });
 const Challenges = dynamic(() => import("@/components/HomeComponent/Challenges"), { ssr: false, loading: () => <p>Loading...</p> });
