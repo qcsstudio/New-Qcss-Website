@@ -11,17 +11,15 @@ const Challenges = dynamic(() => import("@/Component/HomeComponent/Challenges"),
 const Clients = dynamic(() => import("@/Component/HomeComponent/Clients"), { ssr: false, loading: () => <p>Loading...</p> });
 const CTA = dynamic(() => import("@/Component/HomeComponent/CTA"), { ssr: false, loading: () => <p>Loading...</p> });
 const Features = dynamic(() => import("@/Component/HomeComponent/Features"), { ssr: false, loading: () => <p>Loading...</p> });
-const NextGenTools = dynamic(() => import("@/Component/HomeComponent/NextGenTools"), { ssr: false, loading: () => <p>Loading...</p> });
+// const NextGenTools = dynamic(() => import("@/Component/HomeComponent/NextGenTools"), { ssr: false, loading: () => <p>Loading...</p> });
 const PowerSection = dynamic(() => import("@/Component/HomeComponent/PowerSection"), { ssr: false, loading: () => <p>Loading...</p> });
 const Questions = dynamic(() => import("@/Component/HomeComponent/Questions"), { ssr: false, loading: () => <p>Loading...</p> });
 const WeSupport = dynamic(() => import("@/Component/HomeComponent/WeSupport"), { ssr: false, loading: () => <p>Loading...</p> });
-const Herosection = dynamic(() => import("@/Container/HeroSection/Herosection"), { ssr: false, loading: () => <p>Loading...</p> });
 
 // Static data imports (keep as is)
 import { HomePageFaq } from "@/Data/FaqQuestions/Questions";
 import { HomemiddleFeatures, HomerightFeatures } from "@/Data/HomePage/FeaturesData";
 import { supportCards } from "@/Data/HomePage/weSupportData";
-import Herosection3d from "@/Container/HeroSection/Herosection3d";
 
 const HomeContainer = () => {
 
@@ -51,7 +49,7 @@ const HomeContainer = () => {
 
         </div> */}
 
-      <Herosection3d
+      <HeroSection3D
         heading="Your Partner in AI‑Driven Growth in"
         para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
         titles={titles}
