@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { motion} from 'framer-motion';
 
 
-const Herosection3d = ({ heading, para, titles }) => {
+const HerosectionMain = ({ heading, para, titles }) => {
 
     const titles1 = useMemo(
         () => titles,
@@ -97,4 +97,4 @@ const Herosection3d = ({ heading, para, titles }) => {
     )
 }
 
-export default Herosection3d
+export default HerosectionMain

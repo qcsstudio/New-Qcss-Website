@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import Navbar from "@/components/Navbar";
-import HeroSection3D from "@/container/HeroSection/HeroSection3D";
+import HerosectionMain from "@/container/HeroSection/HerosectionMain";
 const Footer = dynamic(() => import("@/components/FooterComponent/Footer"), { ssr: false, loading: () => <p>Loading...</p> });
 const AISEOFeatures = dynamic(() => import("@/components/HomeComponent/AISEOFeatures"), { ssr: false, loading: () => <p>Loading...</p> });
 const Brands = dynamic(() => import("@/components/HomeComponent/Brands"), { ssr: false, loading: () => <p>Loading...</p> });
@@ -44,7 +44,7 @@ const HomeContainer = () => {
   return (
     <>
       <Navbar />
-      <HeroSection3D
+      <HerosectionMain
         heading="Your Partner in AI‑Driven Growth in"
         para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
         titles={titles}
