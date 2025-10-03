@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { usePathname } from "next/navigation";
-import Spinner from "@/Component/Spinner";
+import Spinner from "@/components/Spinner";
 const Campaigns = () => {
     const searchParams = useSearchParams();
     const token = searchParams.get("token");

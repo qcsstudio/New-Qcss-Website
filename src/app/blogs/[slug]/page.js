@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import Image from 'next/image';
-import Navbar from '@/Component/Navbar';
+import Navbar from '@/components/Navbar';
 
 
 

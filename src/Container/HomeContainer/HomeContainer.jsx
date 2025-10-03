@@ -2,19 +2,19 @@
 
 import dynamic from "next/dynamic";
 import React from "react";
-const Navbar = dynamic(() => import("@/Component/Navbar"), { ssr: false, loading: () => <p>Loading...</p> });
-const Footer = dynamic(() => import("@/Component/FooterComponent/Footer"), { ssr: false, loading: () => <p>Loading...</p> });
+const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false, loading: () => <p>Loading...</p> });
+const Footer = dynamic(() => import("@/components/FooterComponent/Footer"), { ssr: false, loading: () => <p>Loading...</p> });
 const HeroSection3D = dynamic(() => import("@/container/HeroSection/Herosection3d"), { ssr: false, loading: () => <p>Loading...</p> });
-const AISEOFeatures = dynamic(() => import("@/Component/HomeComponent/AISEOFeatures"), { ssr: false, loading: () => <p>Loading...</p> });
-const Brands = dynamic(() => import("@/Component/HomeComponent/Brands"), { ssr: false, loading: () => <p>Loading...</p> });
-const Challenges = dynamic(() => import("@/Component/HomeComponent/Challenges"), { ssr: false, loading: () => <p>Loading...</p> });
-const Clients = dynamic(() => import("@/Component/HomeComponent/Clients"), { ssr: false, loading: () => <p>Loading...</p> });
-const CTA = dynamic(() => import("@/Component/HomeComponent/CTA"), { ssr: false, loading: () => <p>Loading...</p> });
-const Features = dynamic(() => import("@/Component/HomeComponent/Features"), { ssr: false, loading: () => <p>Loading...</p> });
+const AISEOFeatures = dynamic(() => import("@/components/HomeComponent/AISEOFeatures"), { ssr: false, loading: () => <p>Loading...</p> });
+const Brands = dynamic(() => import("@/components/HomeComponent/Brands"), { ssr: false, loading: () => <p>Loading...</p> });
+const Challenges = dynamic(() => import("@/components/HomeComponent/Challenges"), { ssr: false, loading: () => <p>Loading...</p> });
+const Clients = dynamic(() => import("@/components/HomeComponent/Clients"), { ssr: false, loading: () => <p>Loading...</p> });
+const CTA = dynamic(() => import("@/components/HomeComponent/CTA"), { ssr: false, loading: () => <p>Loading...</p> });
+const Features = dynamic(() => import("@/components/HomeComponent/Features"), { ssr: false, loading: () => <p>Loading...</p> });
 // const NextGenTools = dynamic(() => import("@/Component/HomeComponent/NextGenTools"), { ssr: false, loading: () => <p>Loading...</p> });
-const PowerSection = dynamic(() => import("@/Component/HomeComponent/PowerSection"), { ssr: false, loading: () => <p>Loading...</p> });
-const Questions = dynamic(() => import("@/Component/HomeComponent/Questions"), { ssr: false, loading: () => <p>Loading...</p> });
-const WeSupport = dynamic(() => import("@/Component/HomeComponent/WeSupport"), { ssr: false, loading: () => <p>Loading...</p> });
+const PowerSection = dynamic(() => import("@/components/HomeComponent/PowerSection"), { ssr: false, loading: () => <p>Loading...</p> });
+const Questions = dynamic(() => import("@/components/HomeComponent/Questions"), { ssr: false, loading: () => <p>Loading...</p> });
+const WeSupport = dynamic(() => import("@/components/HomeComponent/WeSupport"), { ssr: false, loading: () => <p>Loading...</p> });
 
 // Static data imports (keep as is)
 import { HomePageFaq } from "@/Data/FaqQuestions/Questions";

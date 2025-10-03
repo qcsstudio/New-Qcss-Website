@@ -1,15 +1,15 @@
 import React from 'react'
-import Footer from '@/Component/FooterComponent/Footer'
-import Questions from '@/Component/HomeComponent/Questions'
-import Navbar from '@/Component/Navbar'
-import Strategy from '@/Component/ServiceComponent/Strategy'
+import Footer from '@/components/FooterComponent/Footer'
+import Questions from '@/components/HomeComponent/Questions'
+import Navbar from '@/components/Navbar'
+import Strategy from '@/components/ServiceComponent/Strategy'
 import { ProductFaq } from '@/Data/FaqQuestions/Questions'
 import { ProductGrowthCard, ProductGrowthCard2 } from '@/Data/ServicePage/Growth'
 import { ProductStrategy } from '@/Data/ServicePage/StrategyData'
-import { ScrollTimeline } from '@/Component/ProductComponent/ScrollTimeline '
+import { ScrollTimeline } from '@/components/ProductComponent/ScrollTimeline '
 import { ElevatrX_Social_AI, Nova_Chatbot } from '@/Data/ProductPage/Product'
 import Herosection3d from '../HeroSection/Herosection3d'
-import DetailsBenefits from '@/Component/ProductComponent/DetailsBenefits'
+import DetailsBenefits from '@/components/ProductComponent/DetailsBenefits'
 
 const ProductContainer = () => {
     return (

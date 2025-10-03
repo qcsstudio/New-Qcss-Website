@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Navbar from '@/Component/Navbar'
-import ProposalForm from '@/Component/ContactusComponent/ProposalForm'
-import Map from '@/Component/ContactusComponent/Map'
-import Footer from '@/Component/FooterComponent/Footer'
+import Navbar from '@/components/Navbar'
+import ProposalForm from '@/components/ContactusComponent/ProposalForm'
+import Map from '@/components/ContactusComponent/Map'
+import Footer from '@/components/FooterComponent/Footer'
 import RecaptchaProvider from '@/providers/RecaptchaProvider'
 
 const ContactusContainer = () => {

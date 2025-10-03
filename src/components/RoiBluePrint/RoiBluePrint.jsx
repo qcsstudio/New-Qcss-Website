@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { usePathname } from "next/navigation";
-import Spinner from "@/component/Spinner";
+import Spinner from "@/components/Spinner";
 
 const RoiBluePrint = () => {
     const searchParams = useSearchParams();
