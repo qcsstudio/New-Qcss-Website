@@ -1,4 +1,4 @@
-import AIMarketing from '@/component/AI-Marketing/AIMarketing'
+import AIMarketing from '@/component/AI_Marketing/AIMarketing'
 import React, { Suspense } from 'react'
 
 const page = () => {

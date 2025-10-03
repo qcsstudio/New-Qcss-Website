@@ -1,5 +1,5 @@
-import FeatureCards from '@/Component/Ai-MarketingComponent/Accelerators'
-import HelptoGrow from '@/Component/Ai-MarketingComponent/HelptoGrow'
+import FeatureCards from '@/Component/Ai_MarketingComponent/Accelerators'
+import HelptoGrow from '@/Component/Ai_MarketingComponent/HelptoGrow'
 import Footer from '@/Component/FooterComponent/Footer'
 import Questions from '@/Component/HomeComponent/Questions'
 import Navbar from '@/Component/Navbar'
