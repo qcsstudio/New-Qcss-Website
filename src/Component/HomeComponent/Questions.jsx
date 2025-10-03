@@ -23,13 +23,13 @@ const Questions = ({FaqData}) => {
         <>
             {/* <IconNtext text="FAQ's" link="/images/Icons/FAQ.png" /> */}
              
-                    <h2 className="text-3xl md:text-[45px] font-bold font-unbounded text-center mt-10">
+                    <h2 className="text-3xl md:text-[50px] font-bold font-unbounded text-center my-10">
                         Frequently Asked Question's
                     </h2>
              
-            <div className="flex flex-col md:flex-row justify-between items-start container mx-auto px-10">
+            <div className="flex flex-col md:flex-row justify-between items-start container mx-auto px-10 ">
                 {/* Left Section */}
-                <div className="md:w-1/2 space-y-4 p flex flex-col justify-center  mt-20">
+                <div className="md:w-1/2 space-y-4 p flex flex-col justify-center  mt-7 md:mt-20">
                     <motion.h2
                         className={`text-center lg:text-start text-3xl md:text-[48px] font-bold leading-tight mt-3 font-unbounded`}
                         variants={container}

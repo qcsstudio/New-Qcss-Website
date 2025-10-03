@@ -64,7 +64,7 @@ export default function   BlogList() {
   //   return tempDiv.innerHTML;
   // };
 
-const cleanDescription = (html, wordLimit = 50) => {
+const cleanDescription = (html, wordLimit = 54) => {
   if (!html) return "";
 
   const tempDiv = document.createElement("div");
@@ -149,19 +149,19 @@ const cleanDescription = (html, wordLimit = 50) => {
                       loading="lazy"
                     />
                     <h2 className='font-bold mb-2 font-unbounded  Blog-heading'>
-                      {blog.heading}
+                      {blog.heading.length > 50 ? blog.heading.slice(0, 47) + '...' : blog.heading}
                     </h2>
                     <p className={`text-sm text-gray-500 font-montserrat`}>
                       Created: {new Date(blog.createdAt).toLocaleString()}
                     </p>
                     <div
                       className='font-normal text-gray-700 mb-3 font-montserrat Blog-description'
-                      dangerouslySetInnerHTML={{ __html: cleanDescription(blog.description,50) }}
+                      dangerouslySetInnerHTML={{ __html: cleanDescription(blog.description,54) }}
                     ></div>
 
                     <Link
                       href={`/blogs/${blog?.heading?.trim().replace(/\s+/g, "_")}`}
-                      className="text-[#FFFEF5] rounded-lg text-base bg-[#000000] px-[8.95rem] py-2 text-center block"
+                      className="text-[#FFFEF5] rounded-lg text-base bg-[#000000] px-[8.95rem] py-2 text-center block text-nowrap"
                     >
                       Read More
                     </Link>

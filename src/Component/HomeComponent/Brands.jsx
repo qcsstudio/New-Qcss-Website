@@ -8,6 +8,7 @@ import Heading from '../HeadingComponent/Heading';
 const Brands = ({heading,heading1}) => {
     return (
         <>
+       
       <div className="container mx-auto px-10 ">
      <Heading heading={heading} heading1={heading1}/>
         {/* Heading */}

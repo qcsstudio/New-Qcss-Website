@@ -36,48 +36,45 @@ export default function Challenges({ heading, heading1 }) {
         className="pb-12"
       >
         {challenges.map((item, index) => (
-          <SwiperSlide key={index} className="rounded-[25px] overflow-hidden h-full flex  transition-all duration-300">
-            <div >
-              <div
-                className={`absolute inset-0 flex flex-col justify-center p-6 text-white transition-opacity duration-300 ${activeIndex === index ? "bg-white  rounded-[23px]" : "bg-black/0 opacity-0  rounded"
-                  }`}
-              >
-                <div className="relative">
+          <SwiperSlide
+            key={index}
+            className="overflow-hidden h-full flex transition-all duration-300"
+          >
+            <div className="relative w-full h-[580px] rounded-xl overflow-hidden">
+              {activeIndex === index ? (
+               
+                <>
                   <Image
                     src={item.image}
                     alt="swiperimages"
-                    width={600}
-                    height={400}
-                    className="w-full  rounded-xl h-full object-cover"
+                    fill
+                    className="object-cover rounded-xl"
                   />
-                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-center p-6 h-[580px] text-white rounded-2xl">
+                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-center p-6 text-white">
                     <span className="text-[60px] font-unbounded font-extralight">
                       {item.number}
                     </span>
                     <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
                       {item.title}
                     </h3>
-                    <p className="text-[15px] mt-2 font-montserrat">
-                      {item.desc}
-                    </p>
+                    <p className="text-[15px] mt-2 font-montserrat">{item.desc}</p>
                   </div>
+                </>
+              ) : (
+               
+                <div className="flex flex-col justify-center items-start p-6 h-full bg-white text-black rounded-xl">
+                  <span className="text-[60px] font-unbounded font-extralight">
+                    {item.number}
+                  </span>
+                  <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
+                    {item.title}
+                  </h3>
+                  <p className="text-[15px] mt-2 font-montserrat">{item.desc}</p>
                 </div>
-              </div>
-
-              
-              <div className="p-6 flex flex-col justify-center h-[580px] rounded-2xl">
-                <span className="text-[60px] font-unbounded font-extralight">
-                  {item.number}
-                </span>
-                <h3 className="text-[35px] font-unbounded font-semibold border-b-2 w-[300px]">
-                  {item.title}
-                </h3>
-                <p className="text-[15px] mt-2 font-montserrat">
-                  {item.desc}
-                </p>
-              </div>
+              )}
             </div>
           </SwiperSlide>
+
         ))}
       </Swiper>
       {/* Custom Navigation Buttons at Bottom */}

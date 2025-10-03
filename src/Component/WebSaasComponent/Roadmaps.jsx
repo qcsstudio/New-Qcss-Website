@@ -10,7 +10,7 @@ import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
-const Growth = ({ heading, cardData, heading1 }) => {
+const Roadmaps = ({ heading, cardData, heading1 }) => {
  return (
         <>
             <div className="container mx-auto px-10 ">
@@ -38,13 +38,13 @@ const Growth = ({ heading, cardData, heading1 }) => {
                         <SwiperSlide key={index} className="flex items-center justify-center w-full ">
                             <div className="bg-[#F8F8F8] rounded-xl p-4 h-[409px] flex flex-col sm:justify-between">
                                 <div>
-                                    <h3 className={` font-semibold text-[25px] md:text-[30px] lg:text-[35px] mb-2 font-unbounded  h-[112px] md:w-full lg:w-[90%] xl:w-[89%] 2xl:w-[72%] w-[85%]`}>{item.heading}</h3>
+                                    <h3 className={` font-semibold text-[25px] md:text-[30px] lg:text-[35px] mb-2 font-unbounded  h-[110px] lg:h-[145px] md:w-full lg:w-[90%] xl:w-[89%] 2xl:w-[72%] w-[85%]`}>{item.heading}</h3>
                                     {
                                         item.time ? <p className={`text-gray-600 text-base md:text-[18px] font-light font-unbounded`}>
                                             {item.time}
                                         </p> : ""
                                     }
-                                    <div className='mt-5 '>
+                                    <div className='mt-5  h-[72px] '>
                                         {item.cardlist?.map((list, idx) => (
                                             <div key={idx} className='flex flex-col   '>
                                                 <div className='flex items-start gap-2'>
@@ -85,4 +85,4 @@ const Growth = ({ heading, cardData, heading1 }) => {
 
 }
 
-export default Growth
+export default Roadmaps

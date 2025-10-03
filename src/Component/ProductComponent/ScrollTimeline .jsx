@@ -195,10 +195,11 @@ export const ScrollTimeline = ({
 
 
     return (
+        <div className="container mx-auto px-10">
         <div
             ref={scrollRef}
             className={cn(
-                "relative min-h-screen w-full   px-6 md:px-[72px] my-10",
+                "relative min-h-screen w-full ] my-10",
                 darkMode ? "bg-background text-foreground" : "",
                 className
             )}
@@ -366,6 +367,7 @@ export const ScrollTimeline = ({
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
