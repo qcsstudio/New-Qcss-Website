@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useMemo, useState } from 'react'
-import { motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 const HerosectionMain = ({ heading, para, titles }) => {
@@ -24,7 +24,7 @@ const HerosectionMain = ({ heading, para, titles }) => {
     return (
         <>
             <div className='w-full h-[90vh]  lg:h-[90vh] relative '>
-                
+
                 {/* // hide spline mark */}
                 <div className='w-[300px] md:w-[160px] hidden md:block  sm:h-[70px]  absolute bottom-0 right-0  bg-[#ececec] z-101'></div>
 
@@ -89,9 +89,9 @@ const HerosectionMain = ({ heading, para, titles }) => {
                 </div>
 
 
-<spline-viewer className='md:block  hidden relative md:' url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode"></spline-viewer>
+                {/* <spline-viewer className='md:block  hidden relative md:' url="https://prod.spline.design/HmOuhtKFDx2G8L3W/scene.splinecode"></spline-viewer> */}
 
-                
+
             </div>
         </>
     )
