@@ -26,7 +26,7 @@ export default function ClientWins() {
     ];
 
  return (
-        <section className=" px-6 md:px-[72px] my-10 ">
+        <section className="container mx-auto px-10 mt-20  ">
             <div className="mx-auto px-4">
                 {/* Heading */}
                 <div className="flex justify-between items-start mb-8">
@@ -49,7 +49,7 @@ export default function ClientWins() {
                                 />
                             </div>
                             {partner.title && (
-                                <p className="text-[17px] font-light text-gray-700 text-center font-unbounded leading-snug w-[70%] mx-auto">
+                                <p className=" md:text-[13px] lg:text-[17px] font-light text-gray-700 text-center font-unbounded leading-snug w-[70%] mx-auto">
                                     {partner.title}
                                 </p>
                             )}

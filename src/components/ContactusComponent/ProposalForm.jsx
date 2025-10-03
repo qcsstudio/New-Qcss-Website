@@ -16,11 +16,7 @@ const projectEstimation = [
         desc: "Learn to approach problems like a designer - using empathy-driven, design thinking methods to create user-first solutions.",
         image: projectimage1   
     },
-    {
-        title: "Sign NDA",
-        desc: "We sign NDA with all of our customers and make you feel secure. By doing so we would like to assure you of the privacy of your idea and project.",
-        image: projectimage2
-    },
+   
     {
         title: "Analyzing Your Requirement",
         desc: "Once you share your requirements, our scrum masters will analyze them and get back to you within a few hours.",
@@ -30,6 +26,11 @@ const projectEstimation = [
         title: "Get Your Estimation",
         desc: "Once our team finalizes the project scope and resources, we'll share the estimated cost and delivery timeline with you.",
         image: projectimage4
+    },
+     {
+        title: "Sign NDA",
+        desc: "We sign NDA with all of our customers and make you feel secure. By doing so we would like to assure you of the privacy of your idea and project.",
+        image: projectimage2
     },
 ];
 

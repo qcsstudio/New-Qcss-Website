@@ -11,11 +11,18 @@ import { WebSaasFaq } from '@/Data/FaqQuestions/Questions'
 import { WebSaasAutomationCard, WebsaasGrowthCard, WebSaasSLAsCard } from '@/Data/ServicePage/Growth'
 import { websaastableData } from '@/Data/weeb-saas/TableData'
 import React from 'react'
+import HeroSection from '../HeroSection/Herosection'
+
 
 const WebContainer = () => {
   return (
     <>
       <Navbar />
+      <HeroSection heading="Automate Everything Convert Faster, Scale Limitlessly."
+        para="AI-ready websites, drag-and-drop workflows, GPT dashboards and containerised SaaS free 60 % of your team’s week and keep you online—even at 2 million users."
+    
+
+      />
       <AutomationTable />
       <AutomationStack heading="Automation Stack 3.0 " heading1="Under the Hood" cardData={WebSaasAutomationCard} slidesPerView="3.5" />
       <ComparisonTable heading="Edge Over Platform Agencies" />

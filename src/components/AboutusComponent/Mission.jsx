@@ -46,9 +46,10 @@ export default function Mission() {
                 <p className="mt-2 text-[18px] font-montserrat text-[#000000]  ">
                     We work to create most attractive & meaningful place for small businesses. Our Team always ready to help You
                 </p>
-                <div className="mt-8 flex flex-col gap-8 md:flex-row md:justify-center md:gap-10 md:p-10">
+                {/* <div className="mt-8 flex flex-col gap-8 md:flex-row md:justify-center md:gap-10 md:p-10 border"> */}
+                <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-25 lg:gap-10">
                     {data.map((item, idx) => (
-                        <div key={idx} className={`relative w-full md:w-1/3 pb-8 rounded-xl shadow-md ${item.color}`}>
+                        <div key={idx} className={`relative w-full pb-8 rounded-xl shadow-md ${item.color}`}>
                             {/* Main Card */}
                             <div
                                 className={` rounded-xl p-6 text-white `}
@@ -69,7 +70,7 @@ export default function Mission() {
                                         <p className="text-xs text-[#7F7F7F] font-montserrat">{item.smallSubtitle}</p>
                                     </div>
                                     {/* Mini bar chart mock */}
-                                    <div className="flex items-end gap-1 ">
+                                    <div className="flex items-end gap-1 "> 
                                         <Image src={item.image} width={100} height={100} className="w-full h-full "/>
                                     </div>
                                 </div>

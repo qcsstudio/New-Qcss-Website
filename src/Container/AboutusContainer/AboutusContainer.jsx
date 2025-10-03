@@ -13,22 +13,21 @@ import { Aboutusindustries } from '@/Data/Aboutus/IndustryImpact'
 import { AboutusFaq } from '@/Data/FaqQuestions/Questions'
 import { AboutusMiddle, AboutusRight } from '@/Data/HomePage/FeaturesData'
 import React from 'react'
-import HerosectionMain from '../HeroSection/HerosectionMain'
+import HeroSection from '../HeroSection/Herosection'
 
 const AboutusContainer = () => {
   return (
     <>
     <Navbar/>
-     <HerosectionMain heading="Building the Future Today, With Human Creativity & AI Precision"
+     <HeroSection heading="Building the Future Today, With Human Creativity & AI Precision"
         para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo‑charged by AI."
-        // titles={titles}
-        // buttons={buttons}
+        // buttons=""
 
     />
-    <ClientWins/>
-    <TeamGrid/>
-    <OurSuccess/>
+    <OurSuccess/> 
     <Mission/>
+    <TeamGrid/>
+    <ClientWins/>
     <IndustryImpact cardsData={Aboutusindustries}/>
     <Features middleFeature={AboutusMiddle} rightFeature={AboutusRight}/>
      <CTA/>

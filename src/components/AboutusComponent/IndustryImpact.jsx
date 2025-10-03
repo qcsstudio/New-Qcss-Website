@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Heading from "../HeadingComponent/Heading";
 
 
 export default function IndustryImpact({ cardsData }) {
@@ -9,8 +10,8 @@ export default function IndustryImpact({ cardsData }) {
     };
 
 return (
-        <div className="px-6 md:px-[72px] my-10  ">
-            <h2 className="text-3xl md:text-[40px] font-unbounded font-bold mb-4">Industry Impact</h2>
+        <div className="container mx-auto px-10 mt-10 ">
+            <Heading heading="Industry Impact"/>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
                 {cardsData.map((item, idx) => (
                     <div

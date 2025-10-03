@@ -23,7 +23,7 @@ const Navbar = () => {
 
         <div className='hidden lg:flex lg:space-x-11 text-[17px] font-montserrat '>
           <Link href="/service" className="hover:text-gray-400">Service</Link>
-          <Link href="/product" className="hover:text-gray-400">product</Link>
+          <Link href="/product" className="hover:text-gray-400">Product</Link>
           <Link href="/aboutus" className="hover:text-gray-400">About Us</Link>
           <Link href="/blogs" className="hover:text-gray-400">Blogs</Link>
           <Link href="/contactus" className="hover:text-gray-400">Contact Us</Link>

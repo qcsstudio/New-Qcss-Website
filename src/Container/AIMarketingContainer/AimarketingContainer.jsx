@@ -7,7 +7,7 @@ import Growth from '@/components/ServiceComponent/Growth'
 import AutomationStack from '@/components/WebSaasComponent/AutomationStack'
 import CaseStudyCard from '@/components/WebSaasComponent/CaseStudyCard '
 import { AimarketingFaq } from '@/Data/FaqQuestions/Questions'
-import {  AimarketingGrowthCard, AimarketingGrowthCard2, AiMarketingSLAsCard } from '@/Data/ServicePage/Growth'
+import { AimarketingGrowthCard, AimarketingGrowthCard2, AiMarketingSLAsCard } from '@/Data/ServicePage/Growth'
 import { aimarketingtableData } from '@/Data/weeb-saas/TableData'
 import React from 'react'
 import HeroSection from '../HeroSection/Herosection'
@@ -16,7 +16,13 @@ const AimarketingContainer = () => {
     return (
         <>
             <Navbar />
-            <HeroSection/>
+            <HeroSection heading="Your Pipeline Never Sleeps Why Should Your Marketing?"
+                para="Voice‑search dominance, machine‑learning ads, GPT‑accelerated content and
+Nova chatbots turn silent websites into revenue machines—cutting CAC
+up to 40 % in the first 90 days."
+
+
+            />
             <HelptoGrow heading="How We Help You Grow" heading1="Step by Step" />
             <Growth heading="Roadmap to Results" heading1="(Ignite → Elevate)" cardData={AimarketingGrowthCard} />
             <Growth heading="Our Always‑On AI " heading1="Growth Stack" cardData={AimarketingGrowthCard2} />

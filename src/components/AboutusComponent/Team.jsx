@@ -1,6 +1,7 @@
 import { team1, team2, team3 } from "@/AllAssets/AllAsssets";
 import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
+import Heading from "../HeadingComponent/Heading";
 
 const teamMembers = [
   {
@@ -37,8 +38,10 @@ const teamMembers = [
 
 export default function TeamGrid() {
   return (
-    <section className="px-[72px] mt-12">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section className="container mx-auto px-10 md:mt-30 lg:mt-35">
+      <Heading heading="Engage with Our Creative Team" />
+      <p className="text-[18px] font-montserrat">We work to create most attractive & meaningful place for small businesses. Our Team always ready to help You</p>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-5">
         {teamMembers.map((member, idx) => (
           <div
             key={idx}

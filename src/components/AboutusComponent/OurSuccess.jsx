@@ -4,8 +4,10 @@ import React from "react";
 
 const OurSuccess = () => {
   return (
-        <div className="flex flex-col-reverse items-center gap-8 px-6 md:px-[72px] my-10 md:flex-row">
-            <div className="w-full md:w-1/2 space-y-5 text-center md:text-left">
+    <>
+   <div className="container mx-auto px-10 ">
+        <div className="lg:flex flex-col items-center gap-8  md:flex-row  mt-10">
+            <div className="w-full lg:w-1/2 space-y-5 text-center md:text-left">
                 <h2 className="font-unbounded font-bold text-3xl md:text-[40px]">
                     Our Story the Journey That Shaped Our Success
                 </h2>
@@ -18,17 +20,19 @@ const OurSuccess = () => {
                     Get Started a Project
                 </button>
             </div>
-            <div className="flex w-full justify-center md:w-1/2">
+            <div className=" w-full  lg:w-1/2 mt-3 lg:mt-0 ">
                 <Image
                     src={success}
                     width={559}
                     height={100}
                     alt="success"
-                    className="h-auto w-full max-w-[559px] object-contain"
+                    className="h-auto w-full   object-contain"
                     sizes="(min-width: 768px) 50vw, 100vw"
                 />
             </div>
         </div>
+        </div>
+        </>
     );
 };
 
