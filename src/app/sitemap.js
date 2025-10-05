@@ -3,11 +3,18 @@ const siteUrl = "https://www.qcsstudio.com";
 const routes = [
   "",
   "aboutus",
-  "service",
-  "product",
-  "marketing",
-  "blogs",
+  "ai_marketing",
+  "campaigns",
   "contactus",
+  "home",
+  "linkedinOptimization",
+  "marketing",
+  "product",
+  "qcsstudiodeck",
+  "ROIBluePrint",
+  "service",
+  "webSaas",
+  "blogs",
 ];
 
 export default function sitemap() {
@@ -17,6 +24,6 @@ export default function sitemap() {
     url: `${siteUrl}/${route}`.replace(/\/+$/, "/"),
     lastModified,
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.7,
+    priority: route === "" ? 1 : route === "blogs" ? 0.8 : 0.7,
   }));
 }
