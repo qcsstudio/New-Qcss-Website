@@ -26,37 +26,41 @@ const montserrat = Montserrat({
 export const metadata = {
   metadataBase: new URL("https://www.qcsstudio.com"),
   title: {
-    default: "QuantumCrafters Studio | AI Growth, SEO & Automation Agency",
+    default: "Agentic AI & Marketing Studio | QuantumCrafters Studio",
     template: "%s | QuantumCrafters Studio"
   },
   description:
-    "QuantumCrafters Studio helps SaaS and eCommerce teams compound growth with AI-powered SEO, high-performing campaigns, chatbots and automation playbooks.",
+    "QuantumCrafters Studio Private Limited engineers agentic AI platforms, automation, voice-first SEO, and AI-powered marketing that attract, convert, and scale revenue growth.",
   keywords: [
     "QuantumCrafters Studio",
-    "AI growth agency",
-    "AI SEO",
-    "marketing automation",
-    "performance marketing",
-    "chatbot development"
+    "best agentic AI development",
+    "AI-powered marketing studio",
+    "voice search SEO",
+    "conversational AI strategy",
+    "automation agency"
   ],
-  alternates: {
-    canonical: "/"
-  },
   openGraph: {
-    title: "QuantumCrafters Studio | AI Growth, SEO & Automation Agency",
+    title: "Agentic AI & Marketing Studio | QuantumCrafters Studio",
     description:
-      "Accelerate revenue with QuantumCrafters Studio's AI-driven SEO, ads, chatbots and automation services tailored to startups and scaleups.",
+      "Ignite growth with QuantumCrafters Studio’s agentic AI development, voice-search SEO, and AI-powered marketing playbooks designed for always-on customer journeys.",
     url: "https://www.qcsstudio.com/",
     siteName: "QuantumCrafters Studio",
     type: "website",
-    locale: "en_US"
+    locale: "en_US",
+    images: [
+      {
+        url: "https://www.qcsstudio.com/HeroImages/projectimage.png",
+        alt: "QuantumCrafters Studio agentic AI and marketing solutions"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuantumCrafters Studio | AI Growth, SEO & Automation Agency",
+    title: "Agentic AI & Marketing Studio | QuantumCrafters Studio",
     description:
-      "Partner with QuantumCrafters Studio for AI-fuelled marketing, automation and chatbot solutions.",
-    creator: "@qcsstudio"
+      "Ignite growth with QuantumCrafters Studio’s agentic AI development, voice-search SEO, and AI-powered marketing playbooks designed for always-on customer journeys.",
+    creator: "@qcsstudio",
+    images: ["https://www.qcsstudio.com/HeroImages/projectimage.png"]
   },
   robots: {
     index: true,
@@ -85,10 +89,80 @@ export default function RootLayout({ children }) {
         <Script id="org-schema" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'QuantumCrafters Studio',
+            '@type': ['Organization', 'ProfessionalService', 'DigitalAgency'],
+            '@id': 'https://www.qcsstudio.com/#organization',
+            name: 'QuantumCrafters Studio Private Limited',
             url: 'https://www.qcsstudio.com/',
             logo: 'https://www.qcsstudio.com/HeroImages/NavbarLogo.svg',
+            slogan: 'Best agentic AI development and AI-powered marketing lab',
+            description:
+              'QuantumCrafters Studio Private Limited engineers agentic AI systems, conversational SEO, and automation campaigns that keep modern brands always-on.',
+            brand: {
+              '@type': 'Brand',
+              name: 'QuantumCrafters Studio'
+            },
+            award: 'Top Agentic AI Innovation Partner 2024',
+            knowsAbout: [
+              'agentic AI development',
+              'AI-powered marketing automation',
+              'voice search optimization',
+              'conversational commerce',
+              'generative AI enablement'
+            ],
+            areaServed: {
+              '@type': 'GeoCircle',
+              geoMidpoint: {
+                '@type': 'GeoCoordinates',
+                latitude: '30.7046',
+                longitude: '76.7179'
+              },
+              geoRadius: 5000000
+            },
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                contactType: 'sales',
+                telephone: '+91 8264017346',
+                email: 'info@qcsstudio.com',
+                availableLanguage: ['English', 'Hindi']
+              }
+            ],
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Agentic AI & AI-Powered Marketing Services',
+              itemListElement: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Agentic AI Product Development',
+                    serviceType: 'Autonomous agent design, orchestration, and deployment',
+                    description:
+                      'Design, train, and manage autonomous AI agents that coordinate complex customer and employee workflows.'
+                  }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Voice Search SEO & Conversational Content',
+                    serviceType: 'Voice-first content strategy',
+                    description:
+                      'Optimize for voice assistants with conversational SEO, long-form pillar content, and schema-driven discoverability.'
+                  }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'AI-Powered Marketing Automation',
+                    serviceType: 'Lifecycle automation and analytics',
+                    description:
+                      'Launch AI-enhanced funnels, chatbots, and retention systems that accelerate recurring revenue.'
+                  }
+                }
+              ]
+            },
             sameAs: [
               'https://www.linkedin.com/company/qcsstudio',
               'https://www.facebook.com/qcsstudio',
@@ -96,22 +170,22 @@ export default function RootLayout({ children }) {
               'https://www.youtube.com/@qcsstudio',
               'https://in.pinterest.com/qcsstudio'
             ],
-            contactPoint: [
+            speakable: [
               {
-                '@type': 'ContactPoint',
-                contactType: 'sales',
-                telephone: '+91 8264017346',
-                email: 'info@qcsstudio.com',
-                areaServed: 'IN'
+                '@type': 'SpeakableSpecification',
+                cssSelector: ['.hero__headline', '.hero__subheadline']
               }
             ],
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'D266 (C), 203, Second Floor, Ram Hari Tower, Phase 8B, Industrial Area, Sector 74',
-              addressLocality: 'Mohali',
-              postalCode: '160055',
-              addressCountry: 'IN'
-            }
+            potentialAction: [
+              {
+                '@type': 'ContactAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://www.qcsstudio.com/contactus'
+                },
+                name: 'Book an AI growth consultation'
+              }
+            ]
           })}
         </Script>
       </head>
