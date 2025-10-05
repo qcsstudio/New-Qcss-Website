@@ -1,27 +1,16 @@
 "use client";
 import { next, previous } from "@/AllAssets/AllAsssets";
 import { Happyclients } from "@/Data/HomePage/Clients";
-import React, { useCallback, useRef, useState } from "react";
+import Image from "next/image";
+import React, { useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import Image from "next/image";
 import Heading from "../HeadingComponent/Heading";
+import "swiper/css";
+import "swiper/css/navigation";
+
 const Clients = () => {
     const [activeIndex, setActiveIndex] = useState(1);
-    const prevRef = useRef(null);
-    const nextRef = useRef(null);
-    console.log("client")
-    const handleNext = useCallback(() => {
-        setActiveIndex(activeIndex + 1)
-    }, [activeIndex])
-    const handlePrevious = () => {
-        if (activeIndex > 0) {
-            setActiveIndex(activeIndex - 1)
-        }
-    }
-    console.log(activeIndex, "activeIndexactiveIndexactiveIndex")
     return (
         <div className="container mx-auto px-10">
 
@@ -93,3 +82,4 @@ const Clients = () => {
     );
 };
 export default Clients;
+

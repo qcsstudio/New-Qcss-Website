@@ -1,6 +1,4 @@
 
-"use client"
-import { middleFeatures, rightFeatures } from "@/Data/HomePage/FeaturesData";
 import React from "react";
 const Features = ({ middleFeature, rightFeature }) => {
 
@@ -56,3 +54,4 @@ const Features = ({ middleFeature, rightFeature }) => {
   );
 };
 export default Features;
+

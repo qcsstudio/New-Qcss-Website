@@ -30,11 +30,11 @@ export const metadata = {
     template: "%s | QuantumCrafters Studio"
   },
   description:
-    "QuantumCrafters Studio Private Limited engineers agentic AI platforms, automation, voice-first SEO, and AI-powered marketing that attract, convert, and scale revenue growth.",
+    "QuantumCrafters Studio Private Limited engineers agentic AI platforms, Automation, voice-first SEO, and AI-powered marketing that attract, convert, and scale revenue growth.",
   keywords: [
     "QuantumCrafters Studio",
     "best agentic AI development",
-    "AI-powered marketing studio",
+    "AI-powered marketing Studio",
     "voice search SEO",
     "conversational AI strategy",
     "automation agency"
