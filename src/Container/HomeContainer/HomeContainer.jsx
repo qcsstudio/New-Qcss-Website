@@ -16,23 +16,19 @@ import { HomemiddleFeatures, HomerightFeatures } from "@/Data/HomePage/FeaturesD
 import { supportCards } from "@/Data/HomePage/weSupportData";
 
 const HomeContainer = () => {
-  const titles = [
-    "Marketing",
-    "Automation",
-    "SaaS Solutions"
-  ]
+  const titles = ["Marketing", "Automation", "SaaS Solutions"];
   const buttons = [
     {
-      text: 'Book a Free AI Growth Consultation',
-      href: '/contactus',
-      variant: 'primary'
+      text: "Book a Free AI Growth Consultation",
+      href: "/contactus",
+      variant: "primary",
     },
     {
-      text: 'Explore AI Growth Playbooks',
-      href: '#ai-growth-playbooks',
-      variant: 'secondary'
-    }
-  ]
+      text: "Explore AI Growth Playbooks",
+      href: "#ai-growth-playbooks",
+      variant: "secondary",
+    },
+  ];
 
   return (
     <>
@@ -54,7 +50,7 @@ const HomeContainer = () => {
       <Questions FaqData={HomePageFaq} />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default React.memo(HomeContainer)
+export default React.memo(HomeContainer);
