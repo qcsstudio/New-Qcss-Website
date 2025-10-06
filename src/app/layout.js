@@ -77,6 +77,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${unbounded.variable} ${montserrat.variable}`}>
       <head>
+         <link
+          rel="canonical"
+          href="https://qcsstudio.com/"
+          key="canonical"
+        />
+         <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TGNFYNFQQ2');
+          `}
+        </Script>
         <Script
           id="spline-viewer"
           type="module"

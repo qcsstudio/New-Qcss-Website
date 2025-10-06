@@ -26,7 +26,7 @@ const HerosectionMain = ({ heading, para, titles }) => {
             <div className='w-full h-[90vh]  lg:h-[90vh] relative '>
 
                 {/* // hide spline mark */}
-                <div className='w-[300px] md:w-[160px] hidden md:block  sm:h-[70px]  absolute bottom-0 right-0  bg-[#ececec] z-101'></div>
+                <div className='w-[300px] md:w-[160px] hidden md:block  sm:h-[70px]  absolute bottom-0 right-0  bg-[#ececec]  z-10'></div>
 
                 <div className='w-full h-full  absolute z-100 ' >
                     <div className='  absolute z-101 sm:top-0 lg:top-[20%] px-8 py-3 '>
