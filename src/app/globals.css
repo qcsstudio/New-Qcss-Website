@@ -12,7 +12,7 @@ body {
   /* padding:0px 33px */
 }
 
-                           /*-------------- fonts--------- */
+/*-------------- fonts--------- */
 .font-montserrat {
   font-family: "Montserrat", sans-serif !important;
 }
@@ -31,14 +31,14 @@ body {
   --clr: green
 }
 
-                        /*----------- HeroSection Design-------------- */
+/*----------- HeroSection Design-------------- */
 
 .shape {
     width: 395px;
     overflow: hidden;
     height: 180px;
     /* background: #ffffff; */
-    clip-path: path(    "M 0 373      H 373     V 0     H 155     Q 130 0 130 25     L 130 75     Q 130 100 105 100     L 25 100     Q 0 100 0 125 Z"  );
+    clip-path: path("M 0 373 H 373 V 0 H 155 Q 130 0 130 25 L 130 75 Q 130 100 105 100 L 25 100 Q 0 100 0 125 Z"  );
 }
 
 .shape1 {
@@ -48,7 +48,16 @@ body {
   clip-path: path("M 0 133 Q 0 143 10 143 H 320 Q 330 143 330 133 V 10 Q 330 0 320 0 H 155 Q 130 0 130 25 L 130 75 Q 130 100 105 100 L 25 100 Q 0 100 0 125 Z");
 }
 
-                    /*-------- Home Page Scoll Animation ------------*/
+
+.clip-path-main {
+  clip-path: path("M0 210 L0 125 Q0 100 25 100 L105 100 Q130 100 130 75 L130 25 Q130 0 155 0 L395 0 L395 210 Z");
+}
+
+.clip-path-overlay {
+  clip-path: path("M0 250 L0 125 Q0 100 25 100 L105 100 Q130 100 130 75 L130 25 Q130 0 155 0 L380 0 L380 200 Z");
+}
+
+/*-------- Home Page Scoll Animation ------------*/
 
 /* bottom to top scrolling */
 #scroll-container {
@@ -59,6 +68,7 @@ body {
 #scroll-text {
   height: 100%;
   text-align: center;
+
 
   /* animation properties */
   -moz-transform: translateY(100%);

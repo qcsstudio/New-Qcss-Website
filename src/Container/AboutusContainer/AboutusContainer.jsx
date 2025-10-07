@@ -1,34 +1,33 @@
-import ClientWins from '@/Component/AboutusComponent/ClientWins'
-import IndustryImpact from '@/Component/AboutusComponent/IndustryImpact'
-import Mission from '@/Component/AboutusComponent/Mission'
-import OurSuccess from '@/Component/AboutusComponent/OurSuccess'
-import TeamGrid from '@/Component/AboutusComponent/Team'
-import Footer from '@/Component/FooterComponent/Footer'
-import CTA from '@/Component/HomeComponent/CTA'
-import Features from '@/Component/HomeComponent/Features'
+import ClientWins from '@/components/AboutusComponent/ClientWins'
+import IndustryImpact from '@/components/AboutusComponent/IndustryImpact'
+import Mission from '@/components/AboutusComponent/Mission'
+import OurSuccess from '@/components/AboutusComponent/OurSuccess'
+import TeamGrid from '@/components/AboutusComponent/Team'
+import Footer from '@/components/FooterComponent/Footer'
+import CTA from '@/components/HomeComponent/CTA'
+import Features from '@/components/HomeComponent/Features'
 
-import Questions from '@/Component/HomeComponent/Questions'
-import Navbar from '@/Component/Navbar'
+import Questions from '@/components/HomeComponent/Questions'
+import Navbar from '@/components/Navbar'
 import { Aboutusindustries } from '@/Data/Aboutus/IndustryImpact'
 import { AboutusFaq } from '@/Data/FaqQuestions/Questions'
 import { AboutusMiddle, AboutusRight } from '@/Data/HomePage/FeaturesData'
 import React from 'react'
-import Herosection3d from '../HeroSection/Herosection3d'
+import HeroSection from '../HeroSection/Herosection'
 
 const AboutusContainer = () => {
   return (
     <>
     <Navbar/>
-     <Herosection3d heading="Building the Future Today, With Human Creativity & AI Precision"
+     <HeroSection heading="Building the Future Today, With Human Creativity & AI Precision"
         para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo‑charged by AI."
-        // titles={titles}
-        // buttons={buttons}
+        // buttons=""
 
     />
-    <ClientWins/>
-    <TeamGrid/>
-    <OurSuccess/>
+    <OurSuccess/> 
     <Mission/>
+    <TeamGrid/>
+    <ClientWins/>
     <IndustryImpact cardsData={Aboutusindustries}/>
     <Features middleFeature={AboutusMiddle} rightFeature={AboutusRight}/>
      <CTA/>

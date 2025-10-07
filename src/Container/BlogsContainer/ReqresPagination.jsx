@@ -1,7 +1,7 @@
 'use client';
 import { bloglogo } from '@/AllAssets/AllAsssets';
-import Heading from '@/Component/HeadingComponent/Heading';
-import IconNtext from '@/Component/iconNtextComponent/IconNtext';
+import Heading from '@/components/HeadingComponent/Heading';
+import IconNtext from '@/components/iconNtextComponent/IconNtext';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';

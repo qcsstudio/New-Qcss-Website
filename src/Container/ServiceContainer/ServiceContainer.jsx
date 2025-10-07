@@ -1,21 +1,21 @@
 import React from 'react'
-import Footer from '@/Component/FooterComponent/Footer'
-import Questions from '@/Component/HomeComponent/Questions'
-import WeSupport from '@/Component/HomeComponent/WeSupport'
-import Navbar from '@/Component/Navbar'
-import Growth from '@/Component/ServiceComponent/Growth'
-import Strategy from '@/Component/ServiceComponent/Strategy'
+import Footer from '@/components/FooterComponent/Footer'
+import Questions from '@/components/HomeComponent/Questions'
+import WeSupport from '@/AllAssets/WeSupport'
+import Navbar from '@/components/Navbar'
+import Growth from '@/components/ServiceComponent/Growth'
+import Strategy from '@/components/ServiceComponent/Strategy'
 import { ServiceFaq } from '@/Data/FaqQuestions/Questions'
 import { serviceCards1, serviceCards2 } from '@/Data/HomePage/weSupportData'
 import { ServiceGrowthCard } from '@/Data/ServicePage/Growth'
 import { ServiceStrategy } from '@/Data/ServicePage/StrategyData'
-import Herosection3d from '../HeroSection/Herosection3d'
+import HerosectionMain from '../HeroSection/HerosectionMain'
 
 const ServiceContainer = () => {
     return (
         <>
             <Navbar />
-            <Herosection3d heading="Growth Engines That Turn Clicks Into Customers—And Busywork Into Autopilot"
+            <HerosectionMain heading="Growth Engines That Turn Clicks Into Customers—And Busywork Into Autopilot"
                 para="AI SEO, machine‑learning ads, voice‑first content, Nova chatbots, and no‑code web automation—designed and delivered by one cross‑functional team for faster, smarter scale."
             // titles={titles}
             // buttons={buttons}

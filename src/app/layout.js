@@ -1,7 +1,8 @@
 import Script from "next/script";
 import { Geist, Geist_Mono, Montserrat, Unbounded } from "next/font/google";
 import "./globals.css";
-
+import ChatBotComponent from "@/components/ChatBotComponent/ChatBotComponent";
+import { BotProvider } from "@/context/Bot.context";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -76,6 +77,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${unbounded.variable} ${montserrat.variable}`}>
       <head>
+         <link
+          rel="canonical"
+          href="https://qcsstudio.com/"
+          key="canonical"
+        />
+         <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TGNFYNFQQ2');
+          `}
+        </Script>
         <Script
           id="spline-viewer"
           type="module"
@@ -118,8 +132,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       
-        {children}
+        <BotProvider>
+          <ChatBotComponent>{children}</ChatBotComponent>
+        </BotProvider>
+
       </body>
     </html>
   );

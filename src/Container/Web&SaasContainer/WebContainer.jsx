@@ -1,21 +1,28 @@
-import Footer from '@/Component/FooterComponent/Footer'
-import Questions from '@/Component/HomeComponent/Questions'
-import Navbar from '@/Component/Navbar'
-import Growth from '@/Component/ServiceComponent/Growth'
-import AutomationStack from '@/Component/WebSaasComponent/AutomationStack'
-import AutomationTable from '@/Component/WebSaasComponent/AutomationTable'
-import CaseStudyCard from '@/Component/WebSaasComponent/CaseStudyCard '
-import ComparisonTable from '@/Component/WebSaasComponent/ComparisonTable '
-import Roadmaps from '@/Component/WebSaasComponent/Roadmaps'
+import Footer from '@/components/FooterComponent/Footer'
+import Questions from '@/components/HomeComponent/Questions'
+import Navbar from '@/components/Navbar'
+import Growth from '@/components/ServiceComponent/Growth'
+import AutomationStack from '@/components/WebSaasComponent/AutomationStack'
+import AutomationTable from '@/components/WebSaasComponent/AutomationTable'
+import CaseStudyCard from '@/components/WebSaasComponent/CaseStudyCard '
+import ComparisonTable from '@/components/WebSaasComponent/ComparisonTable '
+import Roadmaps from '@/components/WebSaasComponent/Roadmaps'
 import { WebSaasFaq } from '@/Data/FaqQuestions/Questions'
 import { WebSaasAutomationCard, WebsaasGrowthCard, WebSaasSLAsCard } from '@/Data/ServicePage/Growth'
 import { websaastableData } from '@/Data/weeb-saas/TableData'
 import React from 'react'
+import HeroSection from '../HeroSection/Herosection'
+
 
 const WebContainer = () => {
   return (
     <>
       <Navbar />
+      <HeroSection heading="Automate Everything Convert Faster, Scale Limitlessly."
+        para="AI-ready websites, drag-and-drop workflows, GPT dashboards and containerised SaaS free 60 % of your team’s week and keep you online—even at 2 million users."
+    
+
+      />
       <AutomationTable />
       <AutomationStack heading="Automation Stack 3.0 " heading1="Under the Hood" cardData={WebSaasAutomationCard} slidesPerView="3.5" />
       <ComparisonTable heading="Edge Over Platform Agencies" />
