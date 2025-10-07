@@ -4,6 +4,8 @@ import "./globals.css";
 import ChatBotComponent from "@/components/ChatBotComponent/ChatBotComponent";
 import { BotProvider } from "@/context/Bot.context";
 import CalendlyBadge from "@/components/CalendlyBadge/CalendlyBadge";
+import 'react-phone-input-2/lib/style.css';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -78,12 +80,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${unbounded.variable} ${montserrat.variable}`}>
       <head>
-         <link
+        <link
           rel="canonical"
           href="https://qcsstudio.com/"
           key="canonical"
         />
-         <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
