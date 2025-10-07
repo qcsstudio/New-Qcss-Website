@@ -66,7 +66,7 @@ const HomeContainer = () => {
       {/* <NextGenTools /> */}
 
       <Suspense fallback={<div></div>}>
-        <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" headingHeight="h-[80px]" />
+        <WeSupport cards={supportCards} heading="Startups to Scaleups Here's Who We Support" headingHeight="h-[82px]" />
 
       </Suspense>
       <Suspense fallback={<div></div>}>
