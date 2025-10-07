@@ -22,9 +22,10 @@ const WeSupport = dynamic(() => import("@/components/HomeComponent/WeSupport"), 
 import { HomePageFaq } from "@/Data/FaqQuestions/Questions";
 import { HomemiddleFeatures, HomerightFeatures } from "@/Data/HomePage/FeaturesData";
 import { supportCards } from "@/Data/HomePage/weSupportData";
+import { useCalendly } from "@/components/CalendlyBadge/CalendlyBadge";
 
 const HomeContainer = () => {
-
+ const openCalendly = useCalendly()
   const titles = [
     "Marketing",
     "Automation",
@@ -51,6 +52,7 @@ const HomeContainer = () => {
         para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
         titles={titles}
         buttons={buttons}
+        action ={useCalendly()}
       />
       <Suspense fallback={<div></div>}>
         <Brands heading="QuantumCrafters: " heading1="The Growth Engine Behind Modern Brands" />
