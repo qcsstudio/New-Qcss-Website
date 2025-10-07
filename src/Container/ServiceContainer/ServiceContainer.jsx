@@ -1,7 +1,6 @@
 import React from 'react'
 import Footer from '@/components/FooterComponent/Footer'
 import Questions from '@/components/HomeComponent/Questions'
-import WeSupport from '@/components/HomeComponent/WeSupport'
 import Navbar from '@/components/Navbar'
 import Growth from '@/components/ServiceComponent/Growth'
 import Strategy from '@/components/ServiceComponent/Strategy'
@@ -10,6 +9,7 @@ import { serviceCards1, serviceCards2 } from '@/Data/HomePage/weSupportData'
 import { ServiceGrowthCard } from '@/Data/ServicePage/Growth'
 import { ServiceStrategy } from '@/Data/ServicePage/StrategyData'
 import HerosectionMain from '../HeroSection/HerosectionMain'
+import WeSupport from '@/components/HomeComponent/WeSupport'
 
 const ServiceContainer = () => {
     return (

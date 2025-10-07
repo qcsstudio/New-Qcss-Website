@@ -15,7 +15,7 @@ const Features = dynamic(() => import("@/components/HomeComponent/Features"), { 
 const PowerSection = dynamic(() => import("@/components/HomeComponent/PowerSection"), { ssr: false, loading: () => <p></p> });
 const Questions = dynamic(() => import("@/components/HomeComponent/Questions"), { ssr: false, loading: () => <p></p> });
 
-const WeSupport = dynamic(() => import("@/Components/HomeComponent/WeSupport"), { ssr: false, loading: () => <p></p> });
+const WeSupport = dynamic(() => import("@/components/HomeComponent/WeSupport"), { ssr: false, loading: () => <p></p> });
 
 
 // Static data imports (keep as is)
