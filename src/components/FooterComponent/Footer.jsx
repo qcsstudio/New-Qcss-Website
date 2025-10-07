@@ -25,7 +25,7 @@ const Footer = () => {
                   <li><Link href="/">Home</Link></li>
                   <li><Link href="/aboutus">About us</Link></li>
                   <li><Link href="https://elevatrx.app">products</Link></li>
-                  <li><Link href="/courses">Training</Link></li>
+                  {/* <li><Link href="/courses">Training</Link></li> */}
                   <li><Link href="/blogs">Blog</Link></li>
                   <li><Link href="/career">career</Link></li>
                 </ul>

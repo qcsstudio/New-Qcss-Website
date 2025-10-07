@@ -53,8 +53,12 @@ body {
   clip-path: path("M0 210 L0 125 Q0 100 25 100 L105 100 Q130 100 130 75 L130 25 Q130 0 155 0 L395 0 L395 210 Z");
 }
 
-.clip-path-overlay {
+/* .clip-path-overlay {
   clip-path: path("M0 250 L0 125 Q0 100 25 100 L105 100 Q130 100 130 75 L130 25 Q130 0 155 0 L380 0 L380 200 Z");
+} */
+.clip-path-overlay {
+  clip-path: path("M0 250 L0 125 Q0 100 25 100 L105 100 Q130 100 130 75 L130 25 Q130 0 155 0 L580 0 L580 200 Z");
+
 }
 
 /*-------- Home Page Scoll Animation ------------*/
