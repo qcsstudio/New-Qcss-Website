@@ -177,4 +177,7 @@ body {
   }
 }
 
-/*  */
+/*Candely  */
+.calendly-badge-widget {
+  background-color: #F1813B !important;
+}

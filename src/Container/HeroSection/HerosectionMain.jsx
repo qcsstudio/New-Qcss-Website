@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion';
 
 
-const HerosectionMain = ({ heading, para, titles }) => {
+const HerosectionMain = ({ heading, para, titles, action}) => {
 
     const titles1 = useMemo(
         () => titles,
@@ -84,7 +84,7 @@ const HerosectionMain = ({ heading, para, titles }) => {
 
                             </motion.div>
                         </div>
-                        <button className='bg-[#F1813B]  text-white text-nowrap rounded-lg px-6 py-2'>Book a Free AI Growth Consultation</button>
+                        <button onClick={()=>action()} className='bg-[#F1813B]  text-white text-nowrap rounded-lg px-6 py-2 cursor-pointer'>Book a Free AI Growth Consultation</button>
                     </div>
                 </div>
 

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Montserrat, Unbounded } from "next/font/google";
 import "./globals.css";
 import ChatBotComponent from "@/components/ChatBotComponent/ChatBotComponent";
 import { BotProvider } from "@/context/Bot.context";
+import CalendlyBadge from "@/components/CalendlyBadge/CalendlyBadge";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -135,6 +136,7 @@ export default function RootLayout({ children }) {
         <BotProvider>
           <ChatBotComponent>{children}</ChatBotComponent>
         </BotProvider>
+        <CalendlyBadge />
 
       </body>
     </html>
