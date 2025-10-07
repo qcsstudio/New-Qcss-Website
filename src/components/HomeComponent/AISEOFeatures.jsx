@@ -78,7 +78,8 @@ const AISEOFeatures = ({heading,heading1}) => {
           ${!isLastRow ? "md:border-b" : ""}
         `}
               >
-                <div className='transition-all duration-300 hover:shadow-xl hover:scale-105 '>
+
+                <div className='transition-all duration-300  hover:scale-105 '>
                   <div className="lg:px-10 md:px-3 py-8 justify-center items-start">
                     <div className=" ">
                       <h3 className="mt-4 text-xl font-semibold   font-montserrat text-gray-900">
