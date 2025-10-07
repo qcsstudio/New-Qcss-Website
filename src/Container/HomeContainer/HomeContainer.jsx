@@ -14,7 +14,9 @@ const Features = dynamic(() => import("@/components/HomeComponent/Features"), { 
 // const NextGenTools = dynamic(() => import("@/Component/HomeComponent/NextGenTools"), { ssr: false, loading: () => <p></p> });
 const PowerSection = dynamic(() => import("@/components/HomeComponent/PowerSection"), { ssr: false, loading: () => <p></p> });
 const Questions = dynamic(() => import("@/components/HomeComponent/Questions"), { ssr: false, loading: () => <p></p> });
+
 const WeSupport = dynamic(() => import("@/Components/HomeComponent/WeSupport"), { ssr: false, loading: () => <p></p> });
+
 
 // Static data imports (keep as is)
 import { HomePageFaq } from "@/Data/FaqQuestions/Questions";

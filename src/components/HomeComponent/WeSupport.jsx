@@ -11,11 +11,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Heading from '../HeadingComponent/Heading';
 
+
 const WeSupport = ({ cards, heading, heading1 ,headingHeight}) => {
     return (
         <>
-
-            <div className="container mx-auto px-10 "> 
+            <div className="container mx-auto px-10 ">
                 <Heading heading={heading} heading1={heading1} />
                 <div className=" py-10">
                     <Swiper
@@ -47,6 +47,11 @@ const WeSupport = ({ cards, heading, heading1 ,headingHeight}) => {
                                             </p> 
                                         }
                                         <div className={`flex flex-col items-start justify-between    ${item.desc ? "mt-8 md:mt-8 lg:mt-15 xl:mt-10 md:h-64 lg:h-60  " : "mt-12 sm:mt-20 lg:mt-22 xl:mt-24 h-80 md:h-72 lg:h-64"}`}>
+
+                                            item.desc && <p className={`text-gray-600 text-base h-[50px] lg:h-[70px] sm:text-[18px]  lg:text-[20px] font-medium font-unbounded `}>
+                                                {item.desc}
+                                            </p> 
+                                        }
                                             <p className='font-montserrat text-[15px] sm:text-[16px]  lg:text-[15px] '>{item.para}</p>
                                             <button className='flex gap-2 font-montserrat items-center justify-center'>{item.button} <span><MdKeyboardArrowRight className='text-[20px]' /></span></button>
                                         </div>
