@@ -6,7 +6,7 @@ export default function HeroSection({ HeroImage, para, element, action }) {
   return (
     <>
 
-      <div className={`relative w-[97%]  lg:h-[60vh] xl:h-[93vh] mx-auto rounded-lg overflow-hidden mb-10 ${HeroImage ? "text-white" : "text-black"}`}>
+      <div className={`relative w-[97%] flex items-center  lg:h-[60vh] xl:h-[93vh] mx-auto rounded-lg overflow-hidden mb-10 ${HeroImage ? "text-white" : "text-black"}`}>
 
         { HeroImage && <Image
           src={HeroImage}
@@ -15,10 +15,8 @@ export default function HeroSection({ HeroImage, para, element, action }) {
           alt="Hero Background"
           className="absolute top-0 w-full h-full border xl:object-cover z-10"
         />}
-
-
         {/* Content */}
-        <div className="relative lg:w-[55%] xl:w-[55%] lg:mt-16 xl:mt-20 ms-10  xl:ms-20 z-10 ">
+        <div className="relative lg:w-[55%] xl:w-[55%]  ms-10  xl:ms-20 z-10 ">
           {/* <h1 className="font-unbounded text-[55px] ">{heading}</h1> */}
           {element}
           <p className="font-montserrat lg:text-[17px] xl:text-[20px] lg:w-[95%] xl:w-full ">{para}</p>
