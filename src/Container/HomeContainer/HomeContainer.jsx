@@ -54,19 +54,19 @@ useEffect(() => {
 }, [titleNumber, titles]);
 
 const hero_Heading = (
-  <h1 className="font-unbounded lg:text-[40px] xl:text-[60px] lg:w-full xl:w-[92%] 2xl:w-full leading-tight">
+  <h1 className="font-unbounded lg:text-[40px] xl:text-[60px] lg:w-full  leading-tight ">
     {/* Line 1 */}
     Your Partner in
     <br />
 
     {/* Line 2 */}
-    <span className="text-[50px] 2xl:text-[74px] font-bold">
+    <span className="text-[50px] 2xl:text-[70px] font-bold">
       AI Driven Growth in
     </span>
    
 
     {/* Line 3 - Animated Titles */}
-    <span className="relative inline-flex overflow-hidden align-baseline lg:text-[55px] 2xl:text-[75px]  font-bold text-white  w-[82%] h-full ms-4">
+    <span className="relative inline-flex overflow-hidden align-baseline lg:text-[55px] 2xl:text-[70px]  font-bold text-white  w-[82%] h-full ms-4">
          &nbsp;
       {titles1.map((title, index) => (
         <motion.span
