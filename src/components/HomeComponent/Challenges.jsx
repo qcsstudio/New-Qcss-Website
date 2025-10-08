@@ -80,10 +80,10 @@ export default function Challenges({ heading, heading1 }) {
       {/* Custom Navigation Buttons at Bottom */}
       <div className="flex justify-center gap-6 mt-6">
         <button className="custom-prev  transition">
-          <Image src={previous} width={100} height={100} className="w-full h-full" alt="previuosbutton" />
+          <Image src={previous} width={45} height={45}  alt="previuosbutton" />
         </button>
         <button className="custom-next  transition">
-          <Image src={next} width={100} height={100} className="w-full h-full" alt="nextbutton" />
+          <Image src={next} width={45} height={45}  alt="nextbutton" />
         </button>
       </div>
     </div>
