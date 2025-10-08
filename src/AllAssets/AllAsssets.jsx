@@ -74,11 +74,12 @@ import flag from '../../public/HeroImages/flag.png'
 
 //Hero-Image
 import HomeHero from '../../public/HeroImages/Home-Hero.svg'
+import HomeHeromobile from '../../public/HeroImages/Home-Hero-mobile.svg'
 
 export {
     HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
     challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar,success,team1,team2,team3,
     AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2,Crosslogo,Checklogo,bloglogo,
-    projectimage1,projectimage2,projectimage3,projectimage4,upload,flag,HomeHero
+    projectimage1,projectimage2,projectimage3,projectimage4,upload,flag,HomeHero,HomeHeromobile
     
 }
