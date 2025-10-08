@@ -70,7 +70,6 @@ clip-path: path("M0 315 L0 187 Q0 150 37 150 L157 150 Q195 150 195 112 L195 37 Q
 }
 
 #scroll-text {
-  height: 100%;
   text-align: center;
 
 
@@ -81,7 +80,7 @@ clip-path: path("M0 315 L0 187 Q0 150 37 150 L157 150 Q195 150 195 112 L195 37 Q
 
   -moz-animation: my-animation 15s linear infinite;
   -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
+  animation: my-animation 10s linear infinite;
 }
 
 /* for Firefox */
@@ -140,7 +139,7 @@ clip-path: path("M0 315 L0 187 Q0 150 37 150 L157 150 Q195 150 195 112 L195 37 Q
 
   -moz-animation: my-animation1 15s linear infinite;
   -webkit-animation: my-animation1 15s linear infinite;
-  animation: my-animation1 15s linear infinite;
+  animation: my-animation1 10s linear infinite;
 }
 
 

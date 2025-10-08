@@ -15,8 +15,8 @@ import challenges7 from '../../public/HeroImages/challenges7.png';
 import challenges8 from '../../public/HeroImages/challenges8.png';
 import challenges9 from '../../public/HeroImages/challenges9.png';
 import challenges10 from '../../public/HeroImages/challenges10.png';
-import previous from '../../public/HeroImages/previous.png';
-import next from '../../public/HeroImages/next.png';
+import previous from '../../public/HeroImages/previous.svg';
+import next from '../../public/HeroImages/next.svg';
 
 //Footer images----------
 import footerlogo from '../../public/HeroImages/footerlogo.png';
@@ -28,7 +28,8 @@ import cta from '../../public/HeroImages/CTA.svg'
 import qcslogo from '../../public/HeroImages/qcslogo.svg'
 
 //Navbar-------------
-import NavbarQcsLogo from '../../public/HeroImages/NavbarLogo.svg'
+// import NavbarQcsLogo from '../../public/HeroImages/NavbarLogo.svg' // black
+import NavbarQcsLogo from '../../public/HeroImages/Nav-logo.png' // black
 
 //Mission & Values-----------
 import MissionBar from '../../public/HeroImages/Mission.svg'
@@ -76,10 +77,18 @@ import flag from '../../public/HeroImages/flag.png'
 import HomeHero from '../../public/HeroImages/Home-Hero.svg'
 import HomeHeromobile from '../../public/HeroImages/Home-Hero-mobile.svg'
 
+//Client-Images
+
+import accountsly from '../../public/Clients/accountsly.png'
+import EAA from '../../public/Clients/EAA.jpg'
+import Etisha from '../../public/Clients/Etisha.png'
+import PBA from '../../public/Clients/PBA.jpg'
+import Udey from '../../public/Clients/Udey.jpg'
+
 export {
     HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
     challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar,success,team1,team2,team3,
     AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2,Crosslogo,Checklogo,bloglogo,
-    projectimage1,projectimage2,projectimage3,projectimage4,upload,flag,HomeHero,HomeHeromobile
+    projectimage1,projectimage2,projectimage3,projectimage4,upload,flag,HomeHero,HomeHeromobile,accountsly,EAA,Etisha,PBA,Udey
     
 }

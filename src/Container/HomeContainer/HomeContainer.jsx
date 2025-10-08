@@ -127,7 +127,7 @@ const hero_Heading = (
 
 
       <Suspense fallback={<div></div>}>
-        <Clients />
+        <Clients heading="Real Results.Happy Clients."/>
 
       </Suspense>
       <Suspense fallback={<div></div>}>
