@@ -25,7 +25,7 @@ import { HomemiddleFeatures, HomerightFeatures } from "@/Data/HomePage/FeaturesD
 import { supportCards } from "@/Data/HomePage/weSupportData";
 import { useCalendly } from "@/components/CalendlyBadge/CalendlyBadge";
 import HeroSection from "../HeroSection/Herosection";
-import { HomeHero } from "@/AllAssets/AllAsssets";
+import { HomeHero, HomeHeromobile } from "@/AllAssets/AllAsssets";
 
 
 
@@ -46,7 +46,7 @@ useEffect(() => {
     if (titleNumber === titles.length - 1) {
       setTitleNumber(0);
     } else {
-      setTitleNumber(titleNumber + 1);
+      setTitleNumber(prev => prev +1);
     }
   }, 3000);
 
@@ -54,59 +54,53 @@ useEffect(() => {
 }, [titleNumber, titles]);
 
 const hero_Heading = (
-  <h1 className="font-unbounded lg:text-[40px] xl:text-[60px]  leading-tight ">
+  <h1 className="font-unbounded text-[30px]  md:text-[35px] lg:text-[40px] xl:text-[60px]  leading-tight text-white text-center md:text-start ">
     {/* Line 1 */}
     Your Partner in
     <br />
 
     {/* Line 2 */}
-    <span className="text-[50px] 2xl:text-[70px] font-bold">
+    <span className="text-[35px] md:text-[37px] lg:text-[50px] 2xl:text-[70px] font-bold">
       AI Driven Growth 
     </span>
    
 
     {/* Line 3 - Animated Titles */}
-    <span className="relative inline-flex overflow-hidden align-baseline lg:text-[55px] 2xl:text-[70px]  font-bold text-white  w-[82%] h-full ">
+    <span className="relative inline-flex text-start  px-12 md:px-0  md:overflow-hidden align-baseline text-[35px] md:text-[37px] lg:text-[55px] 2xl:text-[70px] w-full font-bold text-white  ">
          <span >in</span>
          &nbsp;
-       <span className="relative h-[70px] w-full">
+       <span className="relative  w-full ">
     {titles1.map((title, index) => (
       <motion.span
         key={index}
-        className="absolute left-0 top-0 font-semibold"
-        initial={{ opacity: 0, y: "-100%" }}
+        className="absolute left-0 top-0 font-semibold w-full text-nowrap"
+        initial={{ opacity: 0, x: 100 }}
         animate={
           titleNumber === index
-            ? { y: 0, opacity: 1 }
-            : { y: titleNumber > index ? -150 : 150, opacity: 0 }
+            ? { x: 0, opacity: 1 }
+            : { x: titleNumber > index ? -100 : 100, opacity: 0 }
         }
-        transition={{ type: "spring", stiffness: 60 }}
+        transition={{ type: "spring", stiffness: 50 }}
       >
         {title}
       </motion.span>
+   
     ))}
   </span>
     </span>
   </h1>
 );
 
-
   return (
     <>
       <Navbar />
       <HeroSection
         HeroImage={HomeHero}
+        HeroImageMobile={HomeHeromobile}
         element={hero_Heading}
         para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation crafted by humans, turbo-charged by AI."
         action={useCalendly()}
       />
-      {/* <HerosectionMain
-        heading="Your Partner in AI‑Driven Growth in"
-        para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
-        titles={titles}
-        buttons={buttons}
-        action ={useCalendly()}
-      /> */}
       <Suspense fallback={<div></div>}>
         <Brands heading="QuantumCrafters: " heading1="The Growth Engine Behind Modern Brands" />
 
