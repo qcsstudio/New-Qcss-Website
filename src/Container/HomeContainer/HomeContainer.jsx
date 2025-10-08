@@ -54,35 +54,38 @@ useEffect(() => {
 }, [titleNumber, titles]);
 
 const hero_Heading = (
-  <h1 className="font-unbounded lg:text-[40px] xl:text-[60px] lg:w-full  leading-tight ">
+  <h1 className="font-unbounded lg:text-[40px] xl:text-[60px]  leading-tight ">
     {/* Line 1 */}
     Your Partner in
     <br />
 
     {/* Line 2 */}
     <span className="text-[50px] 2xl:text-[70px] font-bold">
-      AI Driven Growth in
+      AI Driven Growth 
     </span>
    
 
     {/* Line 3 - Animated Titles */}
-    <span className="relative inline-flex overflow-hidden align-baseline lg:text-[55px] 2xl:text-[70px]  font-bold text-white  w-[82%] h-full ms-4">
+    <span className="relative inline-flex overflow-hidden align-baseline lg:text-[55px] 2xl:text-[70px]  font-bold text-white  w-[82%] h-full ">
+         <span >in</span>
          &nbsp;
-      {titles1.map((title, index) => (
-        <motion.span
-          key={index}
-          className="absolute font-semibold"
-          initial={{ opacity: 0, y: "-100%" }}
-          animate={
-            titleNumber === index
-              ? { y: 0, opacity: 1 }
-              : { y: titleNumber > index ? -150 : 150, opacity: 0 }
-          }
-          transition={{ type: "spring", stiffness: 60 }}
-        >
-          {title}
-        </motion.span>
-      ))}
+       <span className="relative h-[70px] w-full">
+    {titles1.map((title, index) => (
+      <motion.span
+        key={index}
+        className="absolute left-0 top-0 font-semibold"
+        initial={{ opacity: 0, y: "-100%" }}
+        animate={
+          titleNumber === index
+            ? { y: 0, opacity: 1 }
+            : { y: titleNumber > index ? -150 : 150, opacity: 0 }
+        }
+        transition={{ type: "spring", stiffness: 60 }}
+      >
+        {title}
+      </motion.span>
+    ))}
+  </span>
     </span>
   </h1>
 );

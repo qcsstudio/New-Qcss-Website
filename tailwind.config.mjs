@@ -7,11 +7,11 @@ export default {
     "./src/containers/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: {
-    xlg: { raw: '(min-width: 1024px) and (max-width: 1279px)' },
-  },
-    extend: {
 
+    extend: {
+      screens: {
+        xlg: '1407px',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
