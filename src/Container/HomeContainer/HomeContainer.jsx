@@ -1,7 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useMemo, useState } from "react";
+import { motion } from 'framer-motion';
 import Navbar from "@/components/Navbar";
 import HerosectionMain from "@/Container/HeroSection/HerosectionMain";
 const Footer = dynamic(() => import("@/components/FooterComponent/Footer"), { ssr: false, loading: () => <p></p> });
@@ -23,42 +24,91 @@ import { HomePageFaq } from "@/Data/FaqQuestions/Questions";
 import { HomemiddleFeatures, HomerightFeatures } from "@/Data/HomePage/FeaturesData";
 import { supportCards } from "@/Data/HomePage/weSupportData";
 import { useCalendly } from "@/components/CalendlyBadge/CalendlyBadge";
+import HeroSection from "../HeroSection/Herosection";
+import { HomeHero } from "@/AllAssets/AllAsssets";
+
+
+
 
 const HomeContainer = () => {
- const openCalendly = useCalendly()
+
   const titles = [
-    "Marketing",
-    "Automation",
-    "SaaS Solutions"
-  ]
-  const buttons = [
-    {
-      text: 'Book a Free AI Growth Consultation',
-      href: '/contactus',
-      variant: 'primary'
-    },
-    {
-      text: 'Explore AI Growth Playbooks',
-      href: '#ai-growth-playbooks',
-      variant: 'secondary'
+  "Marketing",
+  "Automation",
+  "SaaS Solutions"
+];
+
+const titles1 = useMemo(() => titles, []);
+const [titleNumber, setTitleNumber] = useState(0);
+
+useEffect(() => {
+  const timeoutId = setTimeout(() => {
+    if (titleNumber === titles.length - 1) {
+      setTitleNumber(0);
+    } else {
+      setTitleNumber(titleNumber + 1);
     }
-  ]
+  }, 3000);
+
+  return () => clearTimeout(timeoutId);
+}, [titleNumber, titles]);
+
+const hero_Heading = (
+  <h1 className="font-unbounded lg:text-[40px] xl:text-[60px] lg:w-full xl:w-[92%] leading-tight">
+    {/* Line 1 */}
+    Your Partner in
+    <br />
+
+    {/* Line 2 */}
+    <span className="text-[50px] 2xl:text-[75px] font-bold">
+      AI Driven Growth in
+    </span>
+   
+
+    {/* Line 3 - Animated Titles */}
+    <span className="relative inline-flex overflow-hidden align-baseline lg:text-[55px] 2xl:text-[75px]  font-bold text-white  w-[82%] h-full ms-4">
+         &nbsp;
+      {titles1.map((title, index) => (
+        <motion.span
+          key={index}
+          className="absolute font-semibold"
+          initial={{ opacity: 0, y: "-100%" }}
+          animate={
+            titleNumber === index
+              ? { y: 0, opacity: 1 }
+              : { y: titleNumber > index ? -150 : 150, opacity: 0 }
+          }
+          transition={{ type: "spring", stiffness: 60 }}
+        >
+          {title}
+        </motion.span>
+      ))}
+    </span>
+  </h1>
+);
+
 
   return (
     <>
       <Navbar />
-      <HerosectionMain
+      <HeroSection
+        HeroImage={HomeHero}
+        element={hero_Heading}
+        para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation crafted by humans, turbo-charged by AI."
+        action={useCalendly()}
+      />
+      {/* <HerosectionMain
         heading="Your Partner in AI‑Driven Growth in"
         para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation — crafted by humans, turbo-charged by AI."
         titles={titles}
         buttons={buttons}
         action ={useCalendly()}
-      />
+      /> */}
       <Suspense fallback={<div></div>}>
         <Brands heading="QuantumCrafters: " heading1="The Growth Engine Behind Modern Brands" />
 
       </Suspense>
-        <Suspense fallback={<div></div>}>
+      <Suspense fallback={<div></div>}>
         <Challenges heading="The Biggest Challenges We Help You" heading1="Overcome" />
 
       </Suspense>
@@ -77,7 +127,7 @@ const HomeContainer = () => {
         <PowerSection heading="Double the Power:" heading1="AI Marketing & SaaS Automation" />
 
       </Suspense>
-    
+
 
       <Suspense fallback={<div></div>}>
         <Clients />

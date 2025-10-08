@@ -14,14 +14,14 @@ const Navbar = () => {
     <>
     {/* navbar */}
 
-      <nav className="mx-auto flex w-[90%]  items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex xl:w-[90%] lg:w-full  items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
       
         <Link href="/">
           
           <Image src={NavbarQcsLogo} alt="logo" width={194.82} height={40} className='w-full h-full object-fill' />
         </Link>
 
-        <div className='hidden lg:flex lg:space-x-11 text-[17px] font-montserrat '>
+        <div className='hidden lg:flex lg:space-x-11 lg:text-[15px] xl:text-[17px] font-montserrat  '>
           <Link href="/service" className="hover:text-gray-400">Service</Link>
           <Link href="/product" className="hover:text-gray-400">Product</Link>
           <Link href="/aboutus" className="hover:text-gray-400">About Us</Link>
