@@ -54,13 +54,13 @@ useEffect(() => {
 }, [titleNumber, titles]);
 
 const hero_Heading = (
-  <h1 className="font-unbounded lg:text-[40px] xl:text-[60px] lg:w-full xl:w-[92%] leading-tight">
+  <h1 className="font-unbounded lg:text-[40px] xl:text-[60px] lg:w-full xl:w-[92%] 2xl:w-full leading-tight">
     {/* Line 1 */}
     Your Partner in
     <br />
 
     {/* Line 2 */}
-    <span className="text-[50px] 2xl:text-[75px] font-bold">
+    <span className="text-[50px] 2xl:text-[74px] font-bold">
       AI Driven Growth in
     </span>
    

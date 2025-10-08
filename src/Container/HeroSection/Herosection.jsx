@@ -18,7 +18,7 @@ export default function HeroSection({ HeroImage, para, element, action }) {
 
 
         {/* Content */}
-        <div className="relative lg:w-[55%] xl:w-[50%] lg:mt-16 xl:mt-46 ms-10  xl:ms-20 z-10 ">
+        <div className="relative lg:w-[55%] xl:w-[50%] lg:mt-16 xl:mt-20 ms-10  xl:ms-20 z-10 ">
           {/* <h1 className="font-unbounded text-[55px] ">{heading}</h1> */}
           {element}
           <p className="font-montserrat lg:text-[17px] xl:text-[20px] lg:w-[95%] xl:w-full ">{para}</p>
