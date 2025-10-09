@@ -17,7 +17,7 @@
                 "AI-integrated websites, CRM workflows, API dashboards, modular SaaS builds",
             points: ["2x conversions", "60% time saved", "scale-ready architecture"],
             image: Strategy2,
-            link:"/web-saas"
+            link:"/webSaas"
         },
     ];
  export const ProductStrategy = [

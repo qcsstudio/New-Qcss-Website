@@ -85,10 +85,18 @@ import Etisha from '../../public/Clients/Etisha.png'
 import PBA from '../../public/Clients/PBA.jpg'
 import Udey from '../../public/Clients/Udey.jpg'
 
+//dashboard-----------
+import navImage from '../../public/HeroImages/Nave.png'
+import logo from '../../public/HeroImages/logoNav.png'
+import notification from '../../public/HeroImages/notification.png'
+import profile from '../../public/HeroImages/profilePic.png'
+import downArrow from '../../public/HeroImages/arrow-down.png'
+
 export {
     HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
     challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar,success,team1,team2,team3,
     AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2,Crosslogo,Checklogo,bloglogo,
-    projectimage1,projectimage2,projectimage3,projectimage4,upload,flag,HomeHero,HomeHeromobile,accountsly,EAA,Etisha,PBA,Udey
+    projectimage1,projectimage2,projectimage3,projectimage4,upload,flag,HomeHero,HomeHeromobile,accountsly,EAA,Etisha,PBA,Udey,
+    navImage,logo,notification,profile,downArrow
     
 }

@@ -11,9 +11,12 @@ import { AimarketingGrowthCard, AimarketingGrowthCard2, AiMarketingSLAsCard } fr
 import { aimarketingtableData } from '@/Data/weeb-saas/TableData'
 import React from 'react'
 import HeroSection from '../HeroSection/Herosection'
-import { HomeHero } from '@/AllAssets/AllAsssets'
+import { HomeHero, HomeHeromobile } from '@/AllAssets/AllAsssets'
 
-const hero_Heading = (<h1 className='font-unbounded text-[55px]  w-[92%]'>Your Partner in <br /><span className='text-[72px] font-bold'>AI Driven Growth in Marketing</span></h1>)
+const hero_Heading = (<h1 className='font-unbounded text-[55px]  w-[92%]'>
+    Your Pipeline Never Sleeps<br /><span className='text-[72px] font-bold'>
+        Why Should Your Marketing?</span>
+</h1>)
 
 const AimarketingContainer = () => {
 
@@ -24,8 +27,11 @@ const AimarketingContainer = () => {
             <HeroSection
                 HeroImage={HomeHero}
                 element={hero_Heading}
-                para="Crush growth barriers with AI SEO, performance ads, chatbots and web automation crafted by humans, turbo-charged by AI."
-                // action ={useCalendly()}
+                HeroImageMobile={HomeHeromobile}
+                para="Voice‑search dominance, machine‑learning ads, GPT‑accelerated content and
+                        Nova chatbots turn silent websites into revenue machines—cutting CAC
+                        up to 40 % in the first 90 days."
+
             />
             <HelptoGrow heading="How We Help You Grow" heading1="Step by Step" />
             <Growth heading="Roadmap to Results" heading1="(Ignite → Elevate)" cardData={AimarketingGrowthCard} />
