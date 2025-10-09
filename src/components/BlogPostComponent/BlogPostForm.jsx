@@ -11,7 +11,10 @@ import { AiFillFolderOpen } from "react-icons/ai";
 import { TfiReload } from "react-icons/tfi";
 import { ImCloudUpload } from "react-icons/im";
 import Image from "next/image";
-import { Editor } from "../JoditEditor/JoditEditor";
+import dynamic from "next/dynamic";
+const Editor = dynamic(() => import('@/components/JoditEditor/JoditEditor'), {
+  ssr: false,  
+});
 
 
 

@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import JoditEditor from 'jodit-react';
 
 export const Editor = ({ placeholder, setContent, content }) => {
@@ -7,7 +7,7 @@ export const Editor = ({ placeholder, setContent, content }) => {
     
 
     const config = useMemo(() => ({
-        readonly: false, // all options from https://xdsoft.net/jodit/docs/,
+        readonly: false, 
         placeholder: placeholder || 'Start typings...'
     }),
         [placeholder]
