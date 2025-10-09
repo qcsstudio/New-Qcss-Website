@@ -1,7 +1,5 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-// import TiptapEditor from "../EditorComponent/TiptapEditor";
-import TiptapEditor from "../TiptapEditor/TiptapEditor";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
@@ -13,6 +11,7 @@ import { AiFillFolderOpen } from "react-icons/ai";
 import { TfiReload } from "react-icons/tfi";
 import { ImCloudUpload } from "react-icons/im";
 import Image from "next/image";
+import { Editor } from "../JoditEditor/JoditEditor";
 
 
 
@@ -172,6 +171,8 @@ const BlogPostForm = () => {
     setGlobalFilterValue(value);
   };
 
+
+
   // Table Header with Search
   const renderHeader = () => {
     return (
@@ -211,7 +212,7 @@ const BlogPostForm = () => {
 
   const actionBodyTemplate = (rowData) => {
     return (
-      <div className="flex gap-2">
+      <div className="flex gap-2 ">
         <Button
           icon="pi pi-pencil"
           className="p-button-rounded p-button-success p-button-text"
@@ -316,12 +317,10 @@ const BlogPostForm = () => {
             <label htmlFor="description" className="font-medium">
               Content *
             </label>
-            <TiptapEditor
-              content={formData.description}
-              onChange={(html) =>
-                setFormData({ ...formData, description: html })
-              }
-            />
+           
+            <Editor
+            content={formData} setContent={setFormData}
+             />
           </div>
 
           {/* Thumbnail URL */}
