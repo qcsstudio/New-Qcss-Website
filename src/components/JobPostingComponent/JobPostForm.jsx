@@ -1,9 +1,4 @@
 "use client";
-
-import dynamic from 'next/dynamic';
-
-// const TiptapEditor = dynamic(() => import('../EditorComponent/TiptapEditor'), { ssr: false });
-import TiptapEditor from '@/components/TiptapEditor/TiptapEditor'
 import { useEffect, useState, useRef } from "react";
 
 import { DataTable } from 'primereact/datatable';
@@ -14,6 +9,11 @@ import { Button } from 'primereact/button';
 import { FilterMatchMode } from 'primereact/api';
 import { Toast } from 'primereact/toast';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+// import { Editor } from '../JoditEditor/JoditEditor';
+import dynamic from "next/dynamic";
+const Editor = dynamic(() => import('@/components/JoditEditor/JoditEditor'), {
+  ssr: false,   // ⬅️ this line prevents the “self is not defined” error
+});
 
 
 
@@ -80,8 +80,8 @@ const JobPostForm = () => {
     setIsSubmitting(true);
 
     try {
-      const url = editingId 
-        ? `/api/career/${encodeURIComponent(editingId)}` 
+      const url = editingId
+        ? `/api/career/${encodeURIComponent(editingId)}`
         : "/api/career";
       const method = editingId ? "PUT" : "POST";
 
@@ -100,18 +100,18 @@ const JobPostForm = () => {
       }
 
       showToast(
-        'success', 
-        'Success', 
+        'success',
+        'Success',
         editingId ? 'Job updated successfully' : 'Job created successfully'
       );
-      
+
       setModalOpen(false);
       resetForm();
       await fetchJobs(); // Ensure fresh data is loaded
     } catch (error) {
       console.error("Submission error:", error);
       showToast('error', 'Submission Error', error.message);
-      
+
       // Special handling for update conflicts
       if (editingId && error.message.includes('heading')) {
         fetchJobs(); // Refresh data if heading conflict
@@ -131,15 +131,15 @@ const JobPostForm = () => {
       accept: async () => {
         try {
           const response = await fetch(
-            `/api/career/${encodeURIComponent(job.heading)}`, 
+            `/api/career/${encodeURIComponent(job.heading)}`,
             { method: "DELETE" }
           );
-          
+
           if (!response.ok) {
             const errorData = await response.json();
             throw new Error(errorData.error || 'Failed to delete job');
           }
-          
+
           showToast('success', 'Success', 'Job deleted successfully');
           await fetchJobs();
         } catch (error) {
@@ -207,9 +207,9 @@ const JobPostForm = () => {
   // Table Columns Templates
   const descriptionBodyTemplate = (rowData) => {
     return (
-      <div 
-        className="line-clamp-2 max-w-xs" 
-        dangerouslySetInnerHTML={{ __html: rowData.description }} 
+      <div
+        className="line-clamp-2 max-w-xs"
+        dangerouslySetInnerHTML={{ __html: rowData.description }}
       />
     );
   };
@@ -266,16 +266,16 @@ const JobPostForm = () => {
           <Column field="location" header="Location" sortable style={{ width: '15%' }} />
           <Column field="experience" header="Experience" sortable style={{ width: '15%' }} />
           <Column field="skills" header="Skills" sortable style={{ width: '15%' }} />
-          <Column 
-            field="description" 
-            header="Description" 
-            body={descriptionBodyTemplate} 
+          <Column
+            field="description"
+            header="Description"
+            body={descriptionBodyTemplate}
             style={{ width: '25%' }}
           />
-          <Column 
-            body={actionBodyTemplate} 
-            header="Actions" 
-            style={{ width: '10%' }} 
+          <Column
+            body={actionBodyTemplate}
+            header="Actions"
+            style={{ width: '10%' }}
             exportable={false}
           />
         </DataTable>
@@ -335,12 +335,9 @@ const JobPostForm = () => {
             <label htmlFor="description" className="font-medium block mb-2">
               Description *
             </label>
-            <TiptapEditor
-              content={formData.description}
-              onChange={(html) =>
-                setFormData({ ...formData, description: html })
-              }
-              className="border rounded p-2 min-h-[200px]"
+          
+            <Editor
+              content={formData} setContent={setFormData}
             />
             <small className="p-error block mt-1">
               {!formData.description && 'Description is required'}
