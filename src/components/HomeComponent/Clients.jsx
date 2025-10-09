@@ -12,7 +12,6 @@ const Clients = () => {
     const [activeIndex, setActiveIndex] = useState(1);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
-    console.log("client")
     const handleNext = useCallback(() => {
         setActiveIndex(activeIndex + 1)
     }, [activeIndex])
@@ -21,7 +20,6 @@ const Clients = () => {
             setActiveIndex(activeIndex - 1)
         }
     }
-    console.log(activeIndex, "activeIndexactiveIndexactiveIndex")
     return (
         <div className="container mx-auto px-10">
 
