@@ -160,7 +160,7 @@ const cleanDescription = (html, wordLimit = 54) => {
                     ></div>
 
                     <Link
-                      href={`/blogs/${blog?.heading?.trim().replace(/\s+/g, "_")}`}
+                      href={`/blogs/${blog?.slug?.trim().replace(/\s+/g, "-")}`}
                       className="text-[#FFFEF5] rounded-lg text-base bg-[#000000] px-[8.95rem] py-2 text-center block text-nowrap"
                     >
                       Read More
@@ -181,10 +181,10 @@ const cleanDescription = (html, wordLimit = 54) => {
                   .slice(0, 5)
                   .map((blog, index) => (
                     <Link
-                     href={`/blogs/${blog?.heading?.trim().replace(/\s+/g, "_")}`}
+                     href={`/blogs/${blog?.slug?.trim().replace(/\s+/g, "-")}`}
                       // href={`/blogs/${blog?.heading}`}
                       key={index}
-                      className="flex gap-3 items-start border-b border-gray-300 pb-3 hover:bg-gray-100 transition rounded-md p-2"
+                      className="flex border gap-3 items-start border-b border-gray-300 pb-3 hover:bg-gray-100 transition rounded-md p-2"
                     >
                       <Image
                         src={blog.thumbnail}

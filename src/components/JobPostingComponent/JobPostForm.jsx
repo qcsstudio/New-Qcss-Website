@@ -9,11 +9,7 @@ import { Button } from 'primereact/button';
 import { FilterMatchMode } from 'primereact/api';
 import { Toast } from 'primereact/toast';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
-// import { Editor } from '../JoditEditor/JoditEditor';
-import dynamic from "next/dynamic";
-const Editor = dynamic(() => import('@/components/JoditEditor/JoditEditor'), {
-  ssr: false,   // ⬅️ this line prevents the “self is not defined” error
-});
+import { Editor } from '../JoditEditor/JoditEditor';
 
 
 

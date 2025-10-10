@@ -6,9 +6,9 @@ export async function GET(req,{ params }) {
   const { slug } =   params;
   await connectMongo();
  
-  console.log(params)
+  console.log(params,"====>")
   try {
-    const blog = await Blog.findOne({ heading: decodeURIComponent(slug) });
+    const blog = await Blog.findOne({ slug: decodeURIComponent(slug) });
     if (!blog) {
       return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
     }

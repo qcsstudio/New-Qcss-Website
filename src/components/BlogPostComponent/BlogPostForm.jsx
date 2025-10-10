@@ -11,10 +11,7 @@ import { AiFillFolderOpen } from "react-icons/ai";
 import { TfiReload } from "react-icons/tfi";
 import { ImCloudUpload } from "react-icons/im";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-const Editor = dynamic(() => import('@/components/JoditEditor/JoditEditor'), {
-  ssr: false,  
-});
+import { Editor } from "../JoditEditor/JoditEditor";
 
 
 
@@ -25,8 +22,12 @@ const BlogPostForm = () => {
   const [formData, setFormData] = useState({
     heading: "",
     description: "",
-    thumbnail: ""
+    thumbnail: "",
+    slug:"",
+    metaTitle:"" ,
+    metaDescription:""
   });
+  console.log(formData,"formDataformDataformData")
   const [editingId, setEditingId] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -109,7 +110,7 @@ const BlogPostForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setError("");
-
+ 
     const method = editingId ? "PUT" : "POST";
     const url = editingId
       ? `/api/blog/${encodeURIComponent(formData.heading)}`
@@ -310,6 +311,42 @@ const BlogPostForm = () => {
               value={formData.heading}
               onChange={(e) =>
                 setFormData({ ...formData, heading: e.target.value })
+              }
+              required
+            />
+             <label htmlFor="heading" className="font-medium">
+              Slug *
+            </label>
+            <InputText
+              id="slug"
+              placeholder="Enter Slug.."
+              value={formData.slug}
+              onChange={(e) =>
+                setFormData({ ...formData, slug: e.target.value })
+              }
+              required
+            />
+             <label htmlFor="heading" className="font-medium">
+              Meta Title *
+            </label>
+            <InputText
+              id="metaTitle"
+              placeholder="Enter Meta Title.."
+              value={formData.metaTitle}
+              onChange={(e) =>
+                setFormData({ ...formData, metaTitle: e.target.value })
+              }
+              required
+            />
+            <label htmlFor="heading" className="font-medium">
+              Meta Description *
+            </label>
+            <InputText
+              id="metaDescription"
+              placeholder="Enter Meta Description.."
+              value={formData.metaDescription}
+              onChange={(e) =>
+                setFormData({ ...formData, metaDescription: e.target.value })
               }
               required
             />
