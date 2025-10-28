@@ -48,42 +48,41 @@ const BlogPostForm = () => {
     }
   },[blogs]);
 
-const handleImageChange = async (e) => {
-  setLoading(true);
-  const imageData = e?.target?.files[0];
-  if (!imageData) { 
-    setLoading(false); 
-    return; 
-  }
+  const handleImageChange = async (e) => {
+    setLoading(true);
+    const imageData = e?.target?.files[0];
+    if (!imageData) return;
 
-  try {
-    // Create FormData
-    const formData = new FormData();
-    formData.append('file', imageData);
+    // const tempFileData = URL.createObjectURL(imageData);
+    // setImageShow(tempFileData);
 
-    // Upload via your API (no CORS issues!)
-    const response = await fetch('/api/s3-upload-url', {
-      method: 'POST',
-      body: formData,
-    });
+    try {
+      let fileName = Date.now();
+      fileName = String(fileName) + imageData.name;
+      const res = await fetch(`/api/s3-upload-url?fileName=${fileName}&fileType=${imageData.type}`);
+      const { uploadURL, key } = await res.json();
 
-    const data = await response.json();
+      // Uploading to the temp url
+      const response = await fetch(uploadURL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': imageData.type,
+        },
+        body: imageData,
+      });
+      // const tempData = await response.json()
+      console.log("Image UPload Response S3: ", response?.url);
 
-    if (!response.ok) {
-      throw new Error(data.error || 'Upload failed');
+      const imageUrl = `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/${key}`;
+      console.log("Upload Image URL : ", imageUrl);
+      setThumbnail(imageUrl); // update your context or state
+      setImageShow(imageUrl);
+      setLoading(false);
+    } catch (error) {
+      console.log("Unable to upload Image:", error);
+      setLoading(false);
     }
-
-    console.log("Upload Image URL:", data.url);
-    setThumbnail(data.url);
-    setImageShow(data.url);
-    setLoading(false);
-
-  } catch (error) {
-    console.error("Upload error:", error);
-    alert(`Upload failed: ${error.message}`);
-    setLoading(false);
-  }
-};
+  };
 
   // Fetch Blogs
   const fetchBlogs = async () => {
