@@ -9,7 +9,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 export async function POST(req) {
   await connectMongo();
   const { email, password } = await req.json();
-
+  
   const adminDoc = await Admin.findOne({ email });
   if (!adminDoc) {
     return NextResponse.json({ error: 'Admin not found' }, { status: 401 });
