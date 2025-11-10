@@ -37,9 +37,6 @@ const ChatBotComponent = ({ children }) => {
     }, []);
 
 
-
-
-
     // Handle Select Option's
     const handleOptionClick = (option) => {
         setTimeout(() => {
@@ -199,7 +196,7 @@ const ChatBotComponent = ({ children }) => {
     const renderResponseMessage = (entry, index) => {
         if (entry.type === "user") {
             return (
-                <div className="outerContainer w-[100%] gap-[.7rem] px-[1rem]">
+                <div className="outerContainer w-[100%] gap-[.7rem] px-[1rem] " key={index}>
 
                     <div key={index} className="float-right  py-[1.125rem] px-[1.18rem] rounded-tl-[1.5rem] rounded-bl-[1.5rem] rounded-br-[1.5rem] mb-[.7rem] bg-[#F1813B] text-[#ffffff]">
                         <p className="chatData text-[0.81rem] leading-tight">{entry.text}</p>
@@ -207,7 +204,7 @@ const ChatBotComponent = ({ children }) => {
                 </div>
             );
         }
-
+ 
         const step = flowMap[entry.key];
         console.log("Step Data :", step);
         if (!step) return null;
