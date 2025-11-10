@@ -125,6 +125,7 @@ export default function ReadMoreBlog() {
       <Navbar />
 
       <div className="w-[90%] mx-auto p-6 flex flex-col lg:flex-row gap-6">
+        {/* blog */}
         <div className="w-full lg:w-[60%]">
           {loading ? (
             <div className="space-y-4 animate-pulse">
@@ -145,6 +146,7 @@ export default function ReadMoreBlog() {
             </>
           )}
         </div>
+        
         {/* Recent Post's------------------ */}
         <div className="w-full lg:w-[40%] h-[600px] mt-6 lg:mt-0 rounded-lg px-5 py-8 bg-[#F5F7F9] overflow-y-auto no-scrollbar">
           <h2 className={`text-[26px] font-bold mb-4 font-unbounded`}>Recent Post&#39;s</h2>

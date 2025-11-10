@@ -43,26 +43,7 @@ export default function   BlogList() {
     return () => clearInterval(interval);
   }, []);
 
-  // const cleanDescription = (html) => {
-  //   if (!html) return '';
-  //   const tempDiv = document.createElement('div');
-  //   tempDiv.innerHTML = html;
 
-  //   const walker = document.createTreeWalker(tempDiv, NodeFilter.SHOW_TEXT, null, false);
-  //   let firstTextNode = walker.nextNode();
-
-  //   while (firstTextNode) {
-  //     const text = firstTextNode.nodeValue.trim();
-  //     if (text.toLowerCase().startsWith('introduction')) {
-  //       const newText = text.replace(/^introduction[\s:,-]*/i, '');
-  //       firstTextNode.nodeValue = newText;
-  //       break;
-  //     }
-  //     firstTextNode = walker.nextNode();
-  //   }
-
-  //   return tempDiv.innerHTML;
-  // };
 
 const cleanDescription = (html, wordLimit = 54) => {
   if (!html) return "";
@@ -130,6 +111,9 @@ const cleanDescription = (html, wordLimit = 54) => {
       <div className="w-[90%] mx-auto">
       <Heading heading="Beyond the Canvas Stories from QuantumCrafter Studio" />
         <div className="flex flex-col lg:flex-row gap-6  ">
+
+          {/* ----------blogs-------- */}
+          
           <div className="w-full lg:w-[70%] grid grid-cols-1 sm:grid-cols-2 gap-6">
             {loading
               ? Array.from({ length: blogsPerPage }).map((_, idx) => <BlogSkeleton key={idx} />)

@@ -26,6 +26,7 @@ import { supportCards } from "@/Data/HomePage/weSupportData";
 import { useCalendly } from "@/components/CalendlyBadge/CalendlyBadge";
 import HeroSection from "../HeroSection/Herosection";
 import { HomeHero, HomeHeromobile } from "@/AllAssets/AllAsssets";
+import NextGenTools from "@/components/HomeComponent/NextGenTools";
 
 
 
@@ -129,6 +130,9 @@ const hero_Heading = (
       <Suspense fallback={<div></div>}>
         <Clients heading="Real Results.Happy Clients."/>
 
+      </Suspense>
+      <Suspense fallback={<div></div>}>
+      <NextGenTools heading="Next-Gen Tools Driving Your Success"/>
       </Suspense>
       <Suspense fallback={<div></div>}>
         <Features middleFeature={HomemiddleFeatures} rightFeature={HomerightFeatures} />

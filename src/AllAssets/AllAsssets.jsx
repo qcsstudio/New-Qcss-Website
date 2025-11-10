@@ -92,11 +92,15 @@ import notification from '../../public/HeroImages/notification.png'
 import profile from '../../public/HeroImages/profilePic.png'
 import downArrow from '../../public/HeroImages/arrow-down.png'
 
+// next-gen Tools
+import Elevatx from '../../public/HeroImages/ElevatrX-Nextgen.svg'
+import icon_next from "../../public/HeroImages/icon-nextgen.svg"
+
 export {
     HomeBrand1,HomeBrand2,HomeBrand3,challenges1,challenges2,challenges3,challenges4,challenges5,challenges6,challenges7,challenges8,
     challenges9,challenges10,previous,next,footerlogo,cta,qcslogo,NavbarQcsLogo,MissionBar,VisionBar,ValuesBar,success,team1,team2,team3,
     AWS,DPIIT,GooglePartner,Linkedinpartner,MetaBussiness,PinterestPartner,AutomationPartner,Strategy1,Strategy2,Crosslogo,Checklogo,bloglogo,
     projectimage1,projectimage2,projectimage3,projectimage4,upload,flag,HomeHero,HomeHeromobile,accountsly,EAA,Etisha,PBA,Udey,
-    navImage,logo,notification,profile,downArrow
+    navImage,logo,notification,profile,downArrow,Elevatx,icon_next
     
 }
