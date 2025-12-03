@@ -23,7 +23,7 @@ export async function POST(req) {
 
         // Upload directly to S3 from server
         const uploadParams = {
-            Bucket: process.env.S3_BUCKET_NAME,
+            Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME,
             Key: key,
             Body: buffer,
             ContentType: file.type,
@@ -32,7 +32,7 @@ export async function POST(req) {
 
         await s3.upload(uploadParams).promise();
 
-        const fileUrl = `https://${process.env.S3_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/${key}`;
+        const fileUrl = `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/${key}`;
 
         return Response.json({
             success: true,
