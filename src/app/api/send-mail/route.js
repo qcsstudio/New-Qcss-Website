@@ -3,6 +3,7 @@ import connectMongo from "@/lib/mongodb";
 import pdfViewers from "@/models/pdfViewers";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
+
 const generateVerificationEmail = (verifyUrl) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -18,17 +19,14 @@ const generateVerificationEmail = (verifyUrl) => `
         <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="background:#ffffff; border-radius:8px; padding:40px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
           <tr>
             <td>
-              <!-- Logo / Branding -->
+
               <h1 style="color:#4f46e5; margin-bottom:20px;">QuantumCrafters Studio</h1>
 
-              <!-- Greeting -->
               <h2 style="color:#111827; margin-bottom:10px;">Verify Your Email</h2>
               <p style="color:#374151; font-size:16px; line-height:24px; margin-bottom:30px;">
-                Thanks for signing up! Please confirm your email address by clicking the button below. 
-                This link will expire in <strong>1 hour</strong>.
+                Please confirm your email by clicking the button below. This link will expire in <strong>1 hour</strong>.
               </p>
 
-              <!-- Button -->
               <a href="${verifyUrl}" 
                  style="display:inline-block; background-color:#4f46e5; color:#ffffff; 
                         text-decoration:none; padding:12px 24px; border-radius:6px; 
@@ -36,20 +34,20 @@ const generateVerificationEmail = (verifyUrl) => `
                 Verify Email
               </a>
 
-              <!-- Fallback link -->
               <p style="margin-top:30px; font-size:14px; color:#6b7280;">
-                If the button above does not work, copy and paste this link into your browser:
+                If the button does not work, copy and paste this link:
               </p>
+
               <p style="word-break:break-all; font-size:14px; color:#2563eb;">
                 ${verifyUrl}
               </p>
 
-              <!-- Footer -->
               <hr style="margin:30px 0; border:none; border-top:1px solid #e5e7eb;" />
               <p style="font-size:12px; color:#9ca3af;">
-                If you did not request this email, you can safely ignore it.
+                If you did not request this email, ignore it.
               </p>
               <p style="font-size:12px; color:#9ca3af;">© ${new Date().getFullYear()} QuantumCrafters Studio</p>
+
             </td>
           </tr>
         </table>
@@ -64,69 +62,122 @@ export async function POST(req) {
   try {
     await connectMongo();
     const { email, name, path } = await req.json();
-    console.log(path, "2222222222222")
 
     // generate token
     const token = crypto.randomBytes(32).toString("hex");
     const expiry = new Date(Date.now() + 1000 * 60 * 60); // 1 hour
 
-    // save token in DB
-    let user = await pdfViewers.findOne({ email:email,pdftype:path });
+    // find user
+    let user = await pdfViewers.findOne({ email: email, pdftype: path });
 
-    console.log(user, "useruseruseruser")
-    // return
-   if (!user) {
-  // create new user
-  user = new pdfViewers({
-    name,
-    email,
-    verifyToken: token,
-    verifyTokenExpiry: expiry,
-    pdftype: path,
-  });
+    // create transporter
+    let transporter = nodemailer.createTransport({
+      host: "smtpout.secureserver.net",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.NEXT_EMAIL_USER,
+        pass: process.env.NEXT_EMAIL_PASS,
+      },
+    });
 
-  await user.save();
+    const verifyUrl = `${process.env.NEXT_PUBLIC_Live_URL}/api/verify-email?token=${token}&email=${email}&path=${path}`;
 
-  // send verification mail
-  let transporter = nodemailer.createTransport({
-    host: "smtpout.secureserver.net",
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.NEXT_EMAIL_USER,
-      pass: process.env.NEXT_EMAIL_PASS,
-    },
-  });
+    // -----------------------------------------
+    // 🟢 CASE 1: NEW USER
+    // -----------------------------------------
+    if (!user) {
+      user = new pdfViewers({
+        name,
+        email,
+        verifyToken: token,
+        verifyTokenExpiry: expiry,
+        pdftype: path,
+        isVerified: false, // important
+      });
 
-  const verifyUrl = `${process.env.NEXT_PUBLIC_Live_URL}/api/verify-email?token=${token}&email=${email}&path=${path}`;
+      await user.save();
 
-  await transporter.sendMail({
-    from: process.env.NEXT_EMAIL_USER,
-    to: email,
-    subject: "Verify your email",
-    html: generateVerificationEmail(verifyUrl),
-  });
+      // 1️⃣ Send Verification Email to USER
+      await transporter.sendMail({
+        from: process.env.NEXT_EMAIL_USER,
+        to: email,
+        subject: "Verify your email",
+        html: generateVerificationEmail(verifyUrl),
+      });
 
-  return NextResponse.json({ success: true, message: "Verification email sent!",isVerified:false });
+      // 2️⃣ Send Notification Email to ADMIN
+      await transporter.sendMail({
+        from: process.env.NEXT_EMAIL_USER,
+        to: process.env.ADMIN_NOTIFICATION_EMAIL, // admin email in env
+        subject: "New PDF Access Request",
+        html: `
+          <h2>New User Requested Access</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>PDF:</strong> ${path}</p>
+          <p>User has been sent a verification email.</p>
+        `
+      });
 
-} else {
-  // update existing user
-  user.name = name;
-  user.verifyToken = token;
-  user.verifyTokenExpiry = expiry;
-  user.pdftype = path;
+      return NextResponse.json({
+        success: true,
+        message: "Verification email sent!",
+        isVerified: false,
+      });
+    }
 
-  await user.save();
+    // -----------------------------------------
+    // 🟢 CASE 2: EXISTING USER (Verify email again)
+    // -----------------------------------------
+    if (!user.isVerified) {
 
-  const redirectUrl = `${process.env.NEXT_PUBLIC_Live_URL}${path}?token=${token}`;
-  console.log(redirectUrl,"redirectUrlredirectUrlredirectUrlredirectUrl")
+      user.verifyToken = token;
+      user.verifyTokenExpiry = expiry;
+      await user.save();
 
-   return NextResponse.json({ success: true, message: "",url:redirectUrl, isVerified:true}, { status: 200 });
-  
-}
+      // 1️⃣ Send Verification Email to USER
+      await transporter.sendMail({
+        from: process.env.NEXT_EMAIL_USER,
+        to: email,
+        subject: "Verify your email",
+        html: generateVerificationEmail(verifyUrl),
+      });
+
+      // 2️⃣ Send Notification Email to ADMIN
+      await transporter.sendMail({
+        from: process.env.NEXT_EMAIL_USER,
+        to: process.env.ADMIN_NOTIFICATION_EMAIL,
+        subject: "User Re-Requested Access",
+        html: `
+          <h2>User Re-requested Verification</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>PDF:</strong> ${path}</p>
+          <p>User has been sent a new verification email.</p>
+        `
+      });
+
+      return NextResponse.json({
+        success: true,
+        message: "Verification email sent again!",
+        isVerified: false,
+      });
+    }
+
+    // -----------------------------------------
+    // 🟢 CASE 3: USER ALREADY VERIFIED
+    // -----------------------------------------
+    const redirectUrl = `${process.env.NEXT_PUBLIC_Live_URL}${path}?token=${token}`;
+
+    return NextResponse.json({
+      success: true,
+      url: redirectUrl,
+      isVerified: true,
+    });
 
   } catch (err) {
-    console.error("Send email error:", err);
+    console.error("Email error:", err);
     return NextResponse.json({ success: false, message: err.message }, { status: 500 });
   }
 }
