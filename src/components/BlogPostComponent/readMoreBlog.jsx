@@ -115,12 +115,12 @@ export default function ReadMoreBlog() {
 
   return (
     <>
-      <head>
+      <Head>
         <title>{blog?.title}</title>
         <meta name="description" content={"retetet"} />
         <meta property="og:title" content={blog?.title} />
         <meta property="og:description" content={"njhjhjjhh"} />
-      </head>
+      </Head>
     
       <Navbar />
 
