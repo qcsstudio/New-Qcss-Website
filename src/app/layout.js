@@ -5,6 +5,7 @@ import ChatBotComponent from "@/components/ChatBotComponent/ChatBotComponent";
 import { BotProvider } from "@/context/Bot.context";
 import CalendlyBadge from "@/components/CalendlyBadge/CalendlyBadge";
 import 'react-phone-input-2/lib/style.css';
+import { PolicyProvider } from "@/context/policyContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -131,7 +132,7 @@ export default function RootLayout({ children }) {
             }
           })}
         </Script>
-         <script
+        <script
           id="microsoft-clarity"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -149,7 +150,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <BotProvider>
-          <ChatBotComponent>{children}</ChatBotComponent>
+          <ChatBotComponent>
+            <PolicyProvider>
+
+              {children}
+            </PolicyProvider>
+          </ChatBotComponent>
         </BotProvider>
         <CalendlyBadge />
 
