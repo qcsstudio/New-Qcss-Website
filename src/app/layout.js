@@ -118,7 +118,7 @@ export default function RootLayout({ children }) {
               {
                 '@type': 'ContactPoint',
                 contactType: 'sales',
-                telephone: '+91 8264017346',
+                telephone: '91 7719607776',
                 email: 'info@qcsstudio.com',
                 areaServed: 'IN'
               }

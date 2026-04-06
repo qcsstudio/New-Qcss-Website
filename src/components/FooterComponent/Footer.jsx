@@ -51,8 +51,8 @@ const Footer = () => {
                   <FaPhoneAlt size={12} className='text-[#F1813B] text-xl' />
                   <p className={`font-semibold  text-xs text-[#FFA587]  font-unbounded`}>PHONE</p>
                 </div>
-                <Link href="tel:+91 8264017346">
-                  <p className={`text-sm mt-2 font-normal text-[#FFFFFF]  font-montserrat`}>+91 8264017346</p>
+                <Link href="tel:91 7719607776">
+                  <p className={`text-sm mt-2 font-normal text-[#FFFFFF]  font-montserrat`}>91 7719607776</p>
                 </Link>
               </div>
 
